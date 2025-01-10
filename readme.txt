@@ -3,7 +3,7 @@
 Contributors: nikitahl
 Tags: wpbakery
 Requires at least: 6.4
-Tested up to: 6.5.3
+Tested up to: 6.7.1
 Stable tag: 1.0
 Requires PHP: 7.0
 License: GPLv3 or later
