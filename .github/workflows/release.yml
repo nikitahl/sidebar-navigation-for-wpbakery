@@ -1,0 +1,54 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Triggers the workflow on tag push like v1.0.0
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history so we can access tags and branches
+          ref: ${{ github.ref }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Specify the Node.js version required by your project, compatible with eslint
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build-prod
+
+      - name: Run build script
+        run: bash _tools/build_release.sh
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }}  # Use the PAT instead of the default GITHUB_TOKEN
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Automated release for ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }}  # Use the PAT instead of the default GITHUB_TOKEN
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./sidebar-for-wpbakery.zip
+          asset_name: release-${{ github.ref_name }}.zip
+          asset_content_type: application/zip
