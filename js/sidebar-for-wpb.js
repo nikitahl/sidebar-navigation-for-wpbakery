@@ -1,17 +1,12 @@
 (function ($) {
 	$(document).ready(function () {
-		$(window).on('vc_build', function () {
+		var $window = $(window);
+		$window.on('vc_build', function () {
 			var pluginUrl = window.sidebar_for_wpb_js.plugin_url;
 			var $navbar = $('#vc_navbar');
 			var $frameWrapper = $('#vc_inline-frame-wrapper');
-			var $navbarClone = $navbar.clone();
 			var $navbarItems = $navbar.find('.vc_navbar-nav li');
-			var $undoBtn = $navbar.find('#vc_navbar-undo');
-			var $redoBtn = $navbar.find('#vc_navbar-redo');
-
-			$undoBtn.attr('id', 'vc_navbar-undo-custom');
-			$redoBtn.attr('id', 'vc_navbar-redo-custom');
-			$navbar.attr('id', 'vc_navbar-custom');
+			var $panelWindow = $('.vc_ui-panel-window');
 
 			$.each($navbarItems, function (index, item) {
 				var $item = $(item);
@@ -26,11 +21,6 @@
 					$item.css({
 						'order': '8'
 					});
-					$child.css({
-						'margin': '2px 3px',
-						'width': '90%',
-						'font-size': '11px',
-					})
 				} else if ($child.attr('id') === 'vc_screen-size-control') {
 					$item.css('order', '7');
 				} else if ($child.hasClass('vc_post-settings')) {
@@ -43,10 +33,8 @@
 				}
 			});
 
-			$navbar.after($navbarClone);
 			$('body').append('<link rel="stylesheet" href="' + pluginUrl + '/css/sidebar-for-wpb.min.css" type="text/css" />');
 
-			var $panelWindow = $('.vc_ui-panel-window');
 			var myObserver = new MutationObserver(mutationHandler);
 			var obsConfig = {
 				attributes: true
@@ -58,15 +46,29 @@
 
 			function mutationHandler(mutationRecords) {
 				mutationRecords.forEach(function(mutation) {
-					if (window.innerWidth > 782 && mutation.type === 'attributes' && mutation.attributeName === 'class') {
-						if (mutation.target.classList.contains('vc_active')) {
-							$frameWrapper.css('left', '440px');
-						} else {
-							$frameWrapper.css('left', '60px');
-						}
+					if (window.innerWidth > 960 && mutation.type === 'attributes' && mutation.attributeName === 'class') {
+						setFrameWrapperPosition($(mutation.target));
 					}
 				});
 			}
+
+			function handleWindowResize() {
+				setFrameWrapperPosition($panelWindow);
+			}
+
+			function setFrameWrapperPosition($panelWindow) {
+				if (window.innerWidth > 960) {
+					if ($panelWindow.hasClass('vc_active')) {
+						$frameWrapper.css('left', '490px'); // sidebar 440px + navbar 50px
+					} else {
+						$frameWrapper.css('left', '50px'); // navbar 50px
+					}
+				} else {
+					$frameWrapper.css('left', '0');
+				}
+			}
+
+			$window.on('resize', handleWindowResize);
 
 		});
 	});
