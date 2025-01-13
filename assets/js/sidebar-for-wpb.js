@@ -33,7 +33,7 @@
 				}
 			});
 
-			$('body').append('<link rel="stylesheet" href="' + pluginUrl + '/css/sidebar-for-wpb.min.css" type="text/css" />');
+			$('body').append('<link rel="stylesheet" href="' + pluginUrl + '/assets//css/sidebar-for-wpb.min.css" type="text/css" />');
 
 			var myObserver = new MutationObserver(mutationHandler);
 			var obsConfig = {
