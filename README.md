@@ -3,7 +3,6 @@
 This is WordPress plugin that display a navigation and panels as a sidebar in WPBakery Page Builder.
 
 ![](assets/images/screenshot-1.png)
-![](assets/images/screenshot-2.png)
 
 ## Installation
 You can directly install the plugin from the GitHub repository.
