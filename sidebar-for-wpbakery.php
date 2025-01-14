@@ -18,7 +18,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 	// check if we are in inline editor mode
 	// and only then load the script
 	if ( vc_is_inline() ) {
-		wp_register_script( 'sidebar-for-wpb-js', plugins_url( 'js/sidebar-for-wpb.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
+		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/js/sidebar-for-wpb.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
 		// Provide plugin URL for JS

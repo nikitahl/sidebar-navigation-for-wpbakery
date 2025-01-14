@@ -18,7 +18,11 @@ This simple plugin to display a navigation and panels as a sidebar in WPBakery P
 == Installation ==
 
 1. Upload the plugin folder to your /wp-content/plugins/ folder.
-1. Go to the **Plugins** page and activate the plugin.
+2. Go to the **Plugins** page and activate the plugin.
+
+== Screenshots ==
+
+1. Sidebar UI improvement.
 
 == Frequently Asked Questions ==
 
@@ -37,3 +41,4 @@ To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins p
 == Changelog ==
 = 1.0 =
 * Plugin released.
+
