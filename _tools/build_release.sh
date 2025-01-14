@@ -12,6 +12,5 @@ fi
 zip -r "$ZIP_FILE" \
   *.php \
   readme.txt \
-  css \
-  js \
+  assets \
   -x "*.DS_Store"  # Exclude unnecessary files like macOS metadata
