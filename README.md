@@ -1,25 +1,26 @@
 # Sidebar for WPBakery
 
-This is WordPress plugin that display a navigation and panels as a sidebar in WPBakery Page Builder.
+This simple plugin adds a navigation bar and panels as a sidebar in the WPBakery Page Builder. If you want to keep your content visible at all times without constantly dragging or resizing panels, while still having quick access to them, this plugin is perfect for you.
+
+It makes navigating the WPBakery Page Builder's Frontend Editor effortless. The navigation bar and panels appear as a sidebar on the left side of the screen, enhancing usability and efficiency.
 
 ![](assets/images/screenshot-1.png)
 
 ## Installation
+The plugin is available on the [WordPress plugin repository](https://wordpress.org/plugins/sidebar-navigation-for-wpbakery/). You can install it directly from the WordPress dashboard.
+or
 You can directly install the plugin from the GitHub repository.
 1. Upload the plugin folder to your /wp-content/plugins/ folder.
 2. Go to the **Plugins** page and activate the plugin.
 
-That's it. Right now if you go to WPBakery Page Builder frontend editor you can enjoy new sidebar UI.
+That's it. Right now if you go to the WPBakery Page Builder rontend editor you can enjoy new sidebar UI.
 
 ## Requirements
 1. WPBakery Page Builder version 8.0+
 2. PHP version 7.0+
-3. Wordpress version 6.4+
+3. WordPress version 6.4+
 
 ## Frequently Asked Questions
-1. WPBakery Page Builder version 8.0+
-2. PHP version 7.0+
-3. Wordpress version 6.4+
 
 ### How do I use this plugin?
 
@@ -32,3 +33,15 @@ The navigation bar will be displayed as a sidebar on the left side of the screen
 ### How do I disable the sidebar?
 
 To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins page in the WordPress dashboard.
+
+## Code of Conduct
+
+Please read and follow the [Code of Conduct](./CODE_OF_CONDUCT.md).
+
+## Contributing
+
+This project is open for contributions. Read the [contributing guide](./CONTRIBUTING.md) to learn about development process. How to integrate your changes to CSS Base.
+
+## License
+
+Sidebar for WPBakery is [GPLv3 licensed](./LICENSE).
