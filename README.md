@@ -1,4 +1,4 @@
-## Description
+# Sidebar for WPBakery
 
 This is WordPress plugin that display a navigation and panels as a sidebar in WPBakery Page Builder.
 
