@@ -4,6 +4,7 @@
  * Description: Enhanced UI for WPBakery Page Builder with a sidebar navigation and panels.
  * Version: 1.0
  * Author: Nikita Hlopov
+ * Author URI: https://nikitahl.com
  * Requires PHP: 7.0
  * Requires at least: 6.4
  * License: GPLv3
