@@ -24,7 +24,11 @@ It makes navigating the WPBakery Page Builder's Frontend Editor effortless. The 
 
 == Screenshots ==
 
-1. Sidebar UI improvement.
+1. Sidebar UI improvement
+2. Editor Navbar
+3. Add Element panel
+4. Edit Form panel
+5. Page Settings panel
 
 == Frequently Asked Questions ==
 

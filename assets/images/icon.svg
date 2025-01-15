@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>logo-light</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#AAA0FF" offset="0%"></stop>
+            <stop stop-color="#3DA7F5" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo-light">
+            <rect id="Rectangle" fill="url(#linearGradient-1)" fill-rule="nonzero" x="0" y="0" width="256" height="256" rx="15"></rect>
+            <g id="ui" transform="translate(40.000000, 30.000000)">
+                <g id="navbar">
+                    <rect id="Rectangle" fill="#0772CE" fill-rule="nonzero" x="0" y="0" width="32" height="198" rx="3"></rect>
+                    <g id="logo" transform="translate(0.000000, 12.000000)">
+                        <rect id="Rectangle" fill="#00427B" x="0" y="0" width="32" height="28"></rect>
+                        <g id="wpb-logo" transform="translate(8.000000, 8.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                            <path d="M5.8181818,0 C7.9976562,0 9.89723555,1.27543189 10.8939455,3.16326223 C11.1352011,3.11908726 11.383266,3.09615385 11.6363637,3.09615385 C14.0463335,3.09615385 16,5.17544679 16,7.74038462 C16,10.2796731 14.0852114,12.3429809 11.7085244,12.3839932 L11.5,12.3846154 L11.5,12.9230769 C11.5,13.5178451 11.0522848,14 10.5,14 L5.5,14 C4.94771525,14 4.5,13.5178451 4.5,12.9230769 L4.50032986,12.2250918 C1.92184317,11.5896017 0,9.12982183 0,6.19230769 C0,2.77239059 2.60488873,0 5.8181818,0 Z" id="Path"></path>
+                        </g>
+                    </g>
+                </g>
+                <g id="panel" transform="translate(38.000000, 0.000000)" fill-rule="nonzero">
+                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="138" height="198" rx="3"></rect>
+                    <g id="Group" transform="translate(18.000000, 14.000000)" fill="#0772CE">
+                        <rect id="Rectangle" x="0" y="0" width="104" height="24" rx="1"></rect>
+                        <rect id="Rectangle" x="0" y="32" width="104" height="24" rx="1"></rect>
+                        <rect id="Rectangle" x="0" y="64" width="104" height="24" rx="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
