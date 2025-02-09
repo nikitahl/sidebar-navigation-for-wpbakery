@@ -5,16 +5,20 @@ const cleanCSS = require('gulp-clean-css');
 const mode = require('gulp-mode')();
 const log = require('fancy-log');
 
+const folderPaths = {
+	js: './assets/js/',
+	css: './assets/css/',
+}
 const paths = {
-	js: './assets/js/*.js',
-	css: './assets/css/*.css',
+	js: `${folderPaths.js}*.js`,
+	css: `${folderPaths.css}*.css`,
 };
 
 function buildJs() {
 	console.log('Running buildJs...');
 
 	// Exclude already minified files (files with .min.js)
-	let pipeline = gulp.src([paths.js, '!./js/*.min.js'], { allowEmpty: true });
+	let pipeline = gulp.src([paths.js, `!${folderPaths.js}*.min.js`], { allowEmpty: true });
 
 	if (mode.production()) {
 		console.log('Production mode: Minifying JS...');
@@ -39,7 +43,7 @@ function buildCss() {
 	console.log('Running buildCss...');
 
 	// Exclude already minified files (files with .min.css)
-	let pipeline = gulp.src([paths.css, '!./css/*.min.css'], { allowEmpty: true });
+	let pipeline = gulp.src([paths.css, `!${folderPaths.css}*.min.css`], { allowEmpty: true });
 
 	if (mode.production()) {
 		console.log('Production mode: Minifying CSS...');
