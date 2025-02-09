@@ -6,8 +6,8 @@ const mode = require('gulp-mode')();
 const log = require('fancy-log');
 
 const paths = {
-	js: './js/*.js',
-	css: './css/*.css',
+	js: './assets/js/*.js',
+	css: './assets/css/*.css',
 };
 
 function buildJs() {
