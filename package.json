@@ -1,16 +1,16 @@
 {
-  "name": "Sitebar for WPBakery",
+  "name": "Sidebar Navigation for WPBakery",
   "version": "1.0",
   "description": "Enhanced UI for WPBakery Page Builder with a sidebar navigation and panels.",
   "homepage": "https://wordpress.org/plugins/sidebar-navigation-for-wpbakery/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nikitahl/sidebar-for-wpbakery.git"
+    "url": "git@github.com:nikitahl/sidebar-navigation-for-wpbakery.git"
   },
   "author": "Nikita Hlopov",
-  "license": "http://www.gnu.org/licenses/gpl-3.0.html\n",
+  "license": "http://www.gnu.org/licenses/gpl-3.0.html",
   "bugs": {
-    "url": "https://github.com/nikitahl/sidebar-for-wpbakery/issues"
+    "url": "https://github.com/nikitahl/sidebar-navigation-for-wpbakery/issues"
   },
   "main": "",
   "scripts": {
