@@ -50,5 +50,5 @@ npm run watch
 ```
 6. Build for production:
 ```sh
-  npm run build-prod
+npm run build-prod
 ```
