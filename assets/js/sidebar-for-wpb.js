@@ -7,6 +7,25 @@
 			var $frameWrapper = $('#vc_inline-frame-wrapper');
 			var $navbarItems = $navbar.find('.vc_navbar-nav li');
 			var $panelWindow = $('.vc_ui-panel-window');
+			var $navbarBtns = $navbar.find('.vc_icon-btn');
+			var panelsSettings = [
+				{
+					panelId: 'panel-add-element',
+					navbarBtnId: 'vc_add-new-element'
+				},
+				{
+					panelId: 'panel-templates',
+					navbarBtnId: 'vc_templates-editor-button'
+				},
+				{
+					panelId: 'panel-post-seo',
+					navbarBtnId: 'vc_seo-button'
+				},
+				{
+					panelId: 'panel-post-settings',
+					navbarBtnId: 'vc_post-settings-button'
+				}
+			]
 
 			$.each($navbarItems, function (index, item) {
 				var $item = $(item);
@@ -48,6 +67,7 @@
 				mutationRecords.forEach(function(mutation) {
 					if (window.innerWidth > 960 && mutation.type === 'attributes' && mutation.attributeName === 'class') {
 						setFrameWrapperPosition($(mutation.target));
+						setActiveBtn($(mutation.target));
 					}
 				});
 			}
@@ -67,6 +87,23 @@
 					$frameWrapper.css('left', '0');
 				}
 			}
+
+			function setActiveBtn ($target) {
+				$navbarBtns.removeClass('vc_active');
+				if ($target.hasClass('vc_active')) {
+					var panelType = $target.attr('data-vc-ui-element');
+					var activePanel = panelsSettings.find(function (setting) {
+						return setting.panelId === panelType;
+					});
+					if (activePanel) {
+						var activeBtn = activePanel.navbarBtnId;
+						$navbar.find('.vc_navbar-nav > li > #' + activeBtn).addClass('vc_active');
+					}
+				}
+			}
+
+			setActiveBtn($panelWindow.filter('.vc_active'));
+			handleWindowResize();
 
 			$window.on('resize', handleWindowResize);
 

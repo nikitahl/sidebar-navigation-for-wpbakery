@@ -63,7 +63,11 @@
     width: 100%;
   }
 
-  #vc_navbar .vc_dropdown-list {
+  #vc_navbar .vc_navbar-nav > li:not(.vc_save-buttons) {
+    height: 48px;
+  }
+
+    #vc_navbar .vc_dropdown-list {
     left: 100%;
     right: initial;
     top: -75px;
@@ -117,8 +121,13 @@
   .vc_ui-panel-content {
     margin-top: 0 !important ;
   }
+
   .vc_ui-panel-content.vc_properties-list-init {
     margin: auto !important;
+  }
+
+  #vc_navbar .vc_icon-btn.vc_active {
+    background-color: #00447F;
   }
 }
 
