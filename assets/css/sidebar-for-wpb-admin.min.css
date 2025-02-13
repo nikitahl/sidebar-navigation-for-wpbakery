@@ -1,0 +1,37 @@
+.sfw-label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sfw-tooltip {
+  position: relative;
+  cursor: help;
+  font-size: 12px;
+  margin-left: 5px;
+  color: #fff;
+  background: #00447f;
+  padding: 5px;
+  width: 10px;
+  height: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.sfw-tooltip-text {
+  position: absolute;
+  top: 0;
+  left: 115%;
+  background: #00447f;
+  font-size: 13px;
+  font-weight: 400;
+  width: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 6px;
+  z-index: 1;
+}
+
