@@ -1,4 +1,4 @@
-.sfw-label{
+.sfw-label {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +31,7 @@
   width: 300px;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 6px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 4px 6px;
   z-index: 1;
 }
 

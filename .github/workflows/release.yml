@@ -6,8 +6,8 @@ on:
       - 'v*.*.*'  # Triggers the workflow on tag push like v1.0.0
 
 jobs:
-  lint:
-    name: Run ESLint
+  codestyle:
+    name: Run Codestyle checks
     runs-on: ubuntu-latest
 
     steps:
@@ -26,6 +26,11 @@ jobs:
       - name: Run ESLint
         run: |
           npm run lint
+
+      - name: Run Stylelint
+        run: |
+          npm run lint:css
+
   create_release:
     runs-on: ubuntu-latest
 

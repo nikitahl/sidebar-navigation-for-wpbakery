@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "color-no-invalid-hex": true,
+    "font-family-no-duplicate-names": true,
+    "font-family-no-missing-generic-family-keyword": true,
+    "selector-type-no-unknown": true,
+    "no-duplicate-selectors": true,
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "color-function-notation": "legacy",
+    "alpha-value-notation": "number",
+    "length-zero-no-unit": true,
+    "media-feature-range-notation": "prefix",
+    "rule-empty-line-before": "always"
+  }
+}
