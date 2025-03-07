@@ -3,7 +3,7 @@
 Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation, extension
 Requires at least: 6.4
-Tested up to: 6.7.1
+Tested up to: 6.7.2
 Stable tag: 2.0
 Requires PHP: 7.0
 License: GPLv3 or later
@@ -19,7 +19,7 @@ If you want to keep your content visible at all times without constantly draggin
 
 It makes navigating the WPBakery Page Builder's Frontend Editor effortless. The navigation bar and panels appear as a sidebar on the left side of the screen, enhancing usability and efficiency.
 
-Additionally, the plugin provides a settings page where you can customize the sidebar's appearance and behavior.
+Additionally, the plugin provides a settings page where you can customize some of the sidebar's appearance and behavior.
 
 = Features =
 

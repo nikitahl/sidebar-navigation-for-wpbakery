@@ -8,7 +8,7 @@ If you want to keep your content visible at all times without constantly draggin
 
 It makes navigating the WPBakery Page Builder's Frontend Editor effortless. The navigation bar and panels appear as a sidebar on the left side of the screen, enhancing usability and efficiency.
 
-Additionally, the plugin provides a settings page where you can customize the sidebar's appearance and behavior.
+Additionally, the plugin provides a settings page where you can customize some of the sidebar's appearance and behavior.
 
 ## Features
 
