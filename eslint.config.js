@@ -29,7 +29,8 @@ module.exports = [
       'no-var': 'error',
       'prefer-const': 'error',
       'prefer-arrow-callback': 'error',
-      'arrow-body-style': [ 'error', 'as-needed' ]
+      'arrow-body-style': [ 'error', 'as-needed' ],
+      'no-multiple-empty-lines': 2
     }
   },
   {

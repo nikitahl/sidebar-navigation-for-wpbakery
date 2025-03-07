@@ -147,7 +147,6 @@
       setSettings()
 
       $window.on('resize', handleWindowResize)
-
     })
   })
 })(jQuery)
