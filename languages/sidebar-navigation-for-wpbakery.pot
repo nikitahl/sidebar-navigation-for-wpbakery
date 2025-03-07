@@ -1,0 +1,61 @@
+# Copyright (C) 2025 Nikita Hlopov
+# This file is distributed under the same license as the Sidebar for WPBakery plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Sidebar for WPBakery 2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sidebar-navigation-for-wpbakery\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-02-11T10:01:58+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: sidebar-navigation-for-wpbakery\n"
+
+#. Plugin Name of the plugin
+#: includes/settings.php:25
+msgid "Sidebar for WPBakery"
+msgstr ""
+
+#. Description of the plugin
+msgid "Enhanced UI for WPBakery Page Builder with a sidebar navigation and panels."
+msgstr ""
+
+#. Author of the plugin
+msgid "Nikita Hlopov"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://nikitahl.com"
+msgstr ""
+
+#: includes/settings.php:24
+#: includes/settings.php:40
+msgid "Sidebar for WPBakery Settings"
+msgstr ""
+
+#: includes/settings.php:79
+msgid "Disable elements' description"
+msgstr ""
+
+#: includes/settings.php:80
+msgid "Hides the descriptions under WPBakery elements in the Add Element panel."
+msgstr ""
+
+#: includes/settings.php:91
+msgid "Compact view"
+msgstr ""
+
+#: includes/settings.php:92
+msgid "Reduces spacing between elements in the Add Element panel for a more compact view."
+msgstr ""
+
+#: includes/settings.php:107
+msgid "These settings control the main functionality of the Sidebar for WPBakery plugin."
+msgstr ""
+
+#: sidebar-navigation-for-wpbakery.php:55
+msgid "Settings"
+msgstr ""

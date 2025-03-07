@@ -1,6 +1,8 @@
 @media screen and (min-width: 961px) {
+
   :root {
     --vc-navbar-width: 50px;
+    --vc-min-panel-width: 440px;
   }
 
   #wpcontent,
@@ -83,17 +85,18 @@
     right: 0;
     top: 0 !important;
     width: auto !important;
-  }
-
-  #vc_inline-frame {
     height: 100vh !important;
   }
 
-  .vc_ui-panel-window {
+  #vc_inline-frame {
+    height: 100% !important;
+  }
+
+  .vc_ui-panel.vc_ui-panel-window {
     top: 0 !important;
     bottom: 0 !important;
     left: var(--vc-navbar-width) !important;
-    width: 440px !important;
+    width: var(--vc-min-panel-width) !important;
     max-height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -128,6 +131,35 @@
 
   #vc_navbar .vc_icon-btn.vc_active {
     background-color: #00447F;
+  }
+
+  .ui-resizable-handle {
+    display: none !important;
+  }
+
+  .vc_hide-description .vc_element-description {
+    display: none !important;
+  }
+
+  .vc_compact-view .wpb-content-layouts-container h4 {
+    margin: 0 0 10px !important;
+  }
+
+  .vc_compact-view .wpb-content-layouts {
+    margin: 0 !important;
+    grid-template-columns: repeat(auto-fit, 96px) !important;
+  }
+
+  .vc_compact-view .vc_element-description {
+    font-size: 12px !important;
+  }
+
+  .vc_compact-view .vc_shortcode-link {
+    font-size: 13px;
+  }
+
+  .vc_compact-view .vc_element-icon {
+    margin-bottom: 10px;
   }
 }
 
