@@ -1,7 +1,7 @@
 === Sidebar for WPBakery ===
 
 Contributors: nikitahl, mrdollar4444
-Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation, extension
+Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation
 Requires at least: 6.4
 Tested up to: 6.7.2
 Stable tag: 2.0
