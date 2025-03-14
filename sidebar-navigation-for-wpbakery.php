@@ -29,7 +29,7 @@ add_filter('plugin_action_links_sidebar-navigation-for-wpbakery/sidebar-navigati
 function sidebar_for_wpb_enqueue_frontend() {
 	// Check if we are in inline editor mode and only then load the script
 	if ( vc_is_inline() ) {
-		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/js/dist/editor.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
+		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
 		// Get saved options

@@ -1,3 +1,5 @@
+import '../../css/admin.css'
+
 // Simple tooltip behavior using title attribute
 document.addEventListener('DOMContentLoaded', () => {
   const tooltips = document.querySelectorAll('.sfw-tooltip')

@@ -16,7 +16,9 @@ module.exports = [
         require: 'readonly',
         exports: 'readonly',
         MutationObserver: 'readonly',
-        jQuery: 'readonly'
+        jQuery: 'readonly',
+        module: 'readonly',
+        __dirname: 'readonly'
       }
     },
     rules: {

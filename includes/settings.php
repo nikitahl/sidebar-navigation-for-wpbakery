@@ -203,18 +203,18 @@ function sidebar_nav_for_wpbakery_enqueue_admin_scripts($hook) {
 	// Enqueue CSS file for admin
 	wp_enqueue_style(
 		'sidebar-for-wpb-admin-style', // Handle
-		plugin_dir_url( __FILE__ ) . '../assets/css/sidebar-for-wpb-admin.css', // CSS file path
+		plugin_dir_url( __FILE__ ) . '../assets/dist/css/admin.min.css', // CSS file path
 		array(), // Dependencies (if any)
-		filemtime( plugin_dir_path( __FILE__ ) . '../assets/css/sidebar-for-wpb-admin.min.css' ), // Version (based on file modification time)
+		filemtime( plugin_dir_path( __FILE__ ) . '../assets/dist/css/admin.min.css' ), // Version (based on file modification time)
 		'all' // Media
 	);
 
 	// Enqueue JS file for admin
 	wp_enqueue_script(
 		'sidebar-for-wpb-admin-tooltip', // Handle
-		plugin_dir_url( __FILE__ ) . '../assets/js/dist/admin.min.js', // JS file path
+		plugin_dir_url( __FILE__ ) . '../assets/dist/js/admin.min.js', // JS file path
 		array( 'jquery' ), // Dependencies (if any)
-		filemtime( plugin_dir_path( __FILE__ ) . '../assets/js/dist/admin.js' ), // Version (based on file modification time)
+		filemtime( plugin_dir_path( __FILE__ ) . '../assets/dist/js/admin.min.js' ), // Version (based on file modification time)
 		true // Load in footer
 	);
 }
