@@ -21,15 +21,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
+          yarn install
 
       - name: Run ESLint
         run: |
-          npm run lint
+          yarn lint
 
       - name: Run Stylelint
         run: |
-          npm run lint:css
+          yarn lint:css
 
   create_release:
     runs-on: ubuntu-latest
@@ -47,10 +47,10 @@ jobs:
           node-version: '18'  # Specify the Node.js version required by your project, compatible with eslint
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build the project
-        run: npm run build-prod
+        run: yarn build-prod
 
       - name: Run build script
         run: bash _tools/build_release.sh

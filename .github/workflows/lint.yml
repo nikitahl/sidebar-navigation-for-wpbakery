@@ -18,12 +18,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
+          yarn install
 
       - name: Run ESLint
         run: |
-          npm run lint
+          yarn lint
 
       - name: Run Stylelint
         run: |
-          npm run lint:css
+          yarn lint:css
