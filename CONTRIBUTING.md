@@ -67,19 +67,19 @@ cd sidebar-navigation-for-wpbakery
 ```
 4. Install npm packages:
 ```sh
-npm install
+yarn install
 ```
 5. Build project using [Gulp](https://gulpjs.com/):
 ```sh
-npm run build
+yarn build
 ```
 or watch changes:
 ```sh
-npm run watch
+yarn watch
 ```
 6. Build for production:
 ```sh
-npm run build-prod
+yarn build-prod
 ```
 
 ## Coding Rules
@@ -105,13 +105,13 @@ For JavaScript, we are using [ESLint](https://eslint.org/) to ensure a consisten
 To check your JS code against our code standards rules:
 
 ```sh
-$ npm run lint
+$ yarn lint
 ```
 
 To automatically fix errors and warnings, run:
 
 ```sh
-$ npm run lint --fix
+$ yarn lint --fix
 ```
 
 ### CSS code style check
@@ -121,5 +121,5 @@ For CSS, we are using [Stylelint](https://stylelint.io/) to ensure a consistent 
 To check your CSS code against our code standards rules:
 
 ```sh
-$ npm run lint:css
+$ yarn lint:css
 ```
