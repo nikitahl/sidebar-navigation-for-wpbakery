@@ -65,6 +65,10 @@ The navigation bar will be displayed as a sidebar on the left side of the screen
 
 To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins page in the WordPress dashboard.
 
+= Where can I find the plugin settings? =
+
+The plugin settings can be found under Settings > Sidebar for WPBakery in the WordPress dashboard.
+
 == Changelog ==
 
 = 2.1 =
