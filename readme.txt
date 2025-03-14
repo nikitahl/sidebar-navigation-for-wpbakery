@@ -1,19 +1,19 @@
-=== Sidebar for WPBakery ===
+=== Sidebar for WPBakery Page Builder ===
 
 Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation
 Requires at least: 6.4
 Tested up to: 6.7.2
-Stable tag: 2.0
+Stable tag: 2.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Enhanced UI for WPBakery Page Builder with a sidebar navigation and panels.
+Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
 
 == Description ==
 
-This simple and lightweight plugin adds a navigation bar and panels as a sidebar in the WPBakery Page Builder.
+This simple and lightweight plugin displays a navigation bar and panels as a sidebar in the WPBakery Page Builder.
 
 If you want to keep your content visible at all times without constantly dragging or resizing panels, while still having quick access to them, this plugin is perfect for you.
 
@@ -28,6 +28,7 @@ Additionally, the plugin provides a settings page where you can customize some o
 * Settings page for customizing the sidebar's appearance and behavior.
  * Hide the description under elements in the Add Element panel.
  * Reduce spacing between elements in the Add Element panel for a more compact view.
+ * Reduce fields size and spacing in the Edit Form/Settings panel for a more compact view.
  * Make the page view area shrink or stay the same width when the sidebar is opened.
 
 = Requirements =
@@ -65,6 +66,10 @@ The navigation bar will be displayed as a sidebar on the left side of the screen
 To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins page in the WordPress dashboard.
 
 == Changelog ==
+
+= 2.1 =
+* Update: Added the ability to reduce fields size and spacing in the Edit Form/Settings panel for a more compact view.
+* Fix: Fixed an issue with navbar icons when resizing the screen vertically.
 
 = 2.0 =
 * Update: Added the ability to hide the description under elements in the Add Element panel.

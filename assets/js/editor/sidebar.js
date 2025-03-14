@@ -1,13 +1,16 @@
-(function ($) {
+;(function ($) {
   $(document).ready(() => {
     const $window = $(window)
     $window.on('vc_build', () => {
       const pluginUrl = window.sidebar_for_wpb_js.pluginUrl
       const disableDescription = window.sidebar_for_wpb_js.disableDescription
       const compactView = window.sidebar_for_wpb_js.compactView
+      const compactViewEditForm = window.sidebar_for_wpb_js.compactViewEditForm
       const responsiveView = window.sidebar_for_wpb_js.responsiveView
       const $screenSizeControls = $('#vc_screen-size-control .vc_screen-width')
       const $addElementPanel = $('#vc_ui-panel-add-element')
+      const $editElementPanel = $('#vc_ui-panel-edit-element')
+      const $settingsPanel = $('#vc_ui-panel-post-settings')
       const $navbar = $('#vc_navbar')
       const $frameWrapper = $('#vc_inline-frame-wrapper')
       const $iframe = $('#vc_inline-frame')
@@ -115,6 +118,10 @@
         if (compactView === '1') {
           $addElementPanel.find('.wpb-elements-list').addClass('vc_compact-view')
         }
+        if (compactViewEditForm === '1') {
+          $editElementPanel.find('.vc_ui-panel-content').addClass('vc_compact-view')
+          $settingsPanel.find('.vc_ui-panel-content-container').addClass('vc_compact-view')
+        }
       }
 
       function setNavbarItems (index, item) {
@@ -147,7 +154,6 @@
       setSettings()
 
       $window.on('resize', handleWindowResize)
-
     })
   })
 })(jQuery)

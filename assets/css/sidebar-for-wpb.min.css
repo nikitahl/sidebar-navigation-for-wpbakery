@@ -161,6 +161,183 @@
   .vc_compact-view .vc_element-icon {
     margin-bottom: 10px;
   }
+
+  .vc_compact-view .wpb_element_label,
+  .vc_compact-view .vc_css-editor .vc_settings label{
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  .vc_compact-view .vc_description {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+
+  .vc_compact-view .wpb-param-heading {
+    margin-bottom: 3px;
+  }
+
+  .vc_compact-view .vc_edit_form_elements input,
+  .vc_compact-view .vc_edit_form_elements select {
+    height: 34px;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .vc_compact-view .vc_edit_form_elements input[type="checkbox"],
+  .vc_compact-view .vc_edit_form_elements input[type="radio"],
+  .vc_compact-view .vc_checkbox input[type="checkbox"]:checked::before {
+    height: 16px;
+    width: 16px;
+  }
+
+  .vc_compact-view .vc_edit_form_elements .vc_ui-button.vc_param-animation-style-trigger {
+    height: 34px;
+    line-height: 34px;
+    margin-top: 8px;
+  }
+
+  .vc_compact-view .vc_css-editor input {
+    height: 20px;
+    width: 30px;
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  .vc_compact-view .gallery_widget_add_images,
+  .vc_compact-view .gallery_widget_attached_images_list .added,
+  .vc_compact-view .gallery_widget_attached_images_list .inner,
+  .vc_compact-view .vc_css-editor .vc_settings .vc_background-image .vc_add-image {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .vc_compact-view .gallery_widget_attached_images_list li img {
+    max-height: 60px !important;
+    vertical-align: initial;
+  }
+
+  .vc_compact-view .wpb_el_type_attach_image .vc_icon-remove {
+    width: 12px;
+    right: 12px;
+  }
+
+  .vc_compact-view .wpb_el_type_attach_image .vc_icon-remove .vc-c-icon-close,
+  .vc_compact-view .wpb_el_type_attach_images .vc_icon-remove .vc-composer-icon {
+    font-size: 12px;
+  }
+
+  .vc_compact-view .vc_link_label,
+  .vc_compact-view .url-label,
+  .vc_compact-view .title-label {
+    font-size: 12px;
+  }
+
+  .vc_compact-view .vc-icons-selector .selector {
+    width: 90px;
+    height: 30px;
+  }
+
+  .vc_compact-view .vc-icons-selector .selected-icon {
+    width: 50px;
+  }
+
+  .vc_compact-view .vc-icons-selector .selected-icon i,
+  .vc_compact-view .vc-icons-selector .selector-button i,
+  .vc_compact-view .vc_shortcode-param[data-param_type="iconpicker"] .vc-icons-selector .selected-icon {
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+  .vc_compact-view .vc-icons-selector .selector-button i {
+    font-size: 12px;
+  }
+
+  .vc_compact-view .vc_simplified .vc_layout-onion label {
+    left: 38px;
+  }
+
+  .vc_compact-view .vc_css-editor .vc_layout-onion .vc_border,
+  .vc_compact-view .vc_css-editor .vc_layout-onion .vc_padding,
+  .vc_compact-view .vc_css-editor .vc_layout-onion .vc_content {
+    margin: 36px;
+  }
+
+  .vc_compact-view .vc_css-editor .vc_layout-onion input.vc_bottom {
+    bottom: 3px
+  }
+
+  .vc_compact-view .vc_css-editor .vc_layout-onion input.vc_top {
+    top: 3px
+  }
+
+  .vc_compact-view .vc_css-editor .vc_layout-onion input.vc_left {
+    left: 3px
+  }
+
+  .vc_compact-view .vc_css-editor .vc_layout-onion input.vc_right {
+    right: 3px
+  }
+
+  .vc_compact-view .pickr .pcr-button {
+    height: 26px;
+    width: 26px;
+  }
+
+  @media screen and (max-height: 540px) {
+
+    .vc_pull-right.vc_show-mobile {
+      display: block !important;
+      margin-top: auto !important;
+    }
+
+    .vc_pull-right.vc_show-mobile .vc_dropdown-list {
+      top: initial !important;
+      width: 270px;
+      bottom: 0 !important;
+    }
+
+    .vc_hide-mobile {
+      display: none !important;
+    }
+
+    .vc_save-buttons {
+      margin: 0 !important;
+    }
+
+    .vc_show-mobile .vc_dropdown-list .vc_hide-desktop-more,
+    .vc_show-mobile .vc_dropdown-list .vc_hide-desktop-more .vc_hide-mobile,
+    .vc_show-mobile .vc_dropdown-list .vc_hide-desktop {
+        display: block !important;
+    }
+
+    .vc_save-buttons a.vc_icon-btn,
+    .vc_dropdown-list .vc_dropdown-list-item a,
+    .vc_dropdown-list .vc_hide-mobile a.vc_icon-btn,
+    #vc_navbar-undo.vc_icon-btn,
+    #vc_navbar-redo.vc_icon-btn{
+      height: 56px !important;
+      width: 100% !important;
+      display: flex !important;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 18px !important;
+    }
+
+    .vc_dropdown-list .vc_dropdown-list-item .vc-composer-icon,
+    .vc_dropdown-list a.vc_icon-btn .vc-composer-icon {
+      position: relative;
+      transform: unset;
+      top: unset;
+      left: unset;
+      font-size: 24px;
+    }
+
+    .vc_dropdown-list .vc_dropdown-list-item p,
+    .vc_dropdown-list a.vc_icon-btn p {
+      margin: 0 0 0 18px !important;
+    }
+  }
 }
 
 /*# sourceMappingURL=sidebar-for-wpb.css.map */

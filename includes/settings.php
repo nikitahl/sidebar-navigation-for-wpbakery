@@ -63,10 +63,11 @@ function sidebar_nav_for_wpbakery_settings_init() {
 	// Register settings
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_disable_description' );
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view' );
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view_edit_form' );
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_responsive_view', [
 		'sanitize_callback' => function( $value ) {
 			return $value === '1' ? '1' : '0'; // Ensures checkbox properly saves '1' or '0'
-		}
+		},
 	] );
 
 	// Add settings section
@@ -101,6 +102,18 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_main_section'
 	);
 
+	// Add "Compact view" field for Edit Form
+	add_settings_field(
+		'sidebar_nav_for_wpbakery_compact_view_edit_form',
+		'<div class="sfw-label">
+			<span class="sfw-title">' . esc_html__( 'Edit Form compact view', 'sidebar-navigation-for-wpbakery' ) . '</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Reduces fields size and spacing in the Edit Element panel for a more compact view.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+		</div>',
+		'sidebar_nav_for_wpbakery_compact_view_edit_form_callback',
+		'sidebar-navigation-for-wpbakery',
+		'sidebar_nav_for_wpbakery_main_section'
+	);
+
 	// Add "Responsive view" field
 	add_settings_field(
 		'sidebar_nav_for_wpbakery_responsive_view',
@@ -112,16 +125,6 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar-navigation-for-wpbakery',
 		'sidebar_nav_for_wpbakery_main_section'
 	);
-}
-
-/**
- * Renders the section description above the settings fields.
- *
- * @since 2.0
- */
-function sidebar_nav_for_wpbakery_section_callback() {
-	// You can add a description for the section here if needed
-	echo '<p>' . esc_html__( 'These settings control the main functionality of the Sidebar for WPBakery plugin.', 'sidebar-navigation-for-wpbakery' ) . '</p>';
 }
 
 /**
@@ -148,6 +151,20 @@ function sidebar_nav_for_wpbakery_compact_view_callback() {
 	?>
 	<input type="checkbox" name="sidebar_nav_for_wpbakery_compact_view"
             id="sidebar_nav_for_wpbakery_compact_view" value="1"
+		<?php checked( 1, $option, true ); ?> />
+	<?php
+}
+
+/**
+ * Callback for "Compact view" checkbox for Edit Form/Settings panel.
+ *
+ * @since 2.1
+ */
+function sidebar_nav_for_wpbakery_compact_view_edit_form_callback () {
+	$option = get_option( 'sidebar_nav_for_wpbakery_compact_view_edit_form', 0 );
+	?>
+	<input type="checkbox" name="sidebar_nav_for_wpbakery_compact_view_edit_form"
+            id="sidebar_nav_for_wpbakery_compact_view_edit_form" value="1"
 		<?php checked( 1, $option, true ); ?> />
 	<?php
 }
@@ -195,9 +212,9 @@ function sidebar_nav_for_wpbakery_enqueue_admin_scripts($hook) {
 	// Enqueue JS file for admin
 	wp_enqueue_script(
 		'sidebar-for-wpb-admin-tooltip', // Handle
-		plugin_dir_url( __FILE__ ) . '../assets/js/sidebar-for-wpb-admin.min.js', // JS file path
+		plugin_dir_url( __FILE__ ) . '../assets/js/dist/admin.min.js', // JS file path
 		array( 'jquery' ), // Dependencies (if any)
-		filemtime( plugin_dir_path( __FILE__ ) . '../assets/js/sidebar-for-wpb-admin.js' ), // Version (based on file modification time)
+		filemtime( plugin_dir_path( __FILE__ ) . '../assets/js/dist/admin.js' ), // Version (based on file modification time)
 		true // Load in footer
 	);
 }

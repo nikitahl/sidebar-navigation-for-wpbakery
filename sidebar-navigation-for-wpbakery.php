@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Sidebar for WPBakery
+ * Plugin Name: Sidebar for WPBakery Page Builder
  * Description: Enhanced UI for WPBakery Page Builder with a sidebar navigation and panels.
- * Version: 2.0
+ * Version: 2.1
  * Author: Nikita Hlopov
  * Author URI: https://nikitahl.com
  * Requires PHP: 7.0
@@ -29,7 +29,7 @@ add_filter('plugin_action_links_sidebar-navigation-for-wpbakery/sidebar-navigati
 function sidebar_for_wpb_enqueue_frontend() {
 	// Check if we are in inline editor mode and only then load the script
 	if ( vc_is_inline() ) {
-		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/js/sidebar-for-wpb.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
+		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/js/dist/editor.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
 		// Get saved options
@@ -37,6 +37,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 			'pluginUrl'           => plugins_url( '', __FILE__ ),
 			'disableDescription'  => get_option( 'sidebar_nav_for_wpbakery_disable_description', '0' ),
 			'compactView'         => get_option( 'sidebar_nav_for_wpbakery_compact_view', '0' ),
+			'compactViewEditForm' => get_option( 'sidebar_nav_for_wpbakery_compact_view_edit_form', '0' ),
 			'responsiveView'      => get_option( 'sidebar_nav_for_wpbakery_responsive_view', '0' ),
 		);
 
