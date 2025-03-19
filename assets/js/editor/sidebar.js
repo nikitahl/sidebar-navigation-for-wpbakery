@@ -34,6 +34,10 @@ export class SidebarForWPBakery {
       {
         panelId: 'panel-post-settings',
         navbarBtnId: 'vc_post-settings-button'
+      },
+      {
+        panelId: 'panel-page-structure',
+        navbarBtnId: 'vc_page-structure'
       }
     ]
 

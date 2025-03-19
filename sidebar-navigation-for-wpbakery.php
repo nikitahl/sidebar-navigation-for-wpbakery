@@ -32,6 +32,8 @@ function sidebar_for_wpb_enqueue_frontend() {
 		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
+		$page_structure_html = file_get_contents(plugin_dir_path(__FILE__) . 'includes/page-structure-panel.php');
+		$page_structure_title = esc_html__( 'Page Structure', 'sidebar-navigation-for-wpbakery' );
 		// Get saved options
 		$settings = array(
 			'pluginUrl'           => plugins_url( '', __FILE__ ),
@@ -39,6 +41,8 @@ function sidebar_for_wpb_enqueue_frontend() {
 			'compactView'         => get_option( 'sidebar_nav_for_wpbakery_compact_view', '0' ),
 			'compactViewEditForm' => get_option( 'sidebar_nav_for_wpbakery_compact_view_edit_form', '0' ),
 			'responsiveView'      => get_option( 'sidebar_nav_for_wpbakery_responsive_view', '0' ),
+			'pageStructureHtml'   => $page_structure_html,
+			'pageStructureTitle'  => $page_structure_title,
 		);
 
 		// Provide plugin URL for JS
