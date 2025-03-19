@@ -18,6 +18,9 @@ export class PageStructure {
     this.$pageStructurePanel = null
     this.pageStructurePanel = null
     this.$pageStructureContainer = null
+    this.structuredData = []
+    this.expandedNodes = {}
+    this.debouncedRender = _.debounce(this.renderPageStructure.bind(this), 500)
 
     this.init()
   }
@@ -25,8 +28,7 @@ export class PageStructure {
   init () {
     this.addPageStructurePanel()
     this.addNavbarIcon()
-    // TODO: Add page structure re-render on changes (add, clone, paste, delete, row layout change, undo, redo)
-    // TODO: Add option in settings for navbar to stick to the right side of the screen
+    // TODO: add helper to highlight element on scroll (inspect), remove existing vc_hover
   }
 
   addNavbarIcon () {
@@ -61,17 +63,20 @@ export class PageStructure {
   }
 
   createPanelView () {
-    const _this = this
+    if (vc.PageStructurePanel) return // Prevent multiple initializations
+
     vc.PageStructurePanelView = vc.PanelView.extend({})
     vc.PageStructurePanel = vc.PageStructurePanelView
-      .vcExtendUI (vc.HelperPanelViewHeaderFooter)
+      .vcExtendUI(vc.HelperPanelViewHeaderFooter)
       .extend({
         panelName: 'page_structure',
         isRendered: false,
-        initialize: function () {
+        initialize: () => {
           if (!this.isRendered) {
-            _this.renderPageStructure()
-            vc.events.on('editorChange', _this.debouncedRender.bind(_this))
+            this.isRendered = true
+            this.renderPageStructure()
+            vc.events.on('afterLoadShortcode', this.debouncedRender)
+            vc.events.on('afterRemoveShortcode', this.debouncedRender)
           }
         },
         render: function () {
@@ -113,50 +118,54 @@ export class PageStructure {
   }
 
   renderPageStructure () {
-    const _this = this
     this.structuredData = this.buildTree(vc.shortcodes.models)
     this.$pageStructureContainer.empty()
     this.$pageStructureContainer.append(this.createTreeHTML(this.structuredData))
-    this.$pageStructureContainer.on('click', '.page-structure-label', function () {
-      $(this).toggleClass('expanded')
-      $(this).next().slideToggle(200)
+
+    this.$pageStructureContainer.off('click mouseenter mouseleave', '.page-structure-label')
+    this.$pageStructureContainer.off('click', '.vc_control-btn')
+
+    this.$pageStructureContainer.on('click', '.page-structure-label', (e) => {
+      const $label = $(e.currentTarget)
+      const id = $label.attr('id')
+      const nodeId = `node-${id}`
+      this.expandedNodes[nodeId] = Object.prototype.hasOwnProperty.call(this.expandedNodes, nodeId) ? !this.expandedNodes[nodeId] : true
+      $label.toggleClass('expanded')
+      $label.next().slideToggle(200)
     })
-    this.$pageStructurePanel.on('click', '.vc_control-btn', function (e) {
+
+    this.$pageStructurePanel.on('click', '.vc_control-btn', (e) => {
       e.preventDefault()
       e.stopPropagation()
-      const $label = $(this).closest('.page-structure-label')
+      const $currentTarget = $(e.currentTarget)
+      const $label = $currentTarget.closest('.page-structure-label')
       const id = $label.attr('id')
-      const controlType = $(this).data('control')
+      const controlType = $currentTarget.data('control')
       switch (controlType) {
       case 'inspect':
-        _this.scrollToElement(id)
+        this.scrollToElement(id)
         break
       case 'edit':
-        _this.editElement(id)
-        break
-      case 'delete':
-        vc.deleteElement(id)
+        this.editElement(id)
         break
       }
     })
-    this.$pageStructureContainer.on('mouseenter', '.page-structure-label', function () {
-      const id = $(this).attr('id')
-      vc.$frame_body.find('[data-model-id="' + id + '"]').addClass('vc_hover')
-    })
-    this.$pageStructureContainer.on('mouseleave', '.page-structure-label', function () {
-      const id = $(this).attr('id')
-      vc.$frame_body.find('[data-model-id="' + id + '"]').removeClass('vc_hover')
+
+    this.$pageStructureContainer.on('mouseenter mouseleave', '.page-structure-label', (e) => {
+      const id = $(e.currentTarget).attr('id')
+      vc.$frame_body.find(`[data-model-id="${id}"]`).toggleClass('vc_hover', e.type === 'mouseenter')
     })
   }
 
   createTreeHTML (nodes) {
-    if (!nodes || nodes.length === 0) return ''
+    if (!nodes?.length) return ''
 
     const $ul = $('<ul class="page-structure-list"></ul>')
 
     nodes.forEach(node => {
-      const className = this.createNodeClasses(node)
       const id = node?.id || ''
+      const nodeId = `node-${id}`
+      const isExpanded = this.expandedNodes[nodeId] || false
       let nodeName = node?.settings?.name
       if (nodeName === 'Row') {
         const rowTitle = node?.attributes?.params?.row_title
@@ -164,7 +173,7 @@ export class PageStructure {
       }
       nodeName = nodeName || 'Unnamed Element'
       const $li = $(`
-        <li class="page-structure-item">
+        <li class="page-structure-item ${this.createNodeClasses(node) || ''}">
           <div class="page-structure-label" title="${nodeName}" id="${id}">
             <span>
               ${nodeName}
@@ -172,20 +181,16 @@ export class PageStructure {
             <div class="element-controls">
               <a class="vc_control-btn vc_control-btn-inspect" data-control="inspect" href="#" title="Inspect ${nodeName}" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-search"></i></span></a>
               <a class="vc_control-btn vc_control-btn-edit" data-control="edit" href="#" title="${window.i18nLocale.edit} ${nodeName}" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-mode_edit"></i></span></a>
-              <a class="vc_control-btn vc_control-btn-delete" data-control="delete" href="#" title="Delete ${nodeName}" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-delete_empty"></i></span></a>
             </div>
           </div>
         </li>
       `)
 
-      if (className) {
-        $li.addClass(className)
-      }
-
-      if (node?.children.length > 0) {
-        const $childContainer = $('<div class="page-structure-children"></div>')
-        $childContainer.append(this.createTreeHTML(node.children))
-        $childContainer.hide()
+      if (node?.children?.length) {
+        const $childContainer = $('<div class="page-structure-children"></div>').append(this.createTreeHTML(node.children))
+        if (!isExpanded) {
+          $childContainer.hide()
+        }
         $li.find('.page-structure-label').addClass('page-structure-label--children')
         $li.append($childContainer)
       }
@@ -222,9 +227,9 @@ export class PageStructure {
   }
 
   scrollToElement (id) {
-    vc.$frame_body.find('[data-model-id="' + id + '"]')[0].scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
+    const $element = vc.$frame_body.find(`[data-model-id="${id}"]`)
+    if ($element.length) {
+      $element[0].scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 }

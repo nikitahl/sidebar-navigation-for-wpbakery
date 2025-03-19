@@ -18,7 +18,8 @@ module.exports = [
         MutationObserver: 'readonly',
         jQuery: 'readonly',
         module: 'readonly',
-        __dirname: 'readonly'
+        __dirname: 'readonly',
+        _: 'readonly'
       }
     },
     rules: {

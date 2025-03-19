@@ -61,6 +61,7 @@ function sidebar_nav_for_wpbakery_settings_page() {
  */
 function sidebar_nav_for_wpbakery_settings_init() {
 	// Register settings
+	// TODO: Add option in settings for navbar to stick to the right side of the screen
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_disable_description' );
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view' );
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view_edit_form' );
