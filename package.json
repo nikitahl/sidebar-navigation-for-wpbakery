@@ -17,7 +17,7 @@
     "build": "webpack --mode=development",
     "build-prod": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
-    "lint": "eslint --ignore-pattern assets/**/*.min.js",
+    "lint": "eslint --ignore-pattern assets/dist/",
     "lint:css": "stylelint 'assets/css/**/*.css' '!assets/css/**/*.min.css'"
   },
   "devDependencies": {

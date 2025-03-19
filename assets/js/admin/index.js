@@ -1,9 +1,9 @@
-import '../../css/admin.css'
+import '../../css/admin/admin.css'
 
 // Simple tooltip behavior using title attribute
 document.addEventListener('DOMContentLoaded', () => {
   const tooltips = document.querySelectorAll('.sfw-tooltip')
-  tooltips.forEach(( tooltip ) => {
+  tooltips.forEach((tooltip) => {
     tooltip.addEventListener('mouseover', () => {
       const title = tooltip.getAttribute('aria-label')
       const tooltipDiv = document.createElement('div')
