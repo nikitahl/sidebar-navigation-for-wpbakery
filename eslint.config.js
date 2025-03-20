@@ -16,10 +16,12 @@ module.exports = [
         require: 'readonly',
         exports: 'readonly',
         MutationObserver: 'readonly',
+        IntersectionObserver: 'readonly',
         jQuery: 'readonly',
         module: 'readonly',
         __dirname: 'readonly',
-        _: 'readonly'
+        _: 'readonly',
+        setTimeout: 'readonly'
       }
     },
     rules: {

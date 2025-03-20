@@ -18,6 +18,7 @@ export class PageStructure {
     this.$pageStructurePanel = null
     this.pageStructurePanel = null
     this.$pageStructureContainer = null
+    this.$elementHelper = null
     this.structuredData = []
     this.expandedNodes = {}
     this.debouncedRender = _.debounce(this.renderPageStructure.bind(this), 500)
@@ -28,7 +29,7 @@ export class PageStructure {
   init () {
     this.addPageStructurePanel()
     this.addNavbarIcon()
-    // TODO: add helper to highlight element on scroll (inspect), remove existing vc_hover
+    this.createElementOutlineHelper()
   }
 
   addNavbarIcon () {
@@ -126,6 +127,9 @@ export class PageStructure {
     this.$pageStructureContainer.off('click', '.vc_control-btn')
 
     this.$pageStructureContainer.on('click', '.page-structure-label', (e) => {
+      if ($(e.target).closest('.element-controls').length) {
+        return
+      }
       const $label = $(e.currentTarget)
       const id = $label.attr('id')
       const nodeId = `node-${id}`
@@ -149,11 +153,6 @@ export class PageStructure {
         this.editElement(id)
         break
       }
-    })
-
-    this.$pageStructureContainer.on('mouseenter mouseleave', '.page-structure-label', (e) => {
-      const id = $(e.currentTarget).attr('id')
-      vc.$frame_body.find(`[data-model-id="${id}"]`).toggleClass('vc_hover', e.type === 'mouseenter')
     })
   }
 
@@ -229,7 +228,58 @@ export class PageStructure {
   scrollToElement (id) {
     const $element = vc.$frame_body.find(`[data-model-id="${id}"]`)
     if ($element.length) {
-      $element[0].scrollIntoView({ behavior: 'smooth', block: 'start' })
+      this.scrollToElementAndWait($element[0], () => {
+        this.showElementHelper($element)
+      })
     }
+  }
+
+  scrollToElementAndWait (element, callback) {
+    if (!element) return
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            observer.unobserve(entry.target) // Stop observing once visible
+            callback(entry.target) // Run the callback
+          }
+        })
+      },
+      { threshold: 1.0 } // Trigger when fully visible
+    )
+
+    observer.observe(element)
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  createElementOutlineHelper () {
+    const $helper = $('<div class="sfw-element-helper"><div>')
+    $helper.css({
+      position: 'absolute',
+      opacity: '0',
+      visibility: 'hidden',
+      zIndex: -1,
+      boxShadow: '0 0 4px 2px rgb(10, 130, 240, 0.5)',
+      background: 'rgba(10, 130, 240, 0.2)',
+      pointerEvents: 'none',
+      transition: 'box-shadow 0.8s ease-in-out, background 0.8s ease-in-out'
+    })
+    vc.$frame_body.append($helper)
+    this.$elementHelper = vc.$frame_body.find('.sfw-element-helper')
+  }
+
+  showElementHelper ($element) {
+    $element.append(this.$elementHelper)
+    this.$elementHelper.css({
+      zIndex: 9999,
+      opacity: '1',
+      visibility: 'visible',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%'
+    })
+    setTimeout(() => this.$elementHelper.css({ opacity: '0', visibility: 'hidden', zIndex: -1 }), 1800)
   }
 }
