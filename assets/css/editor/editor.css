@@ -361,7 +361,7 @@
 }
 
 .page-structure-item {
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 5px 12px 12px 5px;
   background: #FFF;
 }
@@ -426,6 +426,10 @@
 
 .element-controls .vc_control-btn .vc_btn-content:hover {
   background: transparent;
+}
+
+.element-controls .vc-c-icon-search {
+  font-size: 18px;
 }
 
 .page-structure-children:hover {

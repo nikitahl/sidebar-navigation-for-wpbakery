@@ -15,6 +15,7 @@ export class PageStructure {
     `
     this.pageStructureHtml = window.sidebar_for_wpb_js.pageStructureHtml
     this.pageStructureTitle = window.sidebar_for_wpb_js.pageStructureTitle
+    this.pageStructureFind = window.sidebar_for_wpb_js.pageStructureFind
     this.$pageStructurePanel = null
     this.pageStructurePanel = null
     this.$pageStructureContainer = null
@@ -178,7 +179,7 @@ export class PageStructure {
               ${nodeName}
             </span>
             <div class="element-controls">
-              <a class="vc_control-btn vc_control-btn-inspect" data-control="inspect" href="#" title="Inspect ${nodeName}" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-search"></i></span></a>
+              <a class="vc_control-btn vc_control-btn-inspect" data-control="inspect" href="#" title="${this.pageStructureFind} ${nodeName}" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-search"></i></span></a>
               <a class="vc_control-btn vc_control-btn-edit" data-control="edit" href="#" title="${window.i18nLocale.edit} ${nodeName}" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-mode_edit"></i></span></a>
             </div>
           </div>

@@ -34,6 +34,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 
 		$page_structure_html = file_get_contents(plugin_dir_path(__FILE__) . 'includes/page-structure-panel.php');
 		$page_structure_title = esc_html__( 'Page Structure', 'sidebar-navigation-for-wpbakery' );
+		$page_structure_find = esc_html__( 'Find', 'sidebar-navigation-for-wpbakery' );
 		// Get saved options
 		$settings = array(
 			'pluginUrl'           => plugins_url( '', __FILE__ ),
@@ -41,8 +42,10 @@ function sidebar_for_wpb_enqueue_frontend() {
 			'compactView'         => get_option( 'sidebar_nav_for_wpbakery_compact_view', '0' ),
 			'compactViewEditForm' => get_option( 'sidebar_nav_for_wpbakery_compact_view_edit_form', '0' ),
 			'responsiveView'      => get_option( 'sidebar_nav_for_wpbakery_responsive_view', '0' ),
+			'pageStructure'       => get_option( 'sidebar_nav_for_wpbakery_page_structure', '0' ),
 			'pageStructureHtml'   => $page_structure_html,
 			'pageStructureTitle'  => $page_structure_title,
+			'pageStructureFind'   => $page_structure_find,
 		);
 
 		// Provide plugin URL for JS

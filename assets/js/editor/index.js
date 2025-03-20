@@ -8,7 +8,9 @@ const $ = jQuery
 $(document).ready(() => {
   extendInlineShortcodeView()
   $(window).on('vc_build', () => {
-    new PageStructure()
+    if (window.sidebar_for_wpb_js.pageStructure === '1') {
+      new PageStructure()
+    }
     new SidebarForWPBakery()
   })
 })

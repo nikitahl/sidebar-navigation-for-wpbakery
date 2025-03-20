@@ -62,7 +62,6 @@ function sidebar_nav_for_wpbakery_settings_page() {
 function sidebar_nav_for_wpbakery_settings_init() {
 	// Register settings
 	// TODO: Add option in settings for navbar to stick to the right side of the screen
-	// TODO: Add option in settings to enable/disable Page Structure icon
     // TODo: Update readme.txt
     // TODo: Update localizations
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_disable_description' );
@@ -73,6 +72,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 			return $value === '1' ? '1' : '0'; // Ensures checkbox properly saves '1' or '0'
 		},
 	] );
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_page_structure' );
 
 	// Add settings section
 	add_settings_section(
@@ -126,6 +126,18 @@ function sidebar_nav_for_wpbakery_settings_init() {
 			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Makes the page view area shrink when the sidebar is opened.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
 		</div>',
 		'sidebar_nav_for_wpbakery_responsive_view_callback',
+		'sidebar-navigation-for-wpbakery',
+		'sidebar_nav_for_wpbakery_main_section'
+	);
+
+	// Add "Page Structure" field
+	add_settings_field(
+		'sidebar_nav_for_wpbakery_page_structure',
+		'<div class="sfw-label">
+			<span class="sfw-title">' . esc_html__( 'Page Structure icon', 'sidebar-navigation-for-wpbakery' ) . '</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Adds a Page Structure icon to the navbar. Displays a Page Structure in a panel.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+		</div>',
+		'sidebar_nav_for_wpbakery_page_structure_callback',
 		'sidebar-navigation-for-wpbakery',
 		'sidebar_nav_for_wpbakery_main_section'
 	);
@@ -191,6 +203,19 @@ function sidebar_nav_for_wpbakery_responsive_view_callback() {
 	<?php
 }
 
+/**
+ * Callback for "Page Structure" checkbox.
+ *
+ * @since 2.1
+ */
+function sidebar_nav_for_wpbakery_page_structure_callback() {
+	$option = get_option( 'sidebar_nav_for_wpbakery_page_structure', 0 );
+	?>
+	<input type="checkbox" name="sidebar_nav_for_wpbakery_page_structure"
+           id="sidebar_nav_for_wpbakery_page_structure" value="1"
+		<?php checked( 1, $option, true ); ?> />
+	<?php
+}
 
 /**
  * Enqueues the CSS and JS files for the plugin's settings page.
