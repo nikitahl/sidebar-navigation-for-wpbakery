@@ -69,7 +69,7 @@
     height: 48px;
   }
 
-    #vc_navbar .vc_dropdown-list {
+  #vc_navbar .vc_dropdown-list {
     left: 100%;
     right: initial;
     top: -75px;
@@ -101,6 +101,26 @@
     margin: 0 !important;
     padding: 0 !important;
     height: 100% !important;
+  }
+
+  .sidebar-position-right #vc_inline-frame-wrapper {
+    left: 0;
+    right: var(--vc-navbar-width);
+  }
+
+  .sidebar-position-right #vc_navbar {
+    right: 0;
+    left: initial;
+  }
+
+  .sidebar-position-right .vc_ui-panel.vc_ui-panel-window {
+    left: initial !important;
+    right: var(--vc-navbar-width) !important;
+  }
+
+  .sidebar-position-right #vc_navbar .vc_dropdown-list {
+    left: initial;
+    right: 100%;
   }
 
   .vc_ui-minimize-button {

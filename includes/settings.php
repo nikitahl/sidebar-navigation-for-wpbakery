@@ -61,7 +61,6 @@ function sidebar_nav_for_wpbakery_settings_page() {
  */
 function sidebar_nav_for_wpbakery_settings_init() {
 	// Register settings
-	// TODO: Add option in settings for navbar to stick to the right side of the screen
     // TODo: Update readme.txt
     // TODo: Update localizations
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_disable_description' );
@@ -73,6 +72,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		},
 	] );
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_page_structure' );
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_sidebar_position' );
 
 	// Add settings section
 	add_settings_section(
@@ -138,6 +138,18 @@ function sidebar_nav_for_wpbakery_settings_init() {
 			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Adds a Page Structure icon to the navbar. Displays a Page Structure in a panel.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
 		</div>',
 		'sidebar_nav_for_wpbakery_page_structure_callback',
+		'sidebar-navigation-for-wpbakery',
+		'sidebar_nav_for_wpbakery_main_section'
+	);
+
+	// Add "Sidebar Position" field
+	add_settings_field(
+		'sidebar_nav_for_wpbakery_sidebar_position',
+		'<div class="sfw-label">
+			<span class="sfw-title">' . esc_html__( 'Sidebar Position', 'sidebar-navigation-for-wpbakery' ) . '</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the position of the sidebar.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+		</div>',
+		'sidebar_nav_for_wpbakery_sidebar_position_callback',
 		'sidebar-navigation-for-wpbakery',
 		'sidebar_nav_for_wpbakery_main_section'
 	);
@@ -214,6 +226,29 @@ function sidebar_nav_for_wpbakery_page_structure_callback() {
 	<input type="checkbox" name="sidebar_nav_for_wpbakery_page_structure"
            id="sidebar_nav_for_wpbakery_page_structure" value="1"
 		<?php checked( 1, $option, true ); ?> />
+	<?php
+}
+
+/**
+ * Callback for "Sidebar Position" radio buttons.
+ *
+ * @since 2.1
+ */
+function sidebar_nav_for_wpbakery_sidebar_position_callback() {
+	$option = get_option( 'sidebar_nav_for_wpbakery_sidebar_position', 'left' );
+	?>
+	<fieldset id="sidebar-position-option">
+		<label class="sfw-inline-item">
+			<input type="radio" name="sidebar_nav_for_wpbakery_sidebar_position" value="left"
+				<?php checked( 'left', $option, true ); ?> />
+			<?php esc_html_e( 'Left', 'sidebar-navigation-for-wpbakery' ); ?>
+		</label class="sfw-radio">
+		<label class="sfw-inline-item">
+			<input type="radio" name="sidebar_nav_for_wpbakery_sidebar_position" value="right"
+				<?php checked( 'right', $option, true ); ?> />
+			<?php esc_html_e( 'Right', 'sidebar-navigation-for-wpbakery' ); ?>
+		</label>
+	</fieldset>
 	<?php
 }
 

@@ -43,6 +43,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 			'compactViewEditForm' => get_option( 'sidebar_nav_for_wpbakery_compact_view_edit_form', '0' ),
 			'responsiveView'      => get_option( 'sidebar_nav_for_wpbakery_responsive_view', '0' ),
 			'pageStructure'       => get_option( 'sidebar_nav_for_wpbakery_page_structure', '0' ),
+			'sidebarPostion'      => get_option( 'sidebar_nav_for_wpbakery_sidebar_position', 'left' ),
 			'pageStructureHtml'   => $page_structure_html,
 			'pageStructureTitle'  => $page_structure_title,
 			'pageStructureFind'   => $page_structure_find,

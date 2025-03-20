@@ -7,7 +7,9 @@ export class SidebarForWPBakery {
     this.compactView = window.sidebar_for_wpb_js.compactView
     this.compactViewEditForm = window.sidebar_for_wpb_js.compactViewEditForm
     this.responsiveView = window.sidebar_for_wpb_js.responsiveView
+    this.sidebarPostion = window.sidebar_for_wpb_js.sidebarPostion
     this.$window = $(window)
+    this.$body = $('body')
     this.$screenSizeControls = $('#vc_screen-size-control .vc_screen-width')
     this.$addElementPanel = $('#vc_ui-panel-add-element')
     this.$editElementPanel = $('#vc_ui-panel-edit-element')
@@ -45,11 +47,12 @@ export class SidebarForWPBakery {
   }
 
   init () {
+    this.$body.addClass(`sidebar-position-${this.sidebarPostion}`)
     // Set navbar items order
     $.each(this.$navbarItems, this.setNavbarItems.bind(this))
 
     // Append styles
-    $('body').append(`<link rel="stylesheet" href="${this.pluginUrl}/assets/dist/css/editor.min.css" type="text/css" />`)
+    this.$body.append(`<link rel="stylesheet" href="${this.pluginUrl}/assets/dist/css/editor.min.css" type="text/css" />`)
 
     // Set up MutationObserver
     const myObserver = new MutationObserver(this.mutationHandler.bind(this))
@@ -85,18 +88,18 @@ export class SidebarForWPBakery {
     if (window.innerWidth > 960) {
       const $activePanel = this.$panelWindow.filter('.vc_active')
       if ($activePanel.length) {
-        this.$frameWrapper.css('left', '490px') // sidebar 440px + navbar 50px
+        this.$frameWrapper.css(this.sidebarPostion, '490px') // sidebar 440px + navbar 50px
         this.setIframeWidth(currentView, `${window.innerWidth}px`, 'auto')
         if ($activePanel.is('#vc_ui-panel-templates') && $activePanel.hasClass('vc_media-xs')) {
           $activePanel.removeClass('vc_media-xs')
           $activePanel.addClass('vc_media-sm')
         }
       } else {
-        this.$frameWrapper.css('left', '50px') // navbar 50px
+        this.$frameWrapper.css(this.sidebarPostion, '50px') // navbar 50px
         this.setIframeWidth(currentView, '100%', 'none')
       }
     } else {
-      this.$frameWrapper.css('left', '0')
+      this.$frameWrapper.css(this.sidebarPostion, '0')
       this.setIframeWidth(currentView, '100%', 'none')
     }
   }
