@@ -1,5 +1,7 @@
 # Sidebar for WPBakery Page Builder
 
+Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
+
 ![](assets/images/screenshot-1.png)
 
 This simple and lightweight plugin adds a navigation bar and panels as a sidebar in the WPBakery Page Builder.
@@ -10,6 +12,8 @@ It makes navigating the WPBakery Page Builder's Frontend Editor effortless. The 
 
 Additionally, the plugin provides a settings page where you can customize some of the sidebar's appearance and behavior.
 
+Boost your productivity and streamline your workflow with the Sidebar for WPBakery Page Builder.
+
 ## Features
 
 * Sidebar navigation bar for quick access to panels.
@@ -18,6 +22,8 @@ Additionally, the plugin provides a settings page where you can customize some o
   * Hide the description under elements in the Add Element panel.
   * Reduce spacing between elements in the Add Element panel for a more compact view.
   * Make the page view area shrink or stay the same width when the sidebar is opened.
+  * Set sidebar position to the right.
+  * Page Structure panel for a quick overview of the page's structure.
 
 ## Installation
 The plugin is available on the [WordPress plugin repository](https://wordpress.org/plugins/sidebar-navigation-for-wpbakery/). You can install it directly from the WordPress dashboard.
@@ -43,13 +49,17 @@ To use the plugin, you just need to activate it. And edit any post/page with the
 
 The navigation bar will be displayed as a sidebar on the left side of the screen in the WPBakery Page Builder's Frontend Editor.
 
-### How do I disable the sidebar?
+### Can I change sidebar position?
 
-To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins page in the WordPress dashboard.
+Yes, you can change the sidebar position to the right in the plugin settings.
 
 ### Where can I find the plugin settings?
 
 The plugin settings can be found under **Settings > Sidebar for WPBakery** in the WordPress dashboard.
+
+### How do I disable the sidebar?
+
+To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins page in the WordPress dashboard.
 
 ## Code of Conduct
 

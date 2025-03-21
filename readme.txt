@@ -21,6 +21,8 @@ It makes navigating the WPBakery Page Builder's Frontend Editor effortless. The 
 
 Additionally, the plugin provides a settings page where you can customize some of the sidebar's appearance and behavior.
 
+Boost your productivity and streamline your workflow with the Sidebar for WPBakery Page Builder.
+
 = Features =
 
 * Sidebar navigation bar for quick access to panels.
@@ -30,6 +32,8 @@ Additionally, the plugin provides a settings page where you can customize some o
  * Reduce spacing between elements in the Add Element panel for a more compact view.
  * Reduce fields size and spacing in the Edit Form/Settings panel for a more compact view.
  * Make the page view area shrink or stay the same width when the sidebar is opened.
+ * Set sidebar position to the right.
+ * Page Structure panel for a quick overview of the page's structure.
 
 = Requirements =
 
@@ -61,18 +65,24 @@ To use the plugin, you just need to activate it. And edit any post/page with the
 
 The navigation bar will be displayed as a sidebar on the left side of the screen in the WPBakery Page Builder's Frontend Editor.
 
-= How do I disable the sidebar? =
+= Can I change sidebar position? =
 
-To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins page in the WordPress dashboard.
+Yes, you can change the sidebar position to the right in the plugin settings.
 
 = Where can I find the plugin settings? =
 
 The plugin settings can be found under Settings > Sidebar for WPBakery in the WordPress dashboard.
 
+= How do I disable the sidebar? =
+
+To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins page in the WordPress dashboard.
+
 == Changelog ==
 
 = 2.1 =
 * Update: Added the ability to reduce fields size and spacing in the Edit Form/Settings panel for a more compact view.
+* Update: Added Page Structure panel to the sidebar, to view the page's structure.
+* Update: Added option to set sidebar position to the right.
 * Fix: Fixed an issue with navbar icons when resizing the screen vertically.
 
 = 2.0 =
