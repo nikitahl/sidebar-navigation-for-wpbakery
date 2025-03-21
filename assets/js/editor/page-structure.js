@@ -247,7 +247,7 @@ export class PageStructure {
           }
         })
       },
-      { threshold: 1.0 } // Trigger when fully visible
+      { threshold: 0.1 }
     )
 
     observer.observe(element)
