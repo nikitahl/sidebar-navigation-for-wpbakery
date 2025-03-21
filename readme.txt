@@ -53,7 +53,9 @@ Boost your productivity and streamline your workflow with the Sidebar for WPBake
 3. Add Element panel
 4. Edit Form panel
 5. Page Settings panel
-6. Plugin's settings page
+6. Page Structure panel
+7. Sidebar on the right side
+8. Plugin's settings page
 
 == Frequently Asked Questions ==
 
