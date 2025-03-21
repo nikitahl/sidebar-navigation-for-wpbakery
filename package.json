@@ -1,7 +1,7 @@
 {
   "name": "sidebar-navigation-for-wpbakery",
   "version": "1.0",
-  "description": "Enhanced UI for WPBakery Page Builder with a sidebar navigation and panels.",
+  "description": "Customizable UI for WPBakery Page Builder with a sidebar navigation and panels.",
   "homepage": "https://wordpress.org/plugins/sidebar-navigation-for-wpbakery/",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
     "build-prod": "webpack --mode=production",
     "watch": "webpack --watch --mode=development",
     "lint": "eslint --ignore-pattern assets/dist/",
-    "lint:css": "stylelint 'assets/css/**/*.css' '!assets/css/**/*.min.css'"
+    "lint:scss": "stylelint 'assets/scss/**/*.scss'"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
@@ -31,8 +31,13 @@
     "mini-css-extract-plugin": "^2.9.2",
     "path": "^0.12.7",
     "postcss-loader": "^8.1.1",
+    "sass": "^1.86.0",
+    "sass-loader": "^16.0.5",
     "stylelint": "^16.14.1",
+    "stylelint-config-scss": "^1.0.0-security",
     "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-scss": "^6.11.1",
     "terser-webpack-plugin": "^5.3.14",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1",

@@ -1,4 +1,4 @@
-import '../../css/editor/editor.css'
+import '../../scss/editor/main.scss'
 import { SidebarForWPBakery } from './sidebar'
 import { PageStructure } from './page-structure'
 import { extendInlineShortcodeView } from './utils'

@@ -1,4 +1,4 @@
-import '../../css/admin/admin.css'
+import '../../scss/admin/admin.scss'
 
 // Simple tooltip behavior using title attribute
 document.addEventListener('DOMContentLoaded', () => {

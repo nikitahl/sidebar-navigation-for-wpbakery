@@ -1,0 +1,22 @@
+.sidebar-position-right {
+
+  #vc_inline-frame-wrapper {
+    left: 0;
+    right: var(--vc-navbar-width);
+  }
+
+  #vc_navbar {
+    right: 0;
+    left: initial;
+  }
+
+  .vc_ui-panel.vc_ui-panel-window {
+    left: initial !important;
+    right: var(--vc-navbar-width) !important;
+  }
+
+  #vc_navbar .vc_dropdown-list {
+    left: initial;
+    right: 100%;
+  }
+}
