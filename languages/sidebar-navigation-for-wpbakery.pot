@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-21T09:37:04+00:00\n"
+"POT-Creation-Date: 2025-03-21T10:51:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: sidebar-navigation-for-wpbakery\n"
@@ -20,7 +20,7 @@ msgid "Sidebar for WPBakery Page Builder"
 msgstr ""
 
 #. Description of the plugin
-msgid "Enhanced UI for WPBakery Page Builder with a sidebar navigation and panels."
+msgid "Customizable UI for WPBakery Page Builder with a sidebar navigation and panels."
 msgstr ""
 
 #. Author of the plugin
@@ -39,59 +39,59 @@ msgstr ""
 msgid "Sidebar for WPBakery Page Builder Settings"
 msgstr ""
 
-#: includes/settings.php:88
+#: includes/settings.php:87
 msgid "Disable elements' description"
 msgstr ""
 
-#: includes/settings.php:89
+#: includes/settings.php:88
 msgid "Hides the descriptions under WPBakery elements in the Add Element panel."
 msgstr ""
 
-#: includes/settings.php:100
+#: includes/settings.php:99
 msgid "Elements compact view"
 msgstr ""
 
-#: includes/settings.php:101
+#: includes/settings.php:100
 msgid "Reduces spacing between elements in the Add Element panel for a more compact view."
 msgstr ""
 
-#: includes/settings.php:112
+#: includes/settings.php:111
 msgid "Edit Form compact view"
 msgstr ""
 
-#: includes/settings.php:113
+#: includes/settings.php:112
 msgid "Reduces fields size and spacing in the Edit Element panel for a more compact view."
 msgstr ""
 
-#: includes/settings.php:124
+#: includes/settings.php:123
 msgid "Responsive view"
 msgstr ""
 
-#: includes/settings.php:125
+#: includes/settings.php:124
 msgid "Makes the page view area shrink when the sidebar is opened."
 msgstr ""
 
-#: includes/settings.php:136
+#: includes/settings.php:135
 msgid "Page Structure icon"
 msgstr ""
 
-#: includes/settings.php:137
+#: includes/settings.php:136
 msgid "Adds a Page Structure icon to the navbar. Displays a Page Structure in a panel."
 msgstr ""
 
-#: includes/settings.php:148
+#: includes/settings.php:147
 msgid "Sidebar Position"
 msgstr ""
 
-#: includes/settings.php:149
+#: includes/settings.php:148
 msgid "Choose the position of the sidebar."
 msgstr ""
 
-#: includes/settings.php:243
+#: includes/settings.php:242
 msgid "Left"
 msgstr ""
 
-#: includes/settings.php:248
+#: includes/settings.php:247
 msgid "Right"
 msgstr ""
 
