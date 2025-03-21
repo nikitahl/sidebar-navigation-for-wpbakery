@@ -9,12 +9,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-21T08:38:37+00:00\n"
+"POT-Creation-Date: 2025-03-21T09:37:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: sidebar-navigation-for-wpbakery\n"
 
 #. Plugin Name of the plugin
+#: includes/settings.php:25
 msgid "Sidebar for WPBakery Page Builder"
 msgstr ""
 
@@ -31,67 +32,66 @@ msgid "https://nikitahl.com"
 msgstr ""
 
 #: includes/settings.php:24
+msgid "Sidebar for WPBakery Settings Page Builder"
+msgstr ""
+
 #: includes/settings.php:40
-msgid "Sidebar for WPBakery Settings"
+msgid "Sidebar for WPBakery Page Builder Settings"
 msgstr ""
 
-#: includes/settings.php:25
-msgid "Sidebar for WPBakery"
-msgstr ""
-
-#: includes/settings.php:89
+#: includes/settings.php:88
 msgid "Disable elements' description"
 msgstr ""
 
-#: includes/settings.php:90
+#: includes/settings.php:89
 msgid "Hides the descriptions under WPBakery elements in the Add Element panel."
 msgstr ""
 
-#: includes/settings.php:101
+#: includes/settings.php:100
 msgid "Elements compact view"
 msgstr ""
 
-#: includes/settings.php:102
+#: includes/settings.php:101
 msgid "Reduces spacing between elements in the Add Element panel for a more compact view."
 msgstr ""
 
-#: includes/settings.php:113
+#: includes/settings.php:112
 msgid "Edit Form compact view"
 msgstr ""
 
-#: includes/settings.php:114
+#: includes/settings.php:113
 msgid "Reduces fields size and spacing in the Edit Element panel for a more compact view."
 msgstr ""
 
-#: includes/settings.php:125
+#: includes/settings.php:124
 msgid "Responsive view"
 msgstr ""
 
-#: includes/settings.php:126
+#: includes/settings.php:125
 msgid "Makes the page view area shrink when the sidebar is opened."
 msgstr ""
 
-#: includes/settings.php:137
+#: includes/settings.php:136
 msgid "Page Structure icon"
 msgstr ""
 
-#: includes/settings.php:138
+#: includes/settings.php:137
 msgid "Adds a Page Structure icon to the navbar. Displays a Page Structure in a panel."
 msgstr ""
 
-#: includes/settings.php:149
+#: includes/settings.php:148
 msgid "Sidebar Position"
 msgstr ""
 
-#: includes/settings.php:150
+#: includes/settings.php:149
 msgid "Choose the position of the sidebar."
 msgstr ""
 
-#: includes/settings.php:244
+#: includes/settings.php:243
 msgid "Left"
 msgstr ""
 
-#: includes/settings.php:249
+#: includes/settings.php:248
 msgid "Right"
 msgstr ""
 

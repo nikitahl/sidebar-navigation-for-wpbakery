@@ -21,8 +21,8 @@ add_action( 'admin_enqueue_scripts', 'sidebar_nav_for_wpbakery_enqueue_admin_scr
  */
 function sidebar_nav_for_wpbakery_add_settings_page() {
 	add_options_page(
-		esc_html__( 'Sidebar for WPBakery Settings', 'sidebar-navigation-for-wpbakery' ), // Page title
-		esc_html__( 'Sidebar for WPBakery', 'sidebar-navigation-for-wpbakery' ),         // Menu title
+		esc_html__( 'Sidebar for WPBakery Settings Page Builder', 'sidebar-navigation-for-wpbakery' ), // Page title
+		esc_html__( 'Sidebar for WPBakery Page Builder', 'sidebar-navigation-for-wpbakery' ),         // Menu title
 		'manage_options',                                                               // Capability
 		'sidebar-navigation-for-wpbakery',                                              // Menu slug
 		'sidebar_nav_for_wpbakery_settings_page'                                        // Callback function
@@ -37,7 +37,7 @@ function sidebar_nav_for_wpbakery_add_settings_page() {
 function sidebar_nav_for_wpbakery_settings_page() {
 	?>
 	<div class="wrap">
-		<h1><?php esc_html_e( 'Sidebar for WPBakery Settings', 'sidebar-navigation-for-wpbakery' ); ?></h1>
+		<h1><?php esc_html_e( 'Sidebar for WPBakery Page Builder Settings', 'sidebar-navigation-for-wpbakery' ); ?></h1>
 		<form action="options.php" method="post">
 			<?php
 			// Output security fields for the registered settings
@@ -61,7 +61,6 @@ function sidebar_nav_for_wpbakery_settings_page() {
  */
 function sidebar_nav_for_wpbakery_settings_init() {
 	// Register settings
-    // TODO: update build script
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_disable_description' );
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view' );
 	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view_edit_form' );
