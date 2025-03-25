@@ -121,5 +121,5 @@ For CSS, we are using [Stylelint](https://stylelint.io/) to ensure a consistent 
 To check your CSS code against our code standards rules:
 
 ```sh
-$ yarn lint:css
+$ yarn lint:scss
 ```
