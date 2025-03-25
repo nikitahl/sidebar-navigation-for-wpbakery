@@ -13,17 +13,15 @@ Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
 
 == Description ==
 
-This simple and lightweight plugin displays a navigation bar and panels as a sidebar in the WPBakery Page Builder.
+Enhance your WPBakery Page Builder experience with a sleek, customizable sidebar for effortless navigation and improved workflow.
 
-If you want to keep your content visible at all times without constantly dragging or resizing panels, while still having quick access to them, this plugin is perfect for you.
+This lightweight and user-friendly plugin adds a persistent navigation bar and panels as a sidebar, ensuring quick access to essential WPBakery features without obstructing your content. No more dragging or resizing panels—just a seamless editing experience.
 
-It makes navigating the WPBakery Page Builder's Frontend Editor effortless. The navigation bar and panels appear as a sidebar on the left side of the screen, enhancing usability and efficiency.
+With intuitive controls, the sidebar streamlines access to elements, settings, and the page structure, making the Frontend Editor more efficient. Plus, a dedicated settings page lets you tailor the sidebar’s appearance and behavior to suit your preferences.
 
-Additionally, the plugin provides a settings page where you can customize some of the sidebar's appearance and behavior.
+Boost your productivity and enjoy a cleaner, more efficient WPBakery Page Builder interface.
 
-Boost your productivity and streamline your workflow with the Sidebar for WPBakery Page Builder.
-
-= Features =
+== Features ==
 
 * Sidebar navigation bar for quick access to panels.
 * Panels as a sidebar for easy access to settings.
@@ -35,7 +33,7 @@ Boost your productivity and streamline your workflow with the Sidebar for WPBake
  * Set sidebar position to the right.
  * Page Structure panel for a quick overview of the page's structure.
 
-= Requirements =
+== Requirements ==
 
 * WPBakery Page Builder 8.0 or later
 * PHP 7.0 or later
@@ -48,36 +46,36 @@ Boost your productivity and streamline your workflow with the Sidebar for WPBake
 
 == Screenshots ==
 
-1. Sidebar UI improvement
-2. Editor Navbar
-3. Add Element panel
-4. Edit Form panel
-5. Page Settings panel
-6. Page Structure panel
-7. Sidebar on the right side
-8. Plugin's settings page
+1. Enhanced Sidebar UI
+2. Editor Navigation Bar
+3. Add Element Panel
+4. Edit Form Panel
+5. Page Settings Panel
+6. Page Structure Panel
+7. Sidebar on the Right
+8. Plugin Settings Page
 
 == Frequently Asked Questions ==
 
-= How do I use this plugin? =
+= How do I activate the sidebar? =
 
-To use the plugin, you just need to activate it. And edit any post/page with the WPBakery Page Builder.
+Simply activate the plugin and edit any post/page using WPBakery Page Builder’s Frontend Editor.
 
-= Where do I see the sidebar? =
+= Where does the sidebar appear? =
 
-The navigation bar will be displayed as a sidebar on the left side of the screen in the WPBakery Page Builder's Frontend Editor.
+By default, the sidebar appears on the left side of the WPBakery Page Builder interface. You can change it to the right in the settings.
 
-= Can I change sidebar position? =
+= Can I customize the sidebar? =
 
-Yes, you can change the sidebar position to the right in the plugin settings.
+Yes! The settings page allows you to tweak sidebar positioning, spacing, and visibility preferences.
 
-= Where can I find the plugin settings? =
+= Where do I find the plugin settings? =
 
-The plugin settings can be found under Settings > Sidebar for WPBakery in the WordPress dashboard.
+Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress dashboard.
 
 = How do I disable the sidebar? =
 
-To disable the sidebar in WPBakery, just deactivate the plugin via the Plugins page in the WordPress dashboard.
+Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
 
