@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the zip file name
-ZIP_FILE="sidebar-for-wpbakery.zip"
+ZIP_FILE="sidebar-navigation-for-wpbakery.zip"
 
 # Remove any existing zip file to avoid conflicts
 if [ -f "$ZIP_FILE" ]; then
