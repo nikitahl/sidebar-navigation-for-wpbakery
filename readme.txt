@@ -77,6 +77,11 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 
 Deactivate the plugin via the WordPress **Plugins** page.
 
+== Contribute ==
+
+This plugin is open-source! You can contribute, report issues, or suggest improvements on GitHub:
+[GitHub Repository](https://github.com/nikitahl/sidebar-navigation-for-wpbakery)
+
 == Changelog ==
 
 = 2.1 =
