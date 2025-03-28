@@ -39,6 +39,11 @@ Boost your productivity and enjoy a cleaner, more efficient WPBakery Page Builde
 * PHP 7.0 or later
 * WordPress 6.4 or later
 
+== Contribute ==
+
+This plugin is open-source! You can contribute, report issues, or suggest improvements on GitHub:
+[GitHub Repository](https://github.com/nikitahl/sidebar-navigation-for-wpbakery)
+
 == Installation ==
 
 1. Upload the plugin folder to your /wp-content/plugins/ folder.
@@ -76,11 +81,6 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 = How do I disable the sidebar? =
 
 Deactivate the plugin via the WordPress **Plugins** page.
-
-== Contribute ==
-
-This plugin is open-source! You can contribute, report issues, or suggest improvements on GitHub:
-[GitHub Repository](https://github.com/nikitahl/sidebar-navigation-for-wpbakery)
 
 == Changelog ==
 
