@@ -1,0 +1,10 @@
+@media screen and (min-width: 961px) {
+  @import "components/editor";
+  @import "components/navbar";
+  @import "components/panels";
+  @import "components/navbar-right";
+  @import "components/media-vertical";
+}
+
+@import "components/compact-view";
+@import "components/page-structure";

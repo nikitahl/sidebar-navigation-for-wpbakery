@@ -1,0 +1,86 @@
+#wpcontent,
+#wpbody {
+  padding: 0;
+  height: 0;
+}
+
+#vc_navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: initial;
+  bottom: 0;
+  width: var(--vc-navbar-width);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  z-index: 99999;
+}
+
+#vc_navbar li,
+#vc_navbar .vc_navbar-header {
+  float: none !important;
+  height: auto;
+}
+
+#vc_navbar .vc_navbar-brand {
+  padding: 25px;
+}
+
+#vc_navbar .vc_save-buttons {
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 2px;
+}
+
+#vc_navbar .vc_save-buttons .vc_btn {
+  margin: 2px;
+  width: 70%;
+}
+
+#vc_navbar .vc_save-buttons .vc_btn p {
+  font-size: 10px;
+}
+
+#vc_navbar a.vc_icon-btn {
+  width: var(--vc-navbar-width);
+  height: 45px;
+  padding: 24px;
+  font-size: 20px;
+}
+
+#vc_navbar .vc_navbar-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#vc_navbar .vc_navbar-nav > li:not(.vc_save-buttons) {
+  height: 48px;
+}
+
+#vc_navbar .vc_dropdown-list {
+  left: 100%;
+  right: initial;
+  top: -75px;
+  z-index: 999999;
+}
+
+#vc_navbar #vc_screen-size-control .vc_dropdown-list {
+  top: -145px;
+}
+
+#vc_navbar .vc_icon-btn.vc_active {
+  background-color: #00447F;
+}
+
+.ui-resizable-handle {
+  display: none !important;
+}
+
+.vc_hide-description .vc_element-description {
+  display: none !important;
+}

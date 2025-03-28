@@ -1,13 +1,15 @@
 const $ = window.jQuery
 
 export class SidebarForWPBakery {
-  constructor() {
+  constructor () {
     this.pluginUrl = window.sidebar_for_wpb_js.pluginUrl
     this.disableDescription = window.sidebar_for_wpb_js.disableDescription
     this.compactView = window.sidebar_for_wpb_js.compactView
     this.compactViewEditForm = window.sidebar_for_wpb_js.compactViewEditForm
     this.responsiveView = window.sidebar_for_wpb_js.responsiveView
+    this.sidebarPostion = window.sidebar_for_wpb_js.sidebarPostion
     this.$window = $(window)
+    this.$body = $('body')
     this.$screenSizeControls = $('#vc_screen-size-control .vc_screen-width')
     this.$addElementPanel = $('#vc_ui-panel-add-element')
     this.$editElementPanel = $('#vc_ui-panel-edit-element')
@@ -34,18 +36,23 @@ export class SidebarForWPBakery {
       {
         panelId: 'panel-post-settings',
         navbarBtnId: 'vc_post-settings-button'
+      },
+      {
+        panelId: 'panel-page-structure',
+        navbarBtnId: 'vc_page-structure'
       }
     ]
 
     this.init()
   }
 
-  init() {
+  init () {
+    this.$body.addClass(`sidebar-position-${this.sidebarPostion}`)
     // Set navbar items order
     $.each(this.$navbarItems, this.setNavbarItems.bind(this))
 
     // Append styles
-    $('body').append(`<link rel="stylesheet" href="${this.pluginUrl}/assets/dist/css/editor.min.css" type="text/css" />`)
+    this.$body.append(`<link rel="stylesheet" href="${this.pluginUrl}/assets/dist/css/editor.min.css" type="text/css" />`)
 
     // Set up MutationObserver
     const myObserver = new MutationObserver(this.mutationHandler.bind(this))
@@ -63,7 +70,7 @@ export class SidebarForWPBakery {
     this.$window.on('resize', this.handleWindowResize.bind(this))
   }
 
-  mutationHandler(mutationRecords) {
+  mutationHandler (mutationRecords) {
     mutationRecords.forEach((mutation) => {
       if (window.innerWidth > 960 && mutation.type === 'attributes' && mutation.attributeName === 'class') {
         this.setFrameWrapperPosition()
@@ -72,32 +79,32 @@ export class SidebarForWPBakery {
     })
   }
 
-  handleWindowResize() {
+  handleWindowResize () {
     this.setFrameWrapperPosition()
   }
 
-  setFrameWrapperPosition() {
+  setFrameWrapperPosition () {
     const currentView = this.getCurrentView()
     if (window.innerWidth > 960) {
       const $activePanel = this.$panelWindow.filter('.vc_active')
       if ($activePanel.length) {
-        this.$frameWrapper.css('left', '490px') // sidebar 440px + navbar 50px
+        this.$frameWrapper.css(this.sidebarPostion, '490px') // sidebar 440px + navbar 50px
         this.setIframeWidth(currentView, `${window.innerWidth}px`, 'auto')
         if ($activePanel.is('#vc_ui-panel-templates') && $activePanel.hasClass('vc_media-xs')) {
           $activePanel.removeClass('vc_media-xs')
           $activePanel.addClass('vc_media-sm')
         }
       } else {
-        this.$frameWrapper.css('left', '50px') // navbar 50px
+        this.$frameWrapper.css(this.sidebarPostion, '50px') // navbar 50px
         this.setIframeWidth(currentView, '100%', 'none')
       }
     } else {
-      this.$frameWrapper.css('left', '0')
+      this.$frameWrapper.css(this.sidebarPostion, '0')
       this.setIframeWidth(currentView, '100%', 'none')
     }
   }
 
-  setIframeWidth(currentView, iframeWidth, overflow) {
+  setIframeWidth (currentView, iframeWidth, overflow) {
     if (this.responsiveView === '0') {
       if (currentView === 100) {
         this.$frameWrapper.css('overflow-x', overflow)
@@ -109,11 +116,11 @@ export class SidebarForWPBakery {
     }
   }
 
-  getCurrentView() {
+  getCurrentView () {
     return parseInt(this.$screenSizeControls.filter('.active').attr('data-size'))
   }
 
-  setActiveBtn($target) {
+  setActiveBtn ($target) {
     this.$navbarBtns.removeClass('vc_active')
     if ($target.hasClass('vc_active')) {
       const panelType = $target.attr('data-vc-ui-element')
@@ -125,7 +132,7 @@ export class SidebarForWPBakery {
     }
   }
 
-  setSettings() {
+  setSettings () {
     if (this.disableDescription === '1') {
       this.$addElementPanel.find('.wpb-elements-list').addClass('vc_hide-description')
     }
@@ -138,7 +145,7 @@ export class SidebarForWPBakery {
     }
   }
 
-  setNavbarItems(index, item) {
+  setNavbarItems (index, item) {
     const $item = $(item)
     const $child = $item.children()
     if ($child.hasClass('vc_back-button')) {

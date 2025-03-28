@@ -16,9 +16,12 @@ module.exports = [
         require: 'readonly',
         exports: 'readonly',
         MutationObserver: 'readonly',
+        IntersectionObserver: 'readonly',
         jQuery: 'readonly',
         module: 'readonly',
-        __dirname: 'readonly'
+        __dirname: 'readonly',
+        _: 'readonly',
+        setTimeout: 'readonly'
       }
     },
     rules: {
@@ -32,7 +35,12 @@ module.exports = [
       'prefer-const': 'error',
       'prefer-arrow-callback': 'error',
       'arrow-body-style': [ 'error', 'as-needed' ],
-      'no-multiple-empty-lines': 2
+      'no-multiple-empty-lines': 2,
+      'space-before-function-paren': [
+        2,
+        'always'
+      ],
+      'space-in-parens': [ 'error', 'never' ]
     }
   },
   {

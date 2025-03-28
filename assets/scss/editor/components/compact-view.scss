@@ -1,0 +1,145 @@
+.vc_compact-view {
+
+  .wpb-content-layouts-container h4 {
+    margin: 0 0 10px !important;
+  }
+
+  .wpb-content-layouts {
+    margin: 0 !important;
+    grid-template-columns: repeat(auto-fit, 96px) !important;
+  }
+
+  .vc_element-description {
+    font-size: 12px !important;
+  }
+
+  .vc_shortcode-link {
+    font-size: 13px;
+  }
+
+  .vc_element-icon {
+    margin-bottom: 10px;
+  }
+
+  .wpb_element_label,
+  .vc_css-editor .vc_settings label{
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  .vc_description {
+    margin-top: 5px;
+    font-size: 12px;
+  }
+
+  .wpb-param-heading {
+    margin-bottom: 3px;
+  }
+
+  .vc_edit_form_elements input,
+  .vc_edit_form_elements select {
+    height: 34px;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .vc_edit_form_elements input[type="checkbox"],
+  .vc_edit_form_elements input[type="radio"],
+  .vc_checkbox input[type="checkbox"]:checked::before {
+    height: 16px;
+    width: 16px;
+  }
+
+  .vc_edit_form_elements .vc_ui-button.vc_param-animation-style-trigger {
+    height: 34px;
+    line-height: 34px;
+    margin-top: 8px;
+  }
+
+  .vc_css-editor input {
+    height: 20px;
+    width: 30px;
+    font-size: 10px;
+    line-height: 1;
+  }
+
+  .gallery_widget_add_images,
+  .gallery_widget_attached_images_list .added,
+  .gallery_widget_attached_images_list .inner,
+  .vc_css-editor .vc_settings .vc_background-image .vc_add-image {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .gallery_widget_attached_images_list li img {
+    max-height: 60px !important;
+    vertical-align: initial;
+  }
+
+  .wpb_el_type_attach_image .vc_icon-remove {
+    width: 12px;
+    right: 12px;
+  }
+
+  .wpb_el_type_attach_image .vc_icon-remove .vc-c-icon-close,
+  .wpb_el_type_attach_images .vc_icon-remove .vc-composer-icon {
+    font-size: 12px;
+  }
+
+  .vc_link_label,
+  .url-label,
+  .title-label {
+    font-size: 12px;
+  }
+
+  .vc-icons-selector .selector {
+    width: 90px;
+    height: 30px;
+  }
+
+  .vc-icons-selector .selected-icon {
+    width: 50px;
+  }
+
+  .vc-icons-selector .selected-icon i,
+  .vc-icons-selector .selector-button i,
+  .vc_shortcode-param[data-param_type="iconpicker"] .vc-icons-selector .selected-icon {
+    line-height: 32px;
+    font-size: 16px;
+  }
+
+  .vc-icons-selector .selector-button i {
+    font-size: 12px;
+  }
+
+  .vc_simplified .vc_layout-onion label {
+    left: 38px;
+  }
+
+  .vc_css-editor .vc_layout-onion .vc_border,
+  .vc_css-editor .vc_layout-onion .vc_padding,
+  .vc_css-editor .vc_layout-onion .vc_content {
+    margin: 36px;
+  }
+
+  .vc_css-editor .vc_layout-onion input.vc_bottom {
+    bottom: 3px
+  }
+
+  .vc_css-editor .vc_layout-onion input.vc_top {
+    top: 3px
+  }
+
+  .vc_css-editor .vc_layout-onion input.vc_left {
+    left: 3px
+  }
+
+  .vc_css-editor .vc_layout-onion input.vc_right {
+    right: 3px
+  }
+
+  .pickr .pcr-button {
+    height: 26px;
+    width: 26px;
+  }
+}

@@ -1,0 +1,48 @@
+#vc_inline-frame-wrapper {
+  left: var(--vc-navbar-width);
+  right: 0;
+  top: 0 !important;
+  width: auto !important;
+  height: 100vh !important;
+}
+
+#vc_inline-frame {
+  height: 100% !important;
+}
+
+.vc_ui-panel.vc_ui-panel-window {
+  top: 0 !important;
+  bottom: 0 !important;
+  left: var(--vc-navbar-width) !important;
+  width: var(--vc-min-panel-width) !important;
+  max-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+}
+
+.vc_ui-minimize-button {
+  display: none !important;
+}
+
+.vc_ui-panel-header-actions,
+.vc_ui-search-box {
+  width: 100%;
+}
+
+.vc_message {
+  top: 0 !important;
+  z-index: 99999 !important;
+}
+
+.vc_add-element-container .wpb-content-layouts {
+  gap: 1px;
+}
+
+.vc_ui-panel-content {
+  margin-top: 0 !important ;
+}
+
+.vc_ui-panel-content.vc_properties-list-init {
+  margin: auto !important;
+}
