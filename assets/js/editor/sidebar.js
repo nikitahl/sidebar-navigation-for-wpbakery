@@ -2,6 +2,9 @@ const $ = window.jQuery
 
 export class SidebarForWPBakery {
   constructor () {
+    this.panelMinWidth = 440
+    this.navbarWidth = 50
+    this.currentPanelWidth = this.panelMinWidth
     this.pluginUrl = window.sidebar_for_wpb_js.pluginUrl
     this.disableDescription = window.sidebar_for_wpb_js.disableDescription
     this.compactView = window.sidebar_for_wpb_js.compactView
@@ -20,6 +23,8 @@ export class SidebarForWPBakery {
     this.$navbarItems = this.$navbar.find('.vc_navbar-nav li')
     this.$panelWindow = $('.vc_ui-panel-window')
     this.$navbarBtns = this.$navbar.find('.vc_icon-btn')
+    this.$frameSizeHelper = null
+    this.isPanelResizing = false
     this.panelsSettings = [
       {
         panelId: 'panel-add-element',
@@ -58,6 +63,7 @@ export class SidebarForWPBakery {
     const myObserver = new MutationObserver(this.mutationHandler.bind(this))
     const obsConfig = { attributes: true }
 
+    this.$panelWindow.append(`<div class="vc_resizable-handle vc_resizable-handle--${this.sidebarPostion}"></div>`)
     this.$panelWindow.each(function () {
       myObserver.observe(this, obsConfig)
     })
@@ -68,6 +74,7 @@ export class SidebarForWPBakery {
     this.setSettings()
 
     this.$window.on('resize', this.handleWindowResize.bind(this))
+    this.$panelWindow.on('mousedown', '.vc_resizable-handle', this.handlePanelResize.bind(this))
   }
 
   mutationHandler (mutationRecords) {
@@ -80,7 +87,9 @@ export class SidebarForWPBakery {
   }
 
   handleWindowResize () {
-    this.setFrameWrapperPosition()
+    if (!this.isPanelResizing) {
+      this.setFrameWrapperPosition()
+    }
   }
 
   setFrameWrapperPosition () {
@@ -88,14 +97,15 @@ export class SidebarForWPBakery {
     if (window.innerWidth > 960) {
       const $activePanel = this.$panelWindow.filter('.vc_active')
       if ($activePanel.length) {
-        this.$frameWrapper.css(this.sidebarPostion, '490px') // sidebar 440px + navbar 50px
+        this.$frameWrapper.css(this.sidebarPostion, `${this.currentPanelWidth + this.navbarWidth}px`)
         this.setIframeWidth(currentView, `${window.innerWidth}px`, 'auto')
+        $activePanel.attr('style', `width: ${this.currentPanelWidth}px !important;`)
         if ($activePanel.is('#vc_ui-panel-templates') && $activePanel.hasClass('vc_media-xs')) {
           $activePanel.removeClass('vc_media-xs')
           $activePanel.addClass('vc_media-sm')
         }
       } else {
-        this.$frameWrapper.css(this.sidebarPostion, '50px') // navbar 50px
+        this.$frameWrapper.css(this.sidebarPostion, this.navbarWidth)
         this.setIframeWidth(currentView, '100%', 'none')
       }
     } else {
@@ -168,5 +178,71 @@ export class SidebarForWPBakery {
         'margin-top': 'auto'
       })
     }
+  }
+
+  handlePanelResize (e) {
+    const $currentPanel = $(e.target).closest('.vc_ui-panel-window')
+    const panelMinWidth = this.panelMinWidth
+    let panelSidePos = ''
+    if (this.sidebarPostion === 'left') {
+      panelSidePos = $currentPanel.position().left
+    } else {
+      panelSidePos = $currentPanel.position().left + $currentPanel.width()
+    }
+
+    this.$iframe.css('pointer-events', 'none')
+    this.$body.css({
+      'cursor': 'ew-resize',
+      'user-select': 'none'
+    })
+
+    // TODO: Take into account non-responsive view (both left and right)
+    this.$body.on('mousemove', (e) => {
+      const $mouseX = e.pageX
+      this.isPanelResizing = true
+      if (this.sidebarPostion === 'left' && $mouseX > panelSidePos + panelMinWidth) {
+        const panelWidth = $mouseX - panelSidePos
+        this.currentPanelWidth = panelWidth
+        this.$panelWindow.attr('style', `width: ${panelWidth}px !important;`)
+        this.$frameWrapper.css('left', $mouseX)
+        this.showFrameSizeHelper($currentPanel)
+        this.$window.trigger('resize')
+      } else if (this.sidebarPostion === 'right' && $mouseX < panelSidePos - panelMinWidth) {
+        const panelWidth = panelSidePos - $mouseX
+        this.currentPanelWidth = panelWidth
+        this.$panelWindow.attr('style', `width: ${panelWidth}px !important;`)
+        this.$frameWrapper.css('right', panelWidth + this.navbarWidth + 'px')
+        this.showFrameSizeHelper($currentPanel)
+        this.$window.trigger('resize')
+      }
+    })
+
+    this.$body.on('mouseup', () => {
+      this.isPanelResizing = false
+      this.$frameSizeHelper.hide()
+      this.$body.off('mousemove')
+      this.$body.css({
+        'cursor': 'auto',
+        'user-select': 'auto'
+      })
+      this.$iframe.css('pointer-events', 'auto')
+    })
+  }
+
+  showFrameSizeHelper ($panel) {
+    let $frameSizeHelper = $panel.find('.vc_frame-size-helper')
+    if ($frameSizeHelper.length === 0) {
+      $frameSizeHelper = $(`<div class="vc_frame-size-helper vc_frame-size-helper--${this.sidebarPostion}"></div>`)
+      $frameSizeHelper.append('<span class="vc_frame-size-helper-text"></span>')
+      this.$frameSizeHelper = $frameSizeHelper
+      $panel.append($frameSizeHelper)
+    } else {
+      $frameSizeHelper.show()
+    }
+    this.$frameSizeHelper = $frameSizeHelper
+    const $frameSizeHelperText = this.$frameSizeHelper.find('.vc_frame-size-helper-text')
+    const frameWidth = this.$iframe[0].contentWindow.innerWidth
+    const frameHeight = this.$iframe[0].contentWindow.innerHeight
+    $frameSizeHelperText.text(`${frameWidth}px × ${frameHeight}px`)
   }
 }
