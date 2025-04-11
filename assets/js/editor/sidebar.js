@@ -196,24 +196,18 @@ export class SidebarForWPBakery {
       'user-select': 'none'
     })
 
-    // TODO: Take into account non-responsive view (both left and right)
     this.$body.on('mousemove', (e) => {
       const $mouseX = e.pageX
       this.isPanelResizing = true
+      const currentView = this.getCurrentView()
       if (this.sidebarPostion === 'left' && $mouseX > panelSidePos + panelMinWidth) {
         const panelWidth = $mouseX - panelSidePos
-        this.currentPanelWidth = panelWidth
-        this.$panelWindow.attr('style', `width: ${panelWidth}px !important;`)
-        this.$frameWrapper.css('left', $mouseX)
-        this.showFrameSizeHelper($currentPanel)
-        this.$window.trigger('resize')
+        const frameWrapperWidth = $mouseX
+        this.setFrameSizeOnPanelResize(panelWidth, currentView, $currentPanel, frameWrapperWidth)
       } else if (this.sidebarPostion === 'right' && $mouseX < panelSidePos - panelMinWidth) {
         const panelWidth = panelSidePos - $mouseX
-        this.currentPanelWidth = panelWidth
-        this.$panelWindow.attr('style', `width: ${panelWidth}px !important;`)
-        this.$frameWrapper.css('right', panelWidth + this.navbarWidth + 'px')
-        this.showFrameSizeHelper($currentPanel)
-        this.$window.trigger('resize')
+        const frameWrapperWidth = panelWidth + this.navbarWidth + 'px'
+        this.setFrameSizeOnPanelResize(panelWidth, currentView, $currentPanel, frameWrapperWidth)
       }
     })
 
@@ -244,5 +238,17 @@ export class SidebarForWPBakery {
     const frameWidth = this.$iframe[0].contentWindow.innerWidth
     const frameHeight = this.$iframe[0].contentWindow.innerHeight
     $frameSizeHelperText.text(`${frameWidth}px × ${frameHeight}px`)
+  }
+
+  setFrameSizeOnPanelResize (panelWidth, currentView, $currentPanel) {
+    this.currentPanelWidth = panelWidth
+    this.$panelWindow.attr('style', `width: ${panelWidth}px !important;`)
+    this.$frameWrapper.css(this.sidebarPostion, panelWidth + this.navbarWidth + 'px')
+    this.showFrameSizeHelper($currentPanel)
+    if (this.responsiveView === '0') {
+      this.setIframeWidth(currentView, `${window.innerWidth}px`, 'auto')
+    } else {
+      this.$window.trigger('resize')
+    }
   }
 }
