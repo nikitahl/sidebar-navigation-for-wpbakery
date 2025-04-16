@@ -3,7 +3,7 @@
 Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation
 Requires at least: 6.4
-Tested up to: 6.7.2
+Tested up to: 6.8
 Stable tag: 2.2
 Requires PHP: 7.0
 License: GPLv3 or later
