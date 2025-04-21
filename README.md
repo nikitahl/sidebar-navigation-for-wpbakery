@@ -16,6 +16,7 @@ Boost your productivity and enjoy a cleaner, more efficient WPBakery Page Builde
 
 * Sidebar navigation bar for quick access to panels.
 * Panels as a sidebar for easy access to settings.
+* Resizable sidebar panels width for a personalized experience.
 * Settings page for customizing the sidebar's appearance and behavior.
   * Hide the description under elements in the Add Element panel.
   * Reduce spacing between elements in the Add Element panel for a more compact view.

@@ -84,3 +84,20 @@
 .vc_hide-description .vc_element-description {
   display: none !important;
 }
+
+.vc_resizable-handle {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  z-index: 9999;
+  cursor: ew-resize;
+}
+
+.vc_resizable-handle--left {
+  right: -5px;
+}
+
+.vc_resizable-handle--right {
+  left: -5px;
+}

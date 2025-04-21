@@ -3,8 +3,8 @@
 Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation
 Requires at least: 6.4
-Tested up to: 6.7.2
-Stable tag: 2.1
+Tested up to: 6.8
+Stable tag: 2.2
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -25,6 +25,7 @@ Boost your productivity and enjoy a cleaner, more efficient WPBakery Page Builde
 
 * Sidebar navigation bar for quick access to panels.
 * Panels as a sidebar for easy access to settings.
+* Resizable sidebar panels width for a personalized experience.
 * Settings page for customizing the sidebar's appearance and behavior.
  * Hide the description under elements in the Add Element panel.
  * Reduce spacing between elements in the Add Element panel for a more compact view.
@@ -83,6 +84,9 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
+
+= 2.2 =
+* Update: Added the ability to resize the sidebar width in the editor.
 
 = 2.1 =
 * Update: Added the ability to reduce fields size and spacing in the Edit Form/Settings panel for a more compact view.
