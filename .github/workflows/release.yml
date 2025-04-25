@@ -69,6 +69,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }}  # Use the PAT instead of the default GITHUB_TOKEN
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./sidebar-for-wpbakery.zip
+          asset_path: ./sidebar-navigation-for-wpbakery.zip
           asset_name: release-${{ github.ref_name }}.zip
           asset_content_type: application/zip
