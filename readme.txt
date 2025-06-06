@@ -87,7 +87,8 @@ Deactivate the plugin via the WordPress **Plugins** page.
 
 = 2.2.1 =
 * Fix: Updated Custom CSS/JS icon position.
-* Fix: Updated collapse point on vertical resize.
+* Fix: Updated navbar collapse point on vertical resize.
+* Fix: Fixed issue with panels size for mobile view on window resize.
 
 = 2.2 =
 * Update: Added the ability to resize the sidebar width in the editor.
