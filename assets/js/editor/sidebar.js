@@ -90,8 +90,8 @@ export class SidebarForWPBakery {
     })
   }
 
-  handleWindowResize () {
-    if (!this.isPanelResizing) {
+  handleWindowResize (e) {
+    if (!this.isPanelResizing && e && e.target && e.target === window) {
       this.setFrameWrapperPosition()
     }
   }
@@ -115,6 +115,7 @@ export class SidebarForWPBakery {
     } else {
       this.$frameWrapper.css(this.sidebarPostion, '0')
       this.setIframeWidth(currentView, '100%', 'none')
+      this.$panelWindow.attr('style', '')
     }
   }
 
