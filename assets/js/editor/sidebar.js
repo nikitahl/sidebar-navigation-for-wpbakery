@@ -45,6 +45,10 @@ export class SidebarForWPBakery {
       {
         panelId: 'panel-page-structure',
         navbarBtnId: 'vc_page-structure'
+      },
+      {
+        panelId: 'panel-custom-code',
+        navbarBtnId: 'vc_custom-code-button'
       }
     ]
 
@@ -86,8 +90,8 @@ export class SidebarForWPBakery {
     })
   }
 
-  handleWindowResize () {
-    if (!this.isPanelResizing) {
+  handleWindowResize (e) {
+    if (!this.isPanelResizing && e && e.target && e.target === window) {
       this.setFrameWrapperPosition()
     }
   }
@@ -111,6 +115,7 @@ export class SidebarForWPBakery {
     } else {
       this.$frameWrapper.css(this.sidebarPostion, '0')
       this.setIframeWidth(currentView, '100%', 'none')
+      this.$panelWindow.attr('style', '')
     }
   }
 
@@ -159,18 +164,16 @@ export class SidebarForWPBakery {
     const $item = $(item)
     const $child = $item.children()
     if ($child.hasClass('vc_back-button')) {
-      $item.css('order', '10')
+      $item.css('order', '11')
     } else if ($child.hasClass('vc_dropdown-more')) {
-      $item.css({
-        'order': '9'
-      })
+      $item.css('order', '10')
     } else if ($child.hasClass('vc_btn-save')) {
-      $item.css({
-        'order': '8'
-      })
+      $item.css('order', '9')
     } else if ($child.attr('id') === 'vc_screen-size-control') {
-      $item.css('order', '7')
+      $item.css('order', '8')
     } else if ($child.hasClass('vc_post-settings')) {
+      $item.css('order', '7')
+    } else if ($child.attr('id') === 'vc_custom-code-button') {
       $item.css('order', '6')
     } else if ($child.hasClass('vc_seo-button')) {
       $item.css({

@@ -3,8 +3,8 @@
 Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation
 Requires at least: 6.4
-Tested up to: 6.8
-Stable tag: 2.2
+Tested up to: 6.8.1
+Stable tag: 2.2.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -84,6 +84,11 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
+
+= 2.2.1 =
+* Fix: Updated Custom CSS/JS icon position.
+* Fix: Updated navbar collapse point on vertical resize.
+* Fix: Fixed issue with panels size for mobile view on window resize.
 
 = 2.2 =
 * Update: Added the ability to resize the sidebar width in the editor.
