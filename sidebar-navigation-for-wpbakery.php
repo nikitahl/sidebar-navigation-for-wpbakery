@@ -15,6 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.2.1');
+
 require_once plugin_dir_path(__FILE__) . 'includes/settings.php';
 
 add_action( 'vc_frontend_editor_enqueue_js_css', 'sidebar_for_wpb_enqueue_frontend', 999 );
