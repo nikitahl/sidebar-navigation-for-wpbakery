@@ -4,8 +4,6 @@ import { SidebarForWPBakery } from './sidebar'
 import { PageStructure } from './page-structure'
 import { Notifications } from './notifications'
 
-'./notifications'
-
 const $ = jQuery
 
 $(document).ready(() => {
