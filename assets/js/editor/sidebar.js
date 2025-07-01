@@ -1,4 +1,6 @@
+import { scrollToElement } from './scroll-to-element'
 const $ = window.jQuery
+const { vc } = window
 
 export class SidebarForWPBakery {
   constructor () {
@@ -11,6 +13,7 @@ export class SidebarForWPBakery {
     this.compactViewEditForm = window.sidebar_for_wpb_js.compactViewEditForm
     this.responsiveView = window.sidebar_for_wpb_js.responsiveView
     this.sidebarPostion = window.sidebar_for_wpb_js.sidebarPostion
+    this.pageStructureFind = window.sidebar_for_wpb_js.pageStructureFind
     this.$window = $(window)
     this.$body = $('body')
     this.$screenSizeControls = $('#vc_screen-size-control .vc_screen-width')
@@ -76,6 +79,7 @@ export class SidebarForWPBakery {
     this.setActiveBtn(this.$panelWindow.filter('.vc_active'))
     this.handleWindowResize()
     this.setSettings()
+    this.addLocateIconToEditForm()
 
     this.$window.on('resize', this.handleWindowResize.bind(this))
     this.$panelWindow.on('mousedown', '.vc_resizable-handle', this.handlePanelResize.bind(this))
@@ -252,6 +256,17 @@ export class SidebarForWPBakery {
       this.setIframeWidth(currentView, `${window.innerWidth}px`, 'auto')
     } else {
       this.$window.trigger('resize')
+    }
+  }
+
+  addLocateIconToEditForm () {
+    if (this.$editElementPanel.length > 0) {
+      const $locateIcon = $(`<button class="vc_general vc_ui-control-button" title="${this.pageStructureFind} element on page"><i class="vc-composer-icon vc-c-icon-search"></i></button>`)
+      const $editFormControls = this.$editElementPanel.find('.vc_ui-panel-header-controls')
+      $editFormControls.prepend($locateIcon)
+      $locateIcon.on('click', () => {
+        scrollToElement(vc.active_panel.model.get('id'))
+      })
     }
   }
 }

@@ -27,6 +27,7 @@ Boost your productivity and enjoy a cleaner, more efficient WPBakery Page Builde
 * Panels as a sidebar for easy access to settings.
 * Resizable sidebar panels width for a personalized experience.
 * Ability to close notification messages for a cleaner interface.
+* Ability to scroll to the element in the Edit Form panel for quick navigation.
 * Improved styling for the backend editor for better appearance.
 * Settings page for customizing the sidebar's appearance and behavior.
  * Hide the description under elements in the Add Element panel.
@@ -90,6 +91,7 @@ Deactivate the plugin via the WordPress **Plugins** page.
 = 2.3 =
 * Update: Added the ability to close notification messages.
 * Update: Added styling for the backend editor, for better appearance.
+* Update: Added button in Edit Form to scroll to element.
 
 = 2.2.1 =
 * Fix: Updated Custom CSS/JS icon position.

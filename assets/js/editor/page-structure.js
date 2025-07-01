@@ -1,5 +1,7 @@
+import { scrollToElement } from './scroll-to-element'
+
+const { vc, _, jQuery } = window
 const $ = jQuery
-const { vc } = window
 
 export class PageStructure {
   constructor () {
@@ -19,7 +21,6 @@ export class PageStructure {
     this.$pageStructurePanel = null
     this.pageStructurePanel = null
     this.$pageStructureContainer = null
-    this.$elementHelper = null
     this.structuredData = []
     this.expandedNodes = {}
     this.debouncedRender = _.debounce(this.renderPageStructure.bind(this), 500)
@@ -30,7 +31,6 @@ export class PageStructure {
   init () {
     this.addPageStructurePanel()
     this.addNavbarIcon()
-    this.createElementOutlineHelper()
   }
 
   addNavbarIcon () {
@@ -148,7 +148,7 @@ export class PageStructure {
       const controlType = $currentTarget.data('control')
       switch (controlType) {
       case 'inspect':
-        this.scrollToElement(id)
+        scrollToElement(id)
         break
       case 'edit':
         this.editElement(id)
@@ -224,63 +224,5 @@ export class PageStructure {
       vc.closeActivePanel()
       vc.edit_element_block_view.render(model)
     }
-  }
-
-  scrollToElement (id) {
-    const $element = vc.$frame_body.find(`[data-model-id="${id}"]`)
-    if ($element.length) {
-      this.scrollToElementAndWait($element[0], () => {
-        this.showElementHelper($element)
-      })
-    }
-  }
-
-  scrollToElementAndWait (element, callback) {
-    if (!element) return
-
-    const observer = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            observer.unobserve(entry.target) // Stop observing once visible
-            callback(entry.target) // Run the callback
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    observer.observe(element)
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-
-  createElementOutlineHelper () {
-    const $helper = $('<div class="sfw-element-helper"><div>')
-    $helper.css({
-      position: 'absolute',
-      opacity: '0',
-      visibility: 'hidden',
-      zIndex: -1,
-      boxShadow: '0 0 4px 2px rgb(10, 130, 240, 0.5)',
-      background: 'rgba(10, 130, 240, 0.2)',
-      pointerEvents: 'none',
-      transition: 'box-shadow 0.8s ease-in-out, background 0.8s ease-in-out'
-    })
-    vc.$frame_body.append($helper)
-    this.$elementHelper = vc.$frame_body.find('.sfw-element-helper')
-  }
-
-  showElementHelper ($element) {
-    $element.append(this.$elementHelper)
-    this.$elementHelper.css({
-      zIndex: 9999,
-      opacity: '1',
-      visibility: 'visible',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%'
-    })
-    setTimeout(() => this.$elementHelper.css({ opacity: '0', visibility: 'hidden', zIndex: -1 }), 1800)
   }
 }
