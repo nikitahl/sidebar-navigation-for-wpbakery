@@ -4,7 +4,7 @@ Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation
 Requires at least: 6.4
 Tested up to: 6.8.1
-Stable tag: 2.2.1
+Stable tag: 2.3
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -26,6 +26,8 @@ Boost your productivity and enjoy a cleaner, more efficient WPBakery Page Builde
 * Sidebar navigation bar for quick access to panels.
 * Panels as a sidebar for easy access to settings.
 * Resizable sidebar panels width for a personalized experience.
+* Ability to close notification messages for a cleaner interface.
+* Ability to scroll to the element in the Edit Form panel for quick navigation.
 * Settings page for customizing the sidebar's appearance and behavior.
  * Hide the description under elements in the Add Element panel.
  * Reduce spacing between elements in the Add Element panel for a more compact view.
@@ -84,6 +86,10 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
+
+= 2.3 =
+* Update: Added the ability to close notification messages.
+* Update: Added button in Edit Form to scroll to element.
 
 = 2.2.1 =
 * Fix: Updated Custom CSS/JS icon position.
