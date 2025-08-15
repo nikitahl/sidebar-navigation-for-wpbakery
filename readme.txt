@@ -4,7 +4,7 @@ Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation
 Requires at least: 6.4
 Tested up to: 6.8.1
-Stable tag: 2.3
+Stable tag: 2.3.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -86,6 +86,9 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
+
+= 2.3.1 =
+* Fix: Fixed issue with the sidebar opening on edit control hover.
 
 = 2.3 =
 * Update: Added the ability to close notification messages.
