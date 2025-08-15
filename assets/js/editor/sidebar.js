@@ -104,7 +104,8 @@ export class SidebarForWPBakery {
     const currentView = this.getCurrentView()
     if (window.innerWidth > 960) {
       const $activePanel = this.$panelWindow.filter('.vc_active')
-      if ($activePanel.length) {
+      const isVisible = $activePanel.css('visibility') !== 'hidden' && $activePanel.css('display') !== 'none'
+      if ($activePanel.length && isVisible) {
         this.$frameWrapper.css(this.sidebarPostion, `${this.currentPanelWidth + this.navbarWidth}px`)
         this.setIframeWidth(currentView, `${window.innerWidth}px`, 'auto')
         $activePanel.attr('style', `width: ${this.currentPanelWidth}px !important;`)
