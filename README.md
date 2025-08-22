@@ -1,6 +1,6 @@
 # Sidebar for WPBakery Page Builder
 
-Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
+Enhance WPBakery Page Builder experience with user-friendly sidebar for navigation, page structure and customizable settings.
 
 ![](assets/images/screenshot-1.png)
 

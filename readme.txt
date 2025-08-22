@@ -9,7 +9,7 @@ Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
+Enhance WPBakery Page Builder experience with user-friendly sidebar for navigation, page structure and customizable settings.
 
 == Description ==
 
