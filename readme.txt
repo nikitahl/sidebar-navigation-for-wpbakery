@@ -13,28 +13,28 @@ Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
 
 == Description ==
 
-Enhance your WPBakery Page Builder experience with a sleek, customizable sidebar for effortless navigation and improved workflow.
+Take your WPBakery Page Builder workflow to the next level with a modern, customizable sidebar designed for faster navigation and smoother editing.
 
-This lightweight and user-friendly plugin adds a persistent navigation bar and panels as a sidebar, ensuring quick access to essential WPBakery features without obstructing your content. No more dragging or resizing panels—just a seamless editing experience.
+This lightweight plugin adds a persistent sidebar with navigation and panels, giving you instant access to WPBakery elements, settings, and page structure—without blocking your content or cluttering the editor. No more dragging, resizing, or hunting for options—everything you need stays neatly organized in one place.
 
-With intuitive controls, the sidebar streamlines access to elements, settings, and the page structure, making the Frontend Editor more efficient. Plus, a dedicated settings page lets you tailor the sidebar’s appearance and behavior to suit your preferences.
+With simple controls and flexible settings, you can tailor the sidebar to match your workflow. Whether you want a compact layout, resizable panels, or a cleaner editor interface, this plugin makes WPBakery easier and more efficient to use.
 
-Boost your productivity and enjoy a cleaner, more efficient WPBakery Page Builder interface.
+Perfect for designers, developers, and content creators who want to boost productivity and enjoy a cleaner WPBakery editing experience.
 
 == Features ==
 
-* Sidebar navigation bar for quick access to panels.
-* Panels as a sidebar for easy access to settings.
-* Resizable sidebar panels width for a personalized experience.
-* Ability to close notification messages for a cleaner interface.
-* Ability to scroll to the element in the Edit Form panel for quick navigation.
-* Settings page for customizing the sidebar's appearance and behavior.
- * Hide the description under elements in the Add Element panel.
- * Reduce spacing between elements in the Add Element panel for a more compact view.
- * Reduce fields size and spacing in the Edit Form/Settings panel for a more compact view.
- * Make the page view area shrink or stay the same width when the sidebar is opened.
- * Set sidebar position to the right.
- * Page Structure panel for a quick overview of the page's structure.
+* Persistent sidebar navigation bar for quick access to WPBakery panels
+* Panels displayed as a sidebar for easy access to settings and tools
+* Resizable sidebar width for a personalized layout
+* Dismissible notifications for a distraction-free interface
+* Scroll directly to selected elements in the Edit Form panel
+* Customizable settings page to adjust sidebar appearance and behavior:
+  * Hide element descriptions in the Add Element panel
+  * Reduce spacing between elements for a compact view
+  * Optimize field size and spacing in the Edit Form/Settings panel
+  * Choose whether the page view area shrinks when the sidebar is open
+  * Option to position the sidebar on the right side
+  * Page Structure panel for a clear overview of your page layout
 
 == Requirements ==
 
