@@ -1,5 +1,5 @@
+const { vc, jQuery } = window
 const $ = jQuery
-const { vc } = window
 let $elementHelper = null
 
 export function scrollToElement (id) {

@@ -90,6 +90,7 @@ Deactivate the plugin via the WordPress **Plugins** page.
 = 2.3.1 =
 * Fix: Fixed issue with the sidebar opening on edit control hover.
 * Fix: Fixed issue with the opened sidebar panel and iframe resize on page load.
+* Fix: Fixed Grid container appearance in the Page Structure panel.
 
 = 2.3 =
 * Update: Added the ability to close notification messages.

@@ -213,6 +213,10 @@ export class PageStructure {
       return 'page-structure-item--inner-row'
     case 'Inner Column':
       return 'page-structure-item--inner-column'
+    case 'Grid container':
+      return 'page-structure-item--grid-container'
+    case 'Grid item':
+      return 'page-structure-item--grid-item'
     default:
       return
     }

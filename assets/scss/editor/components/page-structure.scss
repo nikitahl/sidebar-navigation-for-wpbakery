@@ -34,12 +34,14 @@
 }
 
 .page-structure-item--row,
-.page-structure-item--inner-row {
+.page-structure-item--inner-row,
+.page-structure-item--grid-container {
   background: #EEE;
 }
 
 .page-structure-item--column,
-.page-structure-item--inner-column {
+.page-structure-item--inner-column,
+.page-structure-item--grid-item {
   background: #E7E7E7;
 }
 
@@ -106,7 +108,6 @@
     -webkit-box-orient: vertical;
   }
 }
-
 
 .page-structure-children:hover {
   position: relative;
