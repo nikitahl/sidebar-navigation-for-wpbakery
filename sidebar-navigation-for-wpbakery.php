@@ -15,7 +15,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.2.1');
+define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.3.1');
+define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD', 'sidebar-navigation-for-wpbakery');
 
 require_once plugin_dir_path(__FILE__) . 'includes/settings.php';
 
@@ -25,18 +26,24 @@ add_action( 'plugins_loaded', 'sidebar_nav_for_wpbakery_load_textdomain' );
 // Add "Settings" link on the Plugins page
 add_filter('plugin_action_links_sidebar-navigation-for-wpbakery/sidebar-navigation-for-wpbakery.php', 'sidebar_nav_for_wpbakery_settings_link');
 
+// Admin dependency notice if WPBakery is missing.
+if ( ! function_exists( 'vc_map' ) ) {
+	add_action( 'admin_notices', 'sidebar_nav_for_wpbakery_missing_wpbakery_notice' );
+	return; // Do not proceed without WPBakery.
+}
+
 /**
  * Enqueue the plugin's styles and scripts.
  */
 function sidebar_for_wpb_enqueue_frontend() {
 	// Check if we are in inline editor mode and only then load the script
 	if ( vc_is_inline() ) {
-		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
+		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), array(), SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, true  );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
 		$page_structure_html = file_get_contents(plugin_dir_path(__FILE__) . 'includes/page-structure-panel.php');
-		$page_structure_title = esc_html__( 'Page Structure', 'sidebar-navigation-for-wpbakery' );
-		$page_structure_find = esc_html__( 'Find', 'sidebar-navigation-for-wpbakery' );
+		$page_structure_title = esc_html__( 'Page Structure', SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD );
+		$page_structure_find = esc_html__( 'Find', SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD );
 		// Get saved options
 		$settings = array(
 			'pluginUrl'           => plugins_url( '', __FILE__ ),
@@ -65,7 +72,7 @@ function sidebar_for_wpb_enqueue_frontend() {
  */
 function sidebar_nav_for_wpbakery_settings_link( $links ) {
 	// Generate the settings link and escape the URL for security
-	$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=sidebar-navigation-for-wpbakery' ) ) . '">' . esc_html__( 'Settings', 'sidebar-navigation-for-wpbakery' ) . '</a>';
+	$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=sidebar-navigation-for-wpbakery' ) ) . '">' . esc_html__( 'Settings', SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD ) . '</a>';
 
 	// Add the settings link to the beginning of the array
 	array_unshift( $links, $settings_link );
@@ -77,5 +84,17 @@ function sidebar_nav_for_wpbakery_settings_link( $links ) {
  * Load the plugin's text domain for localization.
  */
 function sidebar_nav_for_wpbakery_load_textdomain() {
-	load_plugin_textdomain( 'sidebar-navigation-for-wpbakery', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+/**
+ * Shows admin notice if WPBakery Page Builder is not active.
+ *
+ * @since 2.3.1
+ * @return void
+ */
+function sidebar_nav_for_wpbakery_missing_wpbakery_notice() {
+	if ( current_user_can( 'activate_plugins' ) ) {
+		echo '<div class="notice notice-error"><p>' . esc_html__('Sidebar for WPBakery requires WPBakery Page Builder to be installed and active.', SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD) . '</p></div>';
+	}
 }
