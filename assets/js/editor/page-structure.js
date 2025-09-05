@@ -217,6 +217,10 @@ export class PageStructure {
       return 'page-structure-item--grid-container'
     case 'Grid item':
       return 'page-structure-item--grid-item'
+    case 'Flexbox container':
+      return 'page-structure-item--flexbox-container'
+    case 'Flexbox item':
+      return 'page-structure-item--flexbox-item'
     default:
       return
     }
