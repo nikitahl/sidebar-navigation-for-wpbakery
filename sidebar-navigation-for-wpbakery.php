@@ -41,8 +41,8 @@ function sidebar_for_wpb_enqueue_frontend() {
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
 		$page_structure_html = file_get_contents(plugin_dir_path(__FILE__) . 'includes/page-structure-panel.php');
-		$page_structure_title = esc_html__( 'Page Structure', SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD );
-		$page_structure_find = esc_html__( 'Find', SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD );
+		$page_structure_title = esc_html__( 'Page Structure', 'sidebar-navigation-for-wpbakery' );
+		$page_structure_find = esc_html__( 'Find', 'sidebar-navigation-for-wpbakery' );
 		// Get saved options
 		$settings = array(
 			'pluginUrl'           => plugins_url( '', __FILE__ ),
@@ -71,7 +71,7 @@ function sidebar_for_wpb_enqueue_frontend() {
  */
 function sidebar_nav_for_wpbakery_settings_link( $links ) {
 	// Generate the settings link and escape the URL for security
-	$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=sidebar-navigation-for-wpbakery' ) ) . '">' . esc_html__( 'Settings', SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD ) . '</a>';
+	$settings_link = '<a href="' . esc_url( admin_url( 'options-general.php?page=sidebar-navigation-for-wpbakery' ) ) . '">' . esc_html__( 'Settings', 'sidebar-navigation-for-wpbakery' ) . '</a>';
 
 	// Add the settings link to the beginning of the array
 	array_unshift( $links, $settings_link );
@@ -87,6 +87,6 @@ function sidebar_nav_for_wpbakery_settings_link( $links ) {
  */
 function sidebar_nav_for_wpbakery_missing_wpbakery_notice() {
 	if ( current_user_can( 'activate_plugins' ) ) {
-		echo '<div class="notice notice-error"><p>' . esc_html__('Sidebar for WPBakery requires WPBakery Page Builder to be installed and active.', SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD) . '</p></div>';
+		echo '<div class="notice notice-error"><p>' . esc_html__('Sidebar for WPBakery requires WPBakery Page Builder to be installed and active.', 'sidebar-navigation-for-wpbakery') . '</p></div>';
 	}
 }
