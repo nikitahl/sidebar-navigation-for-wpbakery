@@ -61,17 +61,28 @@ function sidebar_nav_for_wpbakery_settings_page() {
  */
 function sidebar_nav_for_wpbakery_settings_init() {
 	// Register settings
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_disable_description' );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view' );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view_edit_form' );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_responsive_view', [
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_disable_description', [
+		'sanitize_callback' => 'absint',
+	] );
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view', [
+		'sanitize_callback' => 'absint',
+	] );
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view_edit_form', [
+		'sanitize_callback' => 'absint',
+	] );
+    register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_responsive_view', [
 		'sanitize_callback' => function( $value ) {
 			return $value === '1' ? '1' : '0'; // Ensures checkbox properly saves '1' or '0'
 		},
 	] );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_page_structure' );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_sidebar_position' );
-
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_page_structure', [
+		'sanitize_callback' => 'absint',
+	] );
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_sidebar_position', [
+		'sanitize_callback' => function( $value ) {
+			return in_array( $value, [ 'left', 'right' ], true ) ? $value : 'left';
+		},
+	] );
 	// Add settings section
 	add_settings_section(
 		'sidebar_nav_for_wpbakery_main_section',
@@ -209,7 +220,7 @@ function sidebar_nav_for_wpbakery_responsive_view_callback() {
 	?>
 	<input type="checkbox" name="sidebar_nav_for_wpbakery_responsive_view"
             id="sidebar_nav_for_wpbakery_responsive_view" value="1"
-		<?php echo $checked; ?> />
+		<?php echo esc_attr( $checked ); ?> />
 	<?php
 }
 
