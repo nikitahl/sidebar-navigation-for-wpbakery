@@ -21,7 +21,6 @@ define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD', 'sidebar-navigation-for-wpbakery');
 require_once plugin_dir_path(__FILE__) . 'includes/settings.php';
 
 add_action( 'vc_frontend_editor_enqueue_js_css', 'sidebar_for_wpb_enqueue_frontend', 999 );
-add_action( 'plugins_loaded', 'sidebar_nav_for_wpbakery_load_textdomain' );
 
 // Add "Settings" link on the Plugins page
 add_filter('plugin_action_links_sidebar-navigation-for-wpbakery/sidebar-navigation-for-wpbakery.php', 'sidebar_nav_for_wpbakery_settings_link');
@@ -78,13 +77,6 @@ function sidebar_nav_for_wpbakery_settings_link( $links ) {
 	array_unshift( $links, $settings_link );
 
 	return $links;
-}
-
-/**
- * Load the plugin's text domain for localization.
- */
-function sidebar_nav_for_wpbakery_load_textdomain() {
-	load_plugin_textdomain( SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 /**
