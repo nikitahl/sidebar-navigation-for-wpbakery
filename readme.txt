@@ -93,6 +93,7 @@ Deactivate the plugin via the WordPress **Plugins** page.
 * Fix: Fixed Grid container appearance in the Page Structure panel.
 * Fix: Fixed Flexbox container appearance in the Page Structure panel.
 * Fix: Fixed issue with sidebar structure item expand state.
+* Fix: Fixed issue with panel resize on smaller screen widths.
 
 = 2.3 =
 * Update: Added the ability to close notification messages.

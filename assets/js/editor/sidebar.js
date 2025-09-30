@@ -28,6 +28,7 @@ export class SidebarForWPBakery {
     this.$navbarBtns = this.$navbar.find('.vc_icon-btn')
     this.$frameSizeHelper = null
     this.isPanelResizing = false
+    this.isPanelAsSidebar = false
     this.panelsSettings = [
       {
         panelId: 'panel-add-element',
@@ -101,8 +102,9 @@ export class SidebarForWPBakery {
     // Check if the active panel is visible, usually it is Settings panel after page load
     // and we need to set the frame wrapper position only if it is visible.
     const isPanelVisible = this.isActivePanelVisible()
+    const isPanelDesktop = isPanelVisible && window.innerWidth > 960
 
-    if (!this.isPanelResizing && (isWindowResize || isPanelVisible)) {
+    if (!this.isPanelResizing && (isWindowResize || isPanelDesktop)) {
       this.setFrameWrapperPosition()
     }
   }
@@ -123,10 +125,14 @@ export class SidebarForWPBakery {
         this.$frameWrapper.css(this.sidebarPostion, this.navbarWidth)
         this.setIframeWidth(currentView, '100%', 'none')
       }
+      this.isPanelAsSidebar = true
     } else {
-      this.$frameWrapper.css(this.sidebarPostion, '0')
-      this.setIframeWidth(currentView, '100%', 'none')
-      this.$panelWindow.attr('style', '')
+      if (this.isPanelAsSidebar) {
+        this.isPanelAsSidebar = false
+        this.$frameWrapper.css(this.sidebarPostion, '0')
+        this.setIframeWidth(currentView, '100%', 'none')
+        this.$panelWindow.attr('style', '')
+      }
     }
   }
 
