@@ -188,10 +188,13 @@ export class PageStructure {
 
       if (node?.children?.length) {
         const $childContainer = $('<div class="page-structure-children"></div>').append(this.createTreeHTML(node.children))
+        const $label = $li.find('.page-structure-label')
         if (!isExpanded) {
           $childContainer.hide()
+        } else {
+          $label.addClass('expanded')
         }
-        $li.find('.page-structure-label').addClass('page-structure-label--children')
+        $label.addClass('page-structure-label--children')
         $li.append($childContainer)
       }
 
