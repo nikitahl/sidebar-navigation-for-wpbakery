@@ -3,8 +3,8 @@
  * While preserving existing functionality, it adds a close button.
  */
 
+const { vc, jQuery } = window
 const $ = jQuery
-const { vc } = window
 
 export class Notifications {
   constructor () {

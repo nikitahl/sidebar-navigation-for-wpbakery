@@ -28,6 +28,7 @@ export class SidebarForWPBakery {
     this.$navbarBtns = this.$navbar.find('.vc_icon-btn')
     this.$frameSizeHelper = null
     this.isPanelResizing = false
+    this.isPanelAsSidebar = false
     this.panelsSettings = [
       {
         panelId: 'panel-add-element',
@@ -87,7 +88,9 @@ export class SidebarForWPBakery {
 
   mutationHandler (mutationRecords) {
     mutationRecords.forEach((mutation) => {
-      if (window.innerWidth > 960 && mutation.type === 'attributes' && mutation.attributeName === 'class') {
+      const isStyleChange = mutation.type === 'attributes' && mutation.attributeName === 'style' && mutation.target.style.visibility !== ''
+      const isClassChange = mutation.type === 'attributes' && mutation.attributeName === 'class'
+      if (window.innerWidth > 960 && (isStyleChange || isClassChange)) {
         this.setFrameWrapperPosition()
         this.setActiveBtn($(mutation.target))
       }
@@ -95,7 +98,13 @@ export class SidebarForWPBakery {
   }
 
   handleWindowResize (e) {
-    if (!this.isPanelResizing && e && e.target && e.target === window) {
+    const isWindowResize = e && e.target && e.target === window
+    // Check if the active panel is visible, usually it is Settings panel after page load
+    // and we need to set the frame wrapper position only if it is visible.
+    const isPanelVisible = this.isActivePanelVisible()
+    const isPanelDesktop = isPanelVisible && window.innerWidth > 960
+
+    if (!this.isPanelResizing && (isWindowResize || isPanelDesktop)) {
       this.setFrameWrapperPosition()
     }
   }
@@ -104,7 +113,7 @@ export class SidebarForWPBakery {
     const currentView = this.getCurrentView()
     if (window.innerWidth > 960) {
       const $activePanel = this.$panelWindow.filter('.vc_active')
-      if ($activePanel.length) {
+      if ($activePanel.length && this.isActivePanelVisible()) {
         this.$frameWrapper.css(this.sidebarPostion, `${this.currentPanelWidth + this.navbarWidth}px`)
         this.setIframeWidth(currentView, `${window.innerWidth}px`, 'auto')
         $activePanel.attr('style', `width: ${this.currentPanelWidth}px !important;`)
@@ -116,10 +125,14 @@ export class SidebarForWPBakery {
         this.$frameWrapper.css(this.sidebarPostion, this.navbarWidth)
         this.setIframeWidth(currentView, '100%', 'none')
       }
+      this.isPanelAsSidebar = true
     } else {
-      this.$frameWrapper.css(this.sidebarPostion, '0')
-      this.setIframeWidth(currentView, '100%', 'none')
-      this.$panelWindow.attr('style', '')
+      if (this.isPanelAsSidebar) {
+        this.isPanelAsSidebar = false
+        this.$frameWrapper.css(this.sidebarPostion, '0')
+        this.setIframeWidth(currentView, '100%', 'none')
+        this.$panelWindow.attr('style', '')
+      }
     }
   }
 
@@ -268,5 +281,10 @@ export class SidebarForWPBakery {
         scrollToElement(vc.active_panel.model.get('id'))
       })
     }
+  }
+
+  isActivePanelVisible () {
+    const $activePanel = this.$panelWindow.filter('.vc_active')
+    return $activePanel.length && $activePanel.css('visibility') !== 'hidden' && $activePanel.css('display') !== 'none'
   }
 }
