@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sidebar for WPBakery Page Builder
  * Description: Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
- * Version: 2.3
+ * Version: 2.3.1
  * Author: Nikita Hlopov
  * Author URI: https://nikitahl.com
  * Requires PHP: 7.0
@@ -15,15 +15,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.2.1');
+define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.3.1');
+define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD', 'sidebar-navigation-for-wpbakery');
 
 require_once plugin_dir_path(__FILE__) . 'includes/settings.php';
 
 add_action( 'vc_frontend_editor_enqueue_js_css', 'sidebar_for_wpb_enqueue_frontend', 999 );
-add_action( 'plugins_loaded', 'sidebar_nav_for_wpbakery_load_textdomain' );
 
 // Add "Settings" link on the Plugins page
 add_filter('plugin_action_links_sidebar-navigation-for-wpbakery/sidebar-navigation-for-wpbakery.php', 'sidebar_nav_for_wpbakery_settings_link');
+
+// Admin dependency notice if WPBakery is missing.
+if ( ! function_exists( 'vc_map' ) ) {
+	add_action( 'admin_notices', 'sidebar_nav_for_wpbakery_missing_wpbakery_notice' );
+	return; // Do not proceed without WPBakery.
+}
 
 /**
  * Enqueue the plugin's styles and scripts.
@@ -31,7 +37,7 @@ add_filter('plugin_action_links_sidebar-navigation-for-wpbakery/sidebar-navigati
 function sidebar_for_wpb_enqueue_frontend() {
 	// Check if we are in inline editor mode and only then load the script
 	if ( vc_is_inline() ) {
-		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), array(), WPB_VC_VERSION, true  );
+		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), array(), SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, true  );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
 		$page_structure_html = file_get_contents(plugin_dir_path(__FILE__) . 'includes/page-structure-panel.php');
@@ -74,8 +80,13 @@ function sidebar_nav_for_wpbakery_settings_link( $links ) {
 }
 
 /**
- * Load the plugin's text domain for localization.
+ * Shows admin notice if WPBakery Page Builder is not active.
+ *
+ * @since 2.3.1
+ * @return void
  */
-function sidebar_nav_for_wpbakery_load_textdomain() {
-	load_plugin_textdomain( 'sidebar-navigation-for-wpbakery', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+function sidebar_nav_for_wpbakery_missing_wpbakery_notice() {
+	if ( current_user_can( 'activate_plugins' ) ) {
+		echo '<div class="notice notice-error"><p>' . esc_html__('Sidebar for WPBakery requires WPBakery Page Builder to be installed and active.', 'sidebar-navigation-for-wpbakery') . '</p></div>';
+	}
 }

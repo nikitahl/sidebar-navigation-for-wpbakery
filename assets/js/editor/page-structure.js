@@ -188,10 +188,13 @@ export class PageStructure {
 
       if (node?.children?.length) {
         const $childContainer = $('<div class="page-structure-children"></div>').append(this.createTreeHTML(node.children))
+        const $label = $li.find('.page-structure-label')
         if (!isExpanded) {
           $childContainer.hide()
+        } else {
+          $label.addClass('expanded')
         }
-        $li.find('.page-structure-label').addClass('page-structure-label--children')
+        $label.addClass('page-structure-label--children')
         $li.append($childContainer)
       }
 
@@ -213,6 +216,14 @@ export class PageStructure {
       return 'page-structure-item--inner-row'
     case 'Inner Column':
       return 'page-structure-item--inner-column'
+    case 'Grid container':
+      return 'page-structure-item--grid-container'
+    case 'Grid item':
+      return 'page-structure-item--grid-item'
+    case 'Flexbox container':
+      return 'page-structure-item--flexbox-container'
+    case 'Flexbox item':
+      return 'page-structure-item--flexbox-item'
     default:
       return
     }
