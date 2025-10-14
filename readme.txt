@@ -1,7 +1,7 @@
 === Sidebar for WPBakery Page Builder ===
 
 Contributors: nikitahl, mrdollar4444
-Tags: wpbakery, wpbakery-extension, wpbakery-addon, sidebar, navigation
+Tags: wpbakery, wpbakery-extension, wpbakery-extensions, wpbakery-page-builder
 Requires at least: 6.4
 Tested up to: 6.8.1
 Stable tag: 2.3.1
