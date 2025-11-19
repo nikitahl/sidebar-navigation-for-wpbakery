@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sidebar for WPBakery Page Builder
  * Description: Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
- * Version: 2.3.1
+ * Version: 2.4
  * Author: Nikita Hlopov
  * Author URI: https://nikitahl.com
  * Requires PHP: 7.0
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.3.1');
+define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.4');
 define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD', 'sidebar-navigation-for-wpbakery');
 
 require_once plugin_dir_path(__FILE__) . 'includes/settings.php';
@@ -37,6 +37,15 @@ if ( ! function_exists( 'vc_map' ) ) {
 function sidebar_for_wpb_enqueue_frontend() {
 	// Check if we are in inline editor mode and only then load the script
 	if ( vc_is_inline() ) {
+		// Enqueue preload dark mode CSS early (before editor loads)
+		wp_enqueue_style(
+			'sidebar-for-wpb-preload-dark-mode',
+			plugins_url( '/assets/dist/css/preload-dark-mode.min.css', __FILE__ ),
+			array(),
+			SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION,
+			'all'
+		);
+
 		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), array(), SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, true  );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
@@ -52,6 +61,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 			'responsiveView'      => get_option( 'sidebar_nav_for_wpbakery_responsive_view', '0' ),
 			'pageStructure'       => get_option( 'sidebar_nav_for_wpbakery_page_structure', '0' ),
 			'sidebarPostion'      => get_option( 'sidebar_nav_for_wpbakery_sidebar_position', 'left' ),
+			'colorTheme'          => get_option( 'sidebar_nav_for_wpbakery_color_theme', 'light' ),
 			'pageStructureHtml'   => $page_structure_html,
 			'pageStructureTitle'  => $page_structure_title,
 			'pageStructureFind'   => $page_structure_find,

@@ -83,6 +83,11 @@ function sidebar_nav_for_wpbakery_settings_init() {
 			return in_array( $value, [ 'left', 'right' ], true ) ? $value : 'left';
 		},
 	] );
+	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_color_theme', [
+		'sanitize_callback' => function( $value ) {
+			return in_array( $value, [ 'light', 'dark', 'device' ], true ) ? $value : 'light';
+		},
+	] );
 	// Add settings section
 	add_settings_section(
 		'sidebar_nav_for_wpbakery_main_section',
@@ -159,6 +164,18 @@ function sidebar_nav_for_wpbakery_settings_init() {
 			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the position of the sidebar.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
 		</div>',
 		'sidebar_nav_for_wpbakery_sidebar_position_callback',
+		'sidebar-navigation-for-wpbakery',
+		'sidebar_nav_for_wpbakery_main_section'
+	);
+
+	// Add "Color Theme" field
+	add_settings_field(
+		'sidebar_nav_for_wpbakery_color_theme',
+		'<div class="sfw-label">
+			<span class="sfw-title">' . esc_html__( 'Color Theme', 'sidebar-navigation-for-wpbakery' ) . '</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the color theme for the plugin interface.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+		</div>',
+		'sidebar_nav_for_wpbakery_color_theme_callback',
 		'sidebar-navigation-for-wpbakery',
 		'sidebar_nav_for_wpbakery_main_section'
 	);
@@ -258,6 +275,22 @@ function sidebar_nav_for_wpbakery_sidebar_position_callback() {
 			<?php esc_html_e( 'Right', 'sidebar-navigation-for-wpbakery' ); ?>
 		</label>
 	</fieldset>
+	<?php
+}
+
+/**
+ * Callback for "Color Theme" select dropdown.
+ *
+ * @since 2.1
+ */
+function sidebar_nav_for_wpbakery_color_theme_callback() {
+	$option = get_option( 'sidebar_nav_for_wpbakery_color_theme', 'light' );
+	?>
+	<select name="sidebar_nav_for_wpbakery_color_theme" id="sidebar_nav_for_wpbakery_color_theme">
+		<option value="light" <?php selected( 'light', $option ); ?>><?php esc_html_e( 'Light', 'sidebar-navigation-for-wpbakery' ); ?></option>
+		<option value="dark" <?php selected( 'dark', $option ); ?>><?php esc_html_e( 'Dark', 'sidebar-navigation-for-wpbakery' ); ?></option>
+		<option value="device" <?php selected( 'device', $option ); ?>><?php esc_html_e( 'Device Default', 'sidebar-navigation-for-wpbakery' ); ?></option>
+	</select>
 	<?php
 }
 

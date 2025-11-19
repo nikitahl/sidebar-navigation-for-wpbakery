@@ -1,0 +1,16 @@
+$ui-background-color: #001424;
+
+@mixin navbar {
+    .vc_navbar,
+    .vc_ui-panel-header-container {
+        background-color: $ui-background-color;
+    }
+
+    .vc_navbar-border-right {
+        border-color: $ui-background-color;
+    }
+
+    .vc_navbar a.vc_icon-btn:not([disabled]):hover {
+        background-color: lighten($ui-background-color, 10%);
+    }
+}

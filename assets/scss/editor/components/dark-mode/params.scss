@@ -1,0 +1,92 @@
+@mixin params {
+  // Param group
+  .wpb_vc_row > .vc_controls > .column_move,
+  .wpb_vc_row_inner > .vc_controls > .column_move,
+  .wpb_vc_section > .vc_controls > .column_move,
+  .vc_controls-row .vc_control,
+  .wpb_row_container > .wpb_vc_column > .wpb_element_wrapper {
+    background-color: darken($background-color, 5%);
+    border: 1px solid lighten($background-color, 5%);
+  }
+
+  // Inputs
+  .vc_ui-search-box input[type=search],
+  .vc_ui-panel-content-container input,
+  .vc_ui-panel-content-container select,
+  .vc_ui-panel-content-container textarea,
+  .vc_cta3-colored-dropdown .classic,
+  .vc_shortcode-param[data-param_type="dropdown"] select.wpb_vc_param_value,
+  .vc_shortcode-param[data-param_type="dropdown"] select.wpb_vc_param_value option,
+  .wpb_el_type_attach_images .gallery_widget_add_images,
+  .wpb_el_type_attach_image .gallery_widget_add_images,
+  .vc_css-editor .vc_settings .vc_background-image .vc_add-image {
+    background-color: darken($background-color, 5%);
+    color: $color;
+    border: 1px solid lighten($background-color, 10%);
+  }
+
+  // Buttons
+  .wp-core-ui .button,
+  .wp-core-ui .button-secondary,
+  .vc_edit_form_elements .vc_ui-button.vc_param-animation-style-trigger {
+    background-color: darken($background-color, 5%);
+    color: $color !important;
+    border: 1px solid lighten($background-color, 10%);
+  }
+
+  .wp-core-ui .button:hover,
+  .wp-core-ui .button-secondary:hover,
+  .vc_edit_form_elements .vc_ui-button.vc_param-animation-style-trigger:hover {
+    background-color: darken($background-color, 10%);
+  }
+
+  // Design options
+  .vc_css-editor .vc_layout-onion {
+    label {
+      color: $color;
+    }
+
+    .vc_margin .vc_border {
+      background-color: lighten($background-color, 5%);
+    }
+
+    .vc_margin .vc_border .vc_padding {
+      background-color: lighten($background-color, 10%);
+    }
+  }
+
+  // Iconpicker
+  .fip-vc-theme-grey.vc-icons-selector .selector,
+  .fip-vc-theme-grey.vc-icons-selector .fip-icons-container {
+    background-color: $background-color;
+    border: 1px solid lighten($background-color, 10%);
+  }
+
+  .fip-vc-theme-grey.vc-icons-selector .selector-button {
+    background-color: darken($background-color, 5%);
+    color: $color;
+  }
+
+  .fip-vc-theme-grey.vc-icons-selector .selected-icon i {
+    color: $color;
+  }
+
+  // AI elements
+  .vc_ui-icon-ai,
+  .element-controls .vc_control-btn .vc-composer-icon {
+    color: $color;
+  }
+
+  .vc_ui-button[disabled]:not(.vc_ui-button-undisabled) {
+    background-color: darken($background-color, 10%);
+    color: lighten($color, 20%) !important;
+  }
+
+  .vc_ui-helper-popup-promo--inner {
+    background-color: darken($background-color, 5%);
+    border: 1px solid lighten($background-color, 10%);
+    .vc_description {
+      color: $color;
+    }
+  }
+}

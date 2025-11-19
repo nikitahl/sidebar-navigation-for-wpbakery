@@ -3,10 +3,12 @@ import { extendInlineShortcodeView } from './utils'
 import { SidebarForWPBakery } from './sidebar'
 import { PageStructure } from './page-structure'
 import { Notifications } from './notifications'
+import { applyThemeColor } from './theme-color'
 
 const $ = window.jQuery
 
 $(document).ready(() => {
+  applyThemeColor()
   extendInlineShortcodeView()
   $(window).on('vc_build', () => {
     if (window?.sidebar_for_wpb_js?.pageStructure === '1') {

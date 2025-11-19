@@ -11,7 +11,8 @@ module.exports = (env, argv) => {
     devtool: isProduction ? false : 'source-map',
     entry: {
       admin: './assets/js/admin/index.js',
-      editor: './assets/js/editor/index.js'
+      editor: './assets/js/editor/index.js',
+      'preload-dark-mode': './assets/scss/editor/preload-dark-mode.scss'
     },
     output: {
       filename: '[name].min.js',

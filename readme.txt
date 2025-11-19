@@ -4,7 +4,7 @@ Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-extensions, wpbakery-page-builder
 Requires at least: 6.4
 Tested up to: 6.8.1
-Stable tag: 2.3.1
+Stable tag: 2.4
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -35,6 +35,7 @@ Perfect for designers, developers, and content creators who want to boost produc
   * Choose whether the page view area shrinks when the sidebar is open
   * Option to position the sidebar on the right side
   * Page Structure panel for a clear overview of your page layout
+  * Option to set theme for the Frontend editor interface (light/dark)
 
 == Requirements ==
 
@@ -86,6 +87,10 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
+
+= 2.4 =
+
+* Update: Added option to set theme for the Frontend editor interface (light/dark).
 
 = 2.3.1 =
 * Fix: Fixed issue with the sidebar opening on edit control hover.
