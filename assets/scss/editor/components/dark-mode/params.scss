@@ -84,9 +84,14 @@
 
   .vc_ui-helper-popup-promo--inner {
     background-color: darken($background-color, 5%);
-    border: 1px solid lighten($background-color, 10%);
     .vc_description {
       color: $color;
     }
+  }
+
+  // Column controls
+  .vc_column-offset-table .vc_screen-size {
+    background-color: darken($background-color, 2%);
+    color: $color;
   }
 }

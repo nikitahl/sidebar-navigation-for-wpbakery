@@ -44,6 +44,19 @@
     }
   }
 
+  .vc_ui-list-bar {
+    background-color: darken($background-color, 5%);
+    border: 1px solid lighten($background-color, 10%);
+
+    .vc_ui-list-bar-item:hover {
+        background-color: lighten($background-color, 5%);
+    }
+
+    .vc_ui-list-bar-item-trigger {
+      color: $color;
+    }
+  }
+
   // Text
   .vc_ui-panel-content-container h3,
   .vc_ui-panel-content-container p,
@@ -62,6 +75,14 @@
     background-color: darken($background-color, 10%);
   }
 
+  .vc_add-element-container .wpb-content-layouts a {
+    color: #879fc9;
+  }
+
+  .vc_shortcode-link[data-tag^=vc] .vc_element-icon {
+    filter: invert(99%) sepia(6%) saturate(237%) hue-rotate(196deg) brightness(113%) contrast(87%);
+  }
+
   #vc_elements_name_filter {
     &, &:focus {
       color: $color;
@@ -70,8 +91,8 @@
 
   // Row layout editor
   .vc_layout-panel-switcher .vc_layout-btn {
-    background-color: darken($background-color, 5%);
-    color: $color;
+    background-color: $background-color !important;
+    color: $color !important;
   }
 
   // Page structure panel
@@ -98,6 +119,12 @@
   }
 
   // Template library panel
+  #vc_templates_name_filter {
+    &, &:focus {
+      color: $color;
+    }
+  }
+
   .vc_ui-template-list .vc_ui-list-bar-item {
     color: $color;
     border-color: lighten($background-color, 10%);
@@ -135,5 +162,18 @@
       background-color: darken($background-color, 5%);
       border: 1px solid lighten($background-color, 10%);
     }
+  }
+
+  // Message box
+  .vc_color-warning.vc_message_box {
+    background-color: darken($background-color, 5%);
+    border-color: lighten($background-color, 10%);
+    color: $color;
+  }
+
+  .vc_color-success.vc_message_box {
+    background-color: darken($background-color, 5%);
+    border-color: lighten($background-color, 10%);
+    color: $color;
   }
 }
