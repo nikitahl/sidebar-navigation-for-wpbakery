@@ -35,7 +35,7 @@
   z-index: 99999 !important;
 }
 
-.vc_add-element-container .wpb-content-layouts {
+.vc_add-element-container .wpb-content-layouts:not(.wpb-teasers-grid) {
   gap: 1px;
 }
 

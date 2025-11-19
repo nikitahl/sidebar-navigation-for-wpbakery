@@ -75,7 +75,7 @@
     background-color: darken($background-color, 10%);
   }
 
-  .vc_add-element-container .wpb-content-layouts a {
+  .vc_add-element-container .wpb-content-layouts:not(.wpb-teasers-grid) a {
     color: #879fc9;
   }
 
