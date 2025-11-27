@@ -11,31 +11,6 @@
   #vc_preloader {
     background-color: lighten($background-color, 5%);
   }
-
-  //#wp-link-wrap {
-  //  background-color: $background-color;
-  //  color: $color;
-  //  border: 1px solid lighten($background-color, 10%);
-  //}
-  //
-  //#link-modal-title {
-  //  background-color: darken($background-color, 5%);
-  //  color: $color;
-  //}
-  //
-  //#wp-link .submitbox {
-  //  background-color: lighten($background-color, 5%);
-  //}
-  //
-  //#wp-link-wrap input {
-  //  background-color: darken($background-color, 5%);
-  //  color: $color;
-  //  border: 1px solid lighten($background-color, 10%);
-  //}
-}
-
-@media (prefers-color-scheme: dark) {
-  @include dark-theme;
 }
 
 .sfw-theme-dark {

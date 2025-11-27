@@ -3,8 +3,8 @@
 
 @import "components/dark-mode/variables";
 
-// Apply dark mode based on system preference or manual theme class
-@mixin preload-dark-theme {
+// Manual dark mode class applied to html element
+html.sfw-theme-dark {
   // Preloader
   #vc_preloader {
     background-color: lighten($background-color, 5%);
@@ -27,13 +27,5 @@
   }
 }
 
-// System preference dark mode
-@media (prefers-color-scheme: dark) {
-  @include preload-dark-theme;
-}
-
-// Manual dark mode class
-.sfw-theme-dark {
-  @include preload-dark-theme;
-}
-
+// Device preference will also use .sfw-theme-dark class
+// Applied via inline script before CSS loads
