@@ -141,6 +141,18 @@
     background-color: lighten($background-color, 5%);
   }
 
+  .vc_ui-panel-template-item-name {
+    color: $color;
+  }
+
+  .vc_ui-panel-download,
+  .vc_ui-panel-update,
+  .vc_ui-panel-loading {
+    background-color: darken($background-color, 5%);
+    border: 1px solid lighten($background-color, 10%);
+    color: $color;
+  }
+
   // SEO panel
   #vc_ui-seo-general .page-preview {
     background-color: darken($background-color, 5%);
