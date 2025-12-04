@@ -13,6 +13,14 @@
     "alpha-value-notation": "number",
     "length-zero-no-unit": true,
     "media-feature-range-notation": "prefix",
-    "rule-empty-line-before": "always"
+    "rule-empty-line-before": ["always", {
+      "except": ["first-nested", "after-single-line-comment"],
+      "ignore": ["after-comment"]
+    }],
+    "scss/double-slash-comment-empty-line-before": ["always", {
+      "except": ["first-nested"],
+      "ignore": ["stylelint-commands", "between-comments"]
+    }],
+    "no-descending-specificity": null
   }
 }

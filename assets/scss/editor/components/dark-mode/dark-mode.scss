@@ -1,15 +1,16 @@
+@use "sass:color";
 @import "variables";
 @import "navbar";
 @import "panels";
 @import "params";
 
 @mixin dark-theme {
-    @include navbar();
-    @include panels();
-    @include params();
+    @include navbar;
+    @include panels;
+    @include params;
 
   #vc_preloader {
-    background-color: lighten($background-color, 5%);
+    background-color: color.adjust($background-color, $lightness: 5%);
   }
 }
 

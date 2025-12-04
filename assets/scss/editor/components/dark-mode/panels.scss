@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @mixin panels {
   // Scrollbars
   .vc_ui-panel-content-container,
@@ -13,11 +15,11 @@
     &::-webkit-scrollbar-thumb {
       width: 8px;
       border-radius: 5px;
-      background: lighten($background-color, 20%);
+      background: color.adjust($background-color, $lightness: 20%);
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background: lighten($background-color, 30%);
+      background: color.adjust($background-color, $lightness: 30%);
     }
   }
 
@@ -29,32 +31,32 @@
   .vc_ui-prompt.vc_ui-prompt-templates.vc_visible,
   .vc_ui-prompt.vc_ui-prompt-view-presets.vc_visible,
   .vc-icons-selector .selector-popup,
-  .vc_general.vc_ui-tabs-line > .vc_active > .vc_ui-tabs-line-trigger,
-  .vc_ui-tabs-line .vc_ui-tabs-line-dropdown {
+  .vc_ui-tabs-line .vc_ui-tabs-line-dropdown,
+  .vc_general.vc_ui-tabs-line > .vc_active > .vc_ui-tabs-line-trigger {
     background-color: $background-color;
     color: $color;
   }
 
   // Dropdowns
-  .vc_ui-tabs-line .vc_ui-tabs-line-dropdown {
-    border-color: lighten($background-color, 10%);
+  .vc_ui-tabs-line-trigger {
+    color: $color;
+  }
 
-    .vc_ui-tabs-line-trigger {
-      color: $color;
-    }
+  .vc_ui-tabs-line .vc_ui-tabs-line-dropdown {
+    border-color: color.adjust($background-color, $lightness: 10%);
   }
 
   .vc_ui-list-bar {
-    background-color: darken($background-color, 5%);
-    border: 1px solid lighten($background-color, 10%);
-
-    .vc_ui-list-bar-item:hover {
-        background-color: lighten($background-color, 5%);
-    }
+    background-color: color.adjust($background-color, $lightness: -5%);
+    border: 1px solid color.adjust($background-color, $lightness: 10%);
 
     .vc_ui-list-bar-item-trigger {
       color: $color;
     }
+  }
+
+  .vc_ui-list-bar .vc_ui-list-bar-item:hover {
+    background-color: color.adjust($background-color, $lightness: 5%);
   }
 
   // Text
@@ -66,20 +68,20 @@
 
   // Footer
   .vc_ui-panel-footer-container {
-    background-color: lighten($background-color, 5%) !important;
-    border-top: 1px solid lighten($background-color, 10%) !important;
+    background-color: color.adjust($background-color, $lightness: 5%) !important;
+    border-top: 1px solid color.adjust($background-color, $lightness: 10%) !important;
   }
 
   // Add element panel
   .vc_add-element-container .wpb-content-layouts li:hover {
-    background-color: darken($background-color, 10%);
+    background-color: color.adjust($background-color, $lightness: -10%);
   }
 
   .vc_add-element-container .wpb-content-layouts:not(.wpb-teasers-grid) a {
     color: #879fc9;
   }
 
-  .vc_shortcode-link[data-tag^=vc] .vc_element-icon {
+  .vc_shortcode-link[data-tag^="vc"] .vc_element-icon {
     filter: invert(99%) sepia(6%) saturate(237%) hue-rotate(196deg) brightness(113%) contrast(87%);
   }
 
@@ -115,7 +117,7 @@
   .page-structure-item--inner-column,
   .page-structure-item--grid-item,
   .page-structure-item--flexbox-item {
-    background: #444444;
+    background: #444;
   }
 
   // Template library panel
@@ -127,18 +129,18 @@
 
   .vc_ui-template-list .vc_ui-list-bar-item {
     color: $color;
-    border-color: lighten($background-color, 10%);
+    border-color: color.adjust($background-color, $lightness: 10%);
 
     &:hover,
     &:focus,
     &:active {
-      background-color: lighten($background-color, 5%);
+      background-color: color.adjust($background-color, $lightness: 5%);
     }
   }
 
   .vc_ui-template-list .vc_active .vc_ui-list-bar-item,
   .vc_ui-template-list .vc_loading .vc_ui-list-bar-item {
-    background-color: lighten($background-color, 5%);
+    background-color: color.adjust($background-color, $lightness: 5%);
   }
 
   .vc_ui-panel-template-item-name {
@@ -148,19 +150,19 @@
   .vc_ui-panel-download,
   .vc_ui-panel-update,
   .vc_ui-panel-loading {
-    background-color: darken($background-color, 5%);
-    border: 1px solid lighten($background-color, 10%);
+    background-color: color.adjust($background-color, $lightness: -5%);
+    border: 1px solid color.adjust($background-color, $lightness: 10%);
     color: $color;
   }
 
   // SEO panel
   #vc_ui-seo-general .page-preview {
-    background-color: darken($background-color, 5%);
-    border: 1px solid lighten($background-color, 10%);
+    background-color: color.adjust($background-color, $lightness: -5%);
+    border: 1px solid color.adjust($background-color, $lightness: 10%);
 
     #vc_seo-date,
     #vc_seo-url {
-      color: lighten($color, 20%);
+      color: color.adjust($color, $lightness: 20%);
     }
 
     #vc_seo-title {
@@ -171,21 +173,21 @@
   #vc_ui-seo-social .wpb-social-net-preview {
     .wpb-social-placeholder-image,
     .wpb-preview-content {
-      background-color: darken($background-color, 5%);
-      border: 1px solid lighten($background-color, 10%);
+      background-color: color.adjust($background-color, $lightness: -5%);
+      border: 1px solid color.adjust($background-color, $lightness: 10%);
     }
   }
 
   // Message box
   .vc_color-warning.vc_message_box {
-    background-color: darken($background-color, 5%);
-    border-color: lighten($background-color, 10%);
+    background-color: color.adjust($background-color, $lightness: -5%);
+    border-color: color.adjust($background-color, $lightness: 10%);
     color: $color;
   }
 
   .vc_color-success.vc_message_box {
-    background-color: darken($background-color, 5%);
-    border-color: lighten($background-color, 10%);
+    background-color: color.adjust($background-color, $lightness: -5%);
+    border-color: color.adjust($background-color, $lightness: 10%);
     color: $color;
   }
 }
