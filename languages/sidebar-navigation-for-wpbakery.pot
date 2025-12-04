@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Sidebar for WPBakery Page Builder plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sidebar for WPBakery Page Builder 2.3.1\n"
+"Project-Id-Version: Sidebar for WPBakery Page Builder 2.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sidebar-navigation-for-wpbakery\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-05T19:53:00+00:00\n"
+"POT-Creation-Date: 2025-12-04T21:27:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: sidebar-navigation-for-wpbakery\n"
@@ -39,74 +39,94 @@ msgstr ""
 msgid "Sidebar for WPBakery Page Builder Settings"
 msgstr ""
 
-#: includes/settings.php:98
+#: includes/settings.php:103
 msgid "Disable elements' description"
 msgstr ""
 
-#: includes/settings.php:99
+#: includes/settings.php:104
 msgid "Hides the descriptions under WPBakery elements in the Add Element panel."
 msgstr ""
 
-#: includes/settings.php:110
+#: includes/settings.php:115
 msgid "Elements compact view"
 msgstr ""
 
-#: includes/settings.php:111
+#: includes/settings.php:116
 msgid "Reduces spacing between elements in the Add Element panel for a more compact view."
 msgstr ""
 
-#: includes/settings.php:122
+#: includes/settings.php:127
 msgid "Edit Form compact view"
 msgstr ""
 
-#: includes/settings.php:123
+#: includes/settings.php:128
 msgid "Reduces fields size and spacing in the Edit Element panel for a more compact view."
 msgstr ""
 
-#: includes/settings.php:134
+#: includes/settings.php:139
 msgid "Responsive view"
 msgstr ""
 
-#: includes/settings.php:135
+#: includes/settings.php:140
 msgid "Makes the page view area shrink when the sidebar is opened."
 msgstr ""
 
-#: includes/settings.php:146
+#: includes/settings.php:151
 msgid "Page Structure icon"
 msgstr ""
 
-#: includes/settings.php:147
+#: includes/settings.php:152
 msgid "Adds a Page Structure icon to the navbar. Displays a Page Structure in a panel."
 msgstr ""
 
-#: includes/settings.php:158
+#: includes/settings.php:163
 msgid "Sidebar Position"
 msgstr ""
 
-#: includes/settings.php:159
+#: includes/settings.php:164
 msgid "Choose the position of the sidebar."
 msgstr ""
 
-#: includes/settings.php:253
+#: includes/settings.php:175
+msgid "Color Theme"
+msgstr ""
+
+#: includes/settings.php:176
+msgid "Choose the color theme for the plugin interface."
+msgstr ""
+
+#: includes/settings.php:270
 msgid "Left"
 msgstr ""
 
-#: includes/settings.php:258
+#: includes/settings.php:275
 msgid "Right"
 msgstr ""
 
-#: sidebar-navigation-for-wpbakery.php:44
+#: includes/settings.php:290
+msgid "Light"
+msgstr ""
+
+#: includes/settings.php:291
+msgid "Dark"
+msgstr ""
+
+#: includes/settings.php:292
+msgid "Device Default"
+msgstr ""
+
+#: sidebar-navigation-for-wpbakery.php:71
 msgid "Page Structure"
 msgstr ""
 
-#: sidebar-navigation-for-wpbakery.php:45
+#: sidebar-navigation-for-wpbakery.php:72
 msgid "Find"
 msgstr ""
 
-#: sidebar-navigation-for-wpbakery.php:74
+#: sidebar-navigation-for-wpbakery.php:102
 msgid "Settings"
 msgstr ""
 
-#: sidebar-navigation-for-wpbakery.php:90
+#: sidebar-navigation-for-wpbakery.php:118
 msgid "Sidebar for WPBakery requires WPBakery Page Builder to be installed and active."
 msgstr ""
