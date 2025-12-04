@@ -20,6 +20,9 @@ define('SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD', 'sidebar-navigation-for-wpbakery');
 
 require_once plugin_dir_path(__FILE__) . 'includes/settings.php';
 
+// Enqueue preload script in parent window (not iframe)
+add_action( 'vc_frontend_editor_hook_load_edit', 'sidebar_for_wpb_enqueue_preload_script' );
+
 add_action( 'vc_frontend_editor_enqueue_js_css', 'sidebar_for_wpb_enqueue_frontend', 999 );
 
 // Add "Settings" link on the Plugins page
@@ -32,20 +35,35 @@ if ( ! function_exists( 'vc_map' ) ) {
 }
 
 /**
+ * Enqueue preload script and styles in the parent window (backend editor context)
+ */
+function sidebar_for_wpb_enqueue_preload_script() {
+	$color_theme = get_option( 'sidebar_nav_for_wpbakery_color_theme', 'light' );
+
+	// Inline style for dark mode
+	echo '<style>.sfw-theme-dark #vc_preloader{background-color:rgb(42.75,42.75,42.75);}</style>';
+	// Inline script for theme
+	echo '<script>
+		(function(){
+			var theme = ' . json_encode($color_theme) . ';
+			var root = document.documentElement;
+			if(theme === "device"){
+				var isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+				root.classList.add(isDark ? "sfw-theme-dark" : "sfw-theme-light");
+				root.classList.add("sfw-theme-device");
+			}else{
+				root.classList.add("sfw-theme-" + theme);
+			}
+		})();
+	</script>';
+}
+
+/**
  * Enqueue the plugin's styles and scripts.
  */
 function sidebar_for_wpb_enqueue_frontend() {
 	// Check if we are in inline editor mode and only then load the script
 	if ( vc_is_inline() ) {
-		// Enqueue preload dark mode CSS early (before editor loads)
-		wp_enqueue_style(
-			'sidebar-for-wpb-preload-dark-mode',
-			plugins_url( '/assets/dist/css/preload-dark-mode.min.css', __FILE__ ),
-			array(),
-			SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION,
-			'all'
-		);
-
 		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), array(), SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, true  );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
