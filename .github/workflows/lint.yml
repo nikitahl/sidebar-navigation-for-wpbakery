@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   codestyle-frontend:
-    name: Run Codestyle checks
+    name: Run JS and SCSS Codestyle checks
     runs-on: ubuntu-latest
 
     steps:
