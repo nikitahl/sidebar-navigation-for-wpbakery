@@ -6,7 +6,7 @@ on:
       - 'v*.*.*'  # Triggers the workflow on tag push like v1.0.0
 
 jobs:
-  codestyle:
+  codestyle-frontend:
     name: Run Codestyle checks
     runs-on: ubuntu-latest
 
@@ -25,6 +25,36 @@ jobs:
       - name: Run Stylelint
         run: |
           yarn lint:scss
+          
+            codestyle-php:
+
+  codestyle-php:
+    name: PHP codestyle checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Composer dependencies
+        run: php ci/composer.phar install
+
+      - name: Check PHP Code Style
+        run: php vendor/bin/phpcs --standard=ci/phpcs.xml .
+
+  compatibility-php:
+    name: PHP Code Compatibility
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Composer dependencies
+        run: php ci/composer.phar install
+
+      - name: Check PHP Compatibility
+        run: php vendor/bin/phpcs --standard=PHPCompatibility --extensions=php --runtime-set testVersion 7.0-8.4 --ignore=vendor/* .
 
   create_release:
     runs-on: ubuntu-latest
