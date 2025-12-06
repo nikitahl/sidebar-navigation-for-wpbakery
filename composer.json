@@ -1,0 +1,19 @@
+{
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.*",
+    "wp-coding-standards/wpcs": "*",
+    "phpcompatibility/php-compatibility": "^9.1",
+    "rarst/phpcs-cognitive-complexity": "^0.2",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+    "phpstan/phpstan": "^1.12",
+    "php-stubs/wordpress-stubs": "^6.7"
+  },
+  "config": {
+    "platform": {
+      "php": "7.2"
+    },
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}

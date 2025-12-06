@@ -26,6 +26,7 @@ Perfect for designers, developers, and content creators who want to boost produc
   * Choose whether the page view area shrinks when the sidebar is open
   * Option to position the sidebar on the right side
   * Page Structure panel for a clear overview of your page layout
+  * Option to set theme for the Frontend editor interface (light/dark)
 
 ## Installation
 The plugin is available on the [WordPress plugin repository](https://wordpress.org/plugins/sidebar-navigation-for-wpbakery/). You can install it directly from the WordPress dashboard.

@@ -1,0 +1,17 @@
+# to use check (inside docker container)
+# ../vendor/bin/phpstan analyse
+parameters:
+    level: 5 # Adjust the strictness level (0 to 9).
+    phpVersion: 70100
+    bootstrapFiles:
+        - ../../../../wp-load.php # Load WordPress core files for analysis.
+    ignoreErrors:
+    paths:
+        - ../includes
+        - ../src
+        - ../config
+        - ../templates
+    excludePaths:
+        - ../includes/wpbakery-custom-param-collection/*
+    scanFiles:
+        - ../vendor/php-stubs/wordpress-stubs/wordpress-stubs.php

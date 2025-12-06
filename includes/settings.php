@@ -5,13 +5,13 @@
  * @since 2.0
  */
 
-if (!defined('ABSPATH')) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Hook to add the settings page
-add_action('admin_menu', 'sidebar_nav_for_wpbakery_add_settings_page');
-add_action('admin_init', 'sidebar_nav_for_wpbakery_settings_init');
+// Hook to add the settings page.
+add_action( 'admin_menu', 'sidebar_nav_for_wpbakery_add_settings_page' );
+add_action( 'admin_init', 'sidebar_nav_for_wpbakery_settings_init' );
 add_action( 'admin_enqueue_scripts', 'sidebar_nav_for_wpbakery_enqueue_admin_scripts' );
 
 /**
@@ -21,11 +21,11 @@ add_action( 'admin_enqueue_scripts', 'sidebar_nav_for_wpbakery_enqueue_admin_scr
  */
 function sidebar_nav_for_wpbakery_add_settings_page() {
 	add_options_page(
-		esc_html__( 'Sidebar for WPBakery Settings Page Builder', 'sidebar-navigation-for-wpbakery' ), // Page title
-		esc_html__( 'Sidebar for WPBakery Page Builder', 'sidebar-navigation-for-wpbakery' ),         // Menu title
-		'manage_options',                                                               // Capability
-		'sidebar-navigation-for-wpbakery',                                              // Menu slug
-		'sidebar_nav_for_wpbakery_settings_page'                                        // Callback function
+		esc_html__( 'Sidebar for WPBakery Settings Page Builder', 'sidebar-navigation-for-wpbakery' ), // Page title.
+		esc_html__( 'Sidebar for WPBakery Page Builder', 'sidebar-navigation-for-wpbakery' ),         // Menu title.
+		'manage_options',                                                               // Capability.
+		'sidebar-navigation-for-wpbakery',                                              // Menu slug.
+		'sidebar_nav_for_wpbakery_settings_page'                                        // Callback function.
 	);
 }
 
@@ -40,13 +40,13 @@ function sidebar_nav_for_wpbakery_settings_page() {
 		<h1><?php esc_html_e( 'Sidebar for WPBakery Page Builder Settings', 'sidebar-navigation-for-wpbakery' ); ?></h1>
 		<form action="options.php" method="post">
 			<?php
-			// Output security fields for the registered settings
+			// Output security fields for the registered settings.
 			settings_fields( 'sidebar_nav_for_wpbakery_options_group' );
 
-			// Output the settings sections and their fields
+			// Output the settings sections and their fields.
 			do_settings_sections( 'sidebar-navigation-for-wpbakery' );
 
-			// Submit button for saving the settings
+			// Submit button for saving the settings.
 			submit_button();
 			?>
 		</form>
@@ -60,30 +60,64 @@ function sidebar_nav_for_wpbakery_settings_page() {
  * @since 2.0
  */
 function sidebar_nav_for_wpbakery_settings_init() {
-	// Register settings
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_disable_description', [
-		'sanitize_callback' => 'absint',
-	] );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view', [
-		'sanitize_callback' => 'absint',
-	] );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_compact_view_edit_form', [
-		'sanitize_callback' => 'absint',
-	] );
-    register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_responsive_view', [
-		'sanitize_callback' => function( $value ) {
-			return $value === '1' ? '1' : '0'; // Ensures checkbox properly saves '1' or '0'
-		},
-	] );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_page_structure', [
-		'sanitize_callback' => 'absint',
-	] );
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_sidebar_position', [
-		'sanitize_callback' => function( $value ) {
-			return in_array( $value, [ 'left', 'right' ], true ) ? $value : 'left';
-		},
-	] );
-	// Add settings section
+	// Register settings.
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_disable_description',
+		[
+			'sanitize_callback' => 'absint',
+		]
+	);
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_compact_view',
+		[
+			'sanitize_callback' => 'absint',
+		]
+	);
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_compact_view_edit_form',
+		[
+			'sanitize_callback' => 'absint',
+		]
+	);
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_responsive_view',
+		[
+			'sanitize_callback' => function ( $value ) {
+				// Ensures checkbox properly saves '1' or '0'.
+				return '1' === $value ? '1' : '0';
+			},
+		]
+	);
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_page_structure',
+		[
+			'sanitize_callback' => 'absint',
+		]
+	);
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_sidebar_position',
+		[
+			'sanitize_callback' => function ( $value ) {
+				return in_array( $value, [ 'left', 'right' ], true ) ? $value : 'left';
+			},
+		]
+	);
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_color_theme',
+		[
+			'sanitize_callback' => function ( $value ) {
+				return in_array( $value, [ 'light', 'dark', 'device' ], true ) ? $value : 'light';
+			},
+		]
+	);
+	// Add settings section.
 	add_settings_section(
 		'sidebar_nav_for_wpbakery_main_section',
 		'',
@@ -91,7 +125,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar-navigation-for-wpbakery'
 	);
 
-	// Add "Disable elements' description" field
+	// Add "Disable elements' description" field.
 	add_settings_field(
 		'sidebar_nav_for_wpbakery_disable_description',
 		'<div class="sfw-label">
@@ -103,7 +137,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_main_section'
 	);
 
-	// Add "Compact view" field
+	// Add "Compact view" field.
 	add_settings_field(
 		'sidebar_nav_for_wpbakery_compact_view',
 		'<div class="sfw-label">
@@ -115,7 +149,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_main_section'
 	);
 
-	// Add "Compact view" field for Edit Form
+	// Add "Compact view" field for Edit Form.
 	add_settings_field(
 		'sidebar_nav_for_wpbakery_compact_view_edit_form',
 		'<div class="sfw-label">
@@ -127,7 +161,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_main_section'
 	);
 
-	// Add "Responsive view" field
+	// Add "Responsive view" field.
 	add_settings_field(
 		'sidebar_nav_for_wpbakery_responsive_view',
 		'<div class="sfw-label">
@@ -139,7 +173,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_main_section'
 	);
 
-	// Add "Page Structure" field
+	// Add "Page Structure" field.
 	add_settings_field(
 		'sidebar_nav_for_wpbakery_page_structure',
 		'<div class="sfw-label">
@@ -151,7 +185,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_main_section'
 	);
 
-	// Add "Sidebar Position" field
+	// Add "Sidebar Position" field.
 	add_settings_field(
 		'sidebar_nav_for_wpbakery_sidebar_position',
 		'<div class="sfw-label">
@@ -159,6 +193,18 @@ function sidebar_nav_for_wpbakery_settings_init() {
 			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the position of the sidebar.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
 		</div>',
 		'sidebar_nav_for_wpbakery_sidebar_position_callback',
+		'sidebar-navigation-for-wpbakery',
+		'sidebar_nav_for_wpbakery_main_section'
+	);
+
+	// Add "Color Theme" field.
+	add_settings_field(
+		'sidebar_nav_for_wpbakery_color_theme',
+		'<div class="sfw-label">
+			<span class="sfw-title">' . esc_html__( 'Color Theme', 'sidebar-navigation-for-wpbakery' ) . '</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the color theme for the plugin interface.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+		</div>',
+		'sidebar_nav_for_wpbakery_color_theme_callback',
 		'sidebar-navigation-for-wpbakery',
 		'sidebar_nav_for_wpbakery_main_section'
 	);
@@ -173,7 +219,7 @@ function sidebar_nav_for_wpbakery_disable_description_callback() {
 	$option = get_option( 'sidebar_nav_for_wpbakery_disable_description', 0 );
 	?>
 	<input type="checkbox" name="sidebar_nav_for_wpbakery_disable_description"
-            id="sidebar_nav_for_wpbakery_disable_description" value="1"
+		id="sidebar_nav_for_wpbakery_disable_description" value="1"
 		<?php checked( 1, $option, true ); ?> />
 	<?php
 }
@@ -187,7 +233,7 @@ function sidebar_nav_for_wpbakery_compact_view_callback() {
 	$option = get_option( 'sidebar_nav_for_wpbakery_compact_view', 0 );
 	?>
 	<input type="checkbox" name="sidebar_nav_for_wpbakery_compact_view"
-            id="sidebar_nav_for_wpbakery_compact_view" value="1"
+		id="sidebar_nav_for_wpbakery_compact_view" value="1"
 		<?php checked( 1, $option, true ); ?> />
 	<?php
 }
@@ -197,11 +243,11 @@ function sidebar_nav_for_wpbakery_compact_view_callback() {
  *
  * @since 2.1
  */
-function sidebar_nav_for_wpbakery_compact_view_edit_form_callback () {
+function sidebar_nav_for_wpbakery_compact_view_edit_form_callback() {
 	$option = get_option( 'sidebar_nav_for_wpbakery_compact_view_edit_form', 0 );
 	?>
 	<input type="checkbox" name="sidebar_nav_for_wpbakery_compact_view_edit_form"
-            id="sidebar_nav_for_wpbakery_compact_view_edit_form" value="1"
+		id="sidebar_nav_for_wpbakery_compact_view_edit_form" value="1"
 		<?php checked( 1, $option, true ); ?> />
 	<?php
 }
@@ -215,11 +261,11 @@ function sidebar_nav_for_wpbakery_responsive_view_callback() {
 	$option = get_option( 'sidebar_nav_for_wpbakery_responsive_view', 'default' );
 
 	// If the option is 'default' (not set yet), use checked. Otherwise, use saved value.
-	$checked = ( $option === 'default' || $option == '1' ) ? 'checked' : '';
+	$checked = ( 'default' === $option || '1' === $option ) ? 'checked' : '';
 
 	?>
 	<input type="checkbox" name="sidebar_nav_for_wpbakery_responsive_view"
-            id="sidebar_nav_for_wpbakery_responsive_view" value="1"
+		id="sidebar_nav_for_wpbakery_responsive_view" value="1"
 		<?php echo esc_attr( $checked ); ?> />
 	<?php
 }
@@ -233,7 +279,7 @@ function sidebar_nav_for_wpbakery_page_structure_callback() {
 	$option = get_option( 'sidebar_nav_for_wpbakery_page_structure', 0 );
 	?>
 	<input type="checkbox" name="sidebar_nav_for_wpbakery_page_structure"
-           id="sidebar_nav_for_wpbakery_page_structure" value="1"
+		id="sidebar_nav_for_wpbakery_page_structure" value="1"
 		<?php checked( 1, $option, true ); ?> />
 	<?php
 }
@@ -251,7 +297,7 @@ function sidebar_nav_for_wpbakery_sidebar_position_callback() {
 			<input type="radio" name="sidebar_nav_for_wpbakery_sidebar_position" value="left"
 				<?php checked( 'left', $option, true ); ?> />
 			<?php esc_html_e( 'Left', 'sidebar-navigation-for-wpbakery' ); ?>
-		</label class="sfw-radio">
+		</label>
 		<label class="sfw-inline-item">
 			<input type="radio" name="sidebar_nav_for_wpbakery_sidebar_position" value="right"
 				<?php checked( 'right', $option, true ); ?> />
@@ -262,32 +308,48 @@ function sidebar_nav_for_wpbakery_sidebar_position_callback() {
 }
 
 /**
+ * Callback for "Color Theme" select dropdown.
+ *
+ * @since 2.1
+ */
+function sidebar_nav_for_wpbakery_color_theme_callback() {
+	$option = get_option( 'sidebar_nav_for_wpbakery_color_theme', 'light' );
+	?>
+	<select name="sidebar_nav_for_wpbakery_color_theme" id="sidebar_nav_for_wpbakery_color_theme">
+		<option value="light" <?php selected( 'light', $option ); ?>><?php esc_html_e( 'Light', 'sidebar-navigation-for-wpbakery' ); ?></option>
+		<option value="dark" <?php selected( 'dark', $option ); ?>><?php esc_html_e( 'Dark', 'sidebar-navigation-for-wpbakery' ); ?></option>
+		<option value="device" <?php selected( 'device', $option ); ?>><?php esc_html_e( 'Device Default', 'sidebar-navigation-for-wpbakery' ); ?></option>
+	</select>
+	<?php
+}
+
+/**
  * Enqueues the CSS and JS files for the plugin's settings page.
  *
  * @param string $hook The current admin page.
  * @since 2.0
  */
-function sidebar_nav_for_wpbakery_enqueue_admin_scripts($hook) {
-	// Check if we're on the plugin's settings page
+function sidebar_nav_for_wpbakery_enqueue_admin_scripts( $hook ) {
+	// Check if we're on the plugin's settings page.
 	if ( 'settings_page_sidebar-navigation-for-wpbakery' !== $hook ) {
 		return;
 	}
 
-	// Enqueue CSS file for admin
+	// Enqueue CSS file for admin.
 	wp_enqueue_style(
-		'sidebar-for-wpb-admin-style', // Handle
-		plugin_dir_url( __FILE__ ) . '../assets/dist/css/admin.min.css', // CSS file path
-		array(), // Dependencies (if any)
-		filemtime( plugin_dir_path( __FILE__ ) . '../assets/dist/css/admin.min.css' ), // Version (based on file modification time)
-		'all' // Media
+		'sidebar-for-wpb-admin-style', // Handle.
+		plugin_dir_url( __FILE__ ) . '../assets/dist/css/admin.min.css', // CSS file path.
+		[], // Dependencies (if any).
+		filemtime( plugin_dir_path( __FILE__ ) . '../assets/dist/css/admin.min.css' ), // Version (based on file modification time).
+		'all' // Media.
 	);
 
-	// Enqueue JS file for admin
+	// Enqueue JS file for admin.
 	wp_enqueue_script(
-		'sidebar-for-wpb-admin-tooltip', // Handle
-		plugin_dir_url( __FILE__ ) . '../assets/dist/js/admin.min.js', // JS file path
-		array( 'jquery' ), // Dependencies (if any)
-		filemtime( plugin_dir_path( __FILE__ ) . '../assets/dist/js/admin.min.js' ), // Version (based on file modification time)
-		true // Load in footer
+		'sidebar-for-wpb-admin-tooltip', // Handle.
+		plugin_dir_url( __FILE__ ) . '../assets/dist/js/admin.min.js', // JS file path.
+		[ 'jquery' ], // Dependencies (if any).
+		filemtime( plugin_dir_path( __FILE__ ) . '../assets/dist/js/admin.min.js' ), // Version (based on file modification time).
+		true // Load in footer.
 	);
 }

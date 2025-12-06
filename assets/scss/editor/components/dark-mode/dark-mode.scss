@@ -1,0 +1,19 @@
+@use "sass:color";
+@import "variables";
+@import "navbar";
+@import "panels";
+@import "params";
+
+@mixin dark-theme {
+    @include navbar;
+    @include panels;
+    @include params;
+
+  #vc_preloader {
+    background-color: color.adjust($background-color, $lightness: 5%);
+  }
+}
+
+.sfw-theme-dark {
+  @include dark-theme;
+}

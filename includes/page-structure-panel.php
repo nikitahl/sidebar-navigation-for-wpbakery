@@ -1,5 +1,8 @@
 <?php
-// Silence is golden.
+/**
+ * Silence is golden.
+ */
+
 ?>
 <div class="vc_ui-font-open-sans vc_ui-panel-window vc_media-xs vc_ui-panel" data-vc-panel=".vc_ui-panel-header-header" data-vc-ui-element="panel-page-structure" id="vc_ui-panel-page-structure">
 	<div class="vc_ui-panel-window-inner">

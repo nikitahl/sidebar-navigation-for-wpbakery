@@ -1,10 +1,9 @@
 .vc_compact-view {
-
   .wpb-content-layouts-container h4 {
     margin: 0 0 10px !important;
   }
 
-  .wpb-content-layouts {
+  .wpb-content-layouts:not(.wpb-teasers-grid) {
     margin: 0 !important;
     grid-template-columns: repeat(auto-fit, 96px) !important;
   }
