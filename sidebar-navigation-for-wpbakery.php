@@ -69,7 +69,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 
 		$page_structure_html  = file_get_contents( plugin_dir_path( __FILE__ ) . 'includes/page-structure-panel.php' );
 		$page_structure_title = esc_html__( 'Page Structure', 'sidebar-navigation-for-wpbakery' );
-		$page_structure_find = esc_html__( 'Find', 'sidebar-navigation-for-wpbakery' );
+		$page_structure_find  = esc_html__( 'Find', 'sidebar-navigation-for-wpbakery' );
 		// Get saved options.
 		$settings = [
 			'pluginUrl'           => plugins_url( '', __FILE__ ),
