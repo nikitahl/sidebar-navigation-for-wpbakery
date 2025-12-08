@@ -89,7 +89,6 @@ Deactivate the plugin via the WordPress **Plugins** page.
 == Changelog ==
 
 = 2.4 =
-
 * Update: Added option to set theme for the Frontend editor interface (light/dark).
 
 = 2.3.1 =
