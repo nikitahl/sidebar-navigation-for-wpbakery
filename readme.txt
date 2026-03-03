@@ -90,6 +90,8 @@ Deactivate the plugin via the WordPress **Plugins** page.
 
 = 2.4.1 =
 * Fix: Fixed issue with sidebar styles not applying correctly after 9.0 update of WPBakery Page Builder.
+* Update: Update dark theme styles for the Frontend editor interface.
+* Update: Added ability to add first/selected element on Enter key press in Add Element panel.
 
 = 2.4 =
 * Update: Added option to set theme for the Frontend editor interface (light/dark).

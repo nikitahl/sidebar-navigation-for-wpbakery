@@ -1,5 +1,5 @@
 import '../../scss/editor/main.scss'
-import { extendInlineShortcodeView } from './utils'
+import { extendInlineShortcodeView, addSearchInputListener } from './utils'
 import { SidebarForWPBakery } from './sidebar'
 import { PageStructure } from './page-structure'
 import { Notifications } from './notifications'
@@ -16,5 +16,7 @@ $(document).ready(() => {
     }
     new Notifications()
     new SidebarForWPBakery()
+
+    addSearchInputListener()
   })
 })
