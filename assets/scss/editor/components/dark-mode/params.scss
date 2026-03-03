@@ -64,7 +64,7 @@
 
   // Colorpicker
   .pcr-app.wpb-pickr {
-    background-color: color.adjust($background-color, $lightness: -5%);
+    background-color: color.adjust($background-color, $lightness: 5%);
   }
 
   // Design options
