@@ -19,12 +19,19 @@
   .vc_cta3-colored-dropdown .classic,
   .vc_shortcode-param[data-param_type="dropdown"] select.wpb_vc_param_value,
   .vc_shortcode-param[data-param_type="dropdown"] select.wpb_vc_param_value option,
+  .wpb-form-select + .select2-container.select2-container--default .select2-selection--single,
+  .wpb-form-select-search + .select2-container.select2-container--default .select2-selection--single,
   .wpb_el_type_attach_images .gallery_widget_add_images,
   .wpb_el_type_attach_image .gallery_widget_add_images,
   .vc_css-editor .vc_settings .vc_background-image .vc_add-image {
-    background-color: color.adjust($background-color, $lightness: -5%);
+    background-color: color.adjust($background-color, $lightness: -5%) !important;;
+    color: $color !important;;
+    border: 1px solid color.adjust($background-color, $lightness: 10%) !important;
+  }
+
+  .wpb-form-select + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered,
+  .wpb-form-select-search + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered {
     color: $color;
-    border: 1px solid color.adjust($background-color, $lightness: 10%);
   }
 
   // Buttons
@@ -38,6 +45,26 @@
   .vc_link-build:hover,
   .vc_edit_form_elements .vc_ui-button.vc_param-animation-style-trigger:hover {
     background-color: color.adjust($background-color, $lightness: -10%);
+  }
+
+  .vc_param_type_number_chevron,
+  .wpb_linked_fields_toggle,
+  .vc_wrapper-param-type-button_group.wpb_el_type_button_group .wpb_button_group-button--icon .wpb_button_group-icon {
+    color: $color;
+  }
+
+  .vc_wrapper-param-type-button_group.wpb_el_type_button_group .wpb_button_group-buttons {
+    background-color: color.adjust($background-color, $lightness: -5%);
+    border: 1px solid color.adjust($background-color, $lightness: 10%);
+  }
+
+  .vc_wrapper-param-type-button_group.wpb_el_type_button_group .wpb_button_group-button--text .wpb_button_group-text {
+    color: $color;
+  }
+
+  // Colorpicker
+  .pcr-app.wpb-pickr {
+    background-color: color.adjust($background-color, $lightness: -5%);
   }
 
   // Design options
