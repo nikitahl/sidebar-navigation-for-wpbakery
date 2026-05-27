@@ -27,6 +27,10 @@
     background-color: color.adjust($background-color, $lightness: -5%) !important;;
     color: $color !important;;
     border: 1px solid color.adjust($background-color, $lightness: 10%) !important;
+
+    &:focus {
+      border: 1px solid color.adjust(#005FB1, $lightness: 10%) !important;
+    }
   }
 
   .wpb-form-select + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered,
@@ -53,7 +57,8 @@
     color: $color;
   }
 
-  .vc_wrapper-param-type-button_group.wpb_el_type_button_group .wpb_button_group-buttons {
+  .vc_wrapper-param-type-button_group.wpb_el_type_button_group .wpb_button_group-buttons,
+  .wpb_button_group-buttons {
     background-color: color.adjust($background-color, $lightness: -5%);
     border: 1px solid color.adjust($background-color, $lightness: 10%);
   }
@@ -79,6 +84,10 @@
 
     .vc_margin .vc_border .vc_padding {
       background-color: color.adjust($background-color, $lightness: 10%);
+    }
+
+    .vc_margin .vc_border .vc_padding .vc_content {
+      background-color: color.adjust($background-color, $lightness: 15%);
     }
   }
 
