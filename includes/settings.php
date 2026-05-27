@@ -130,7 +130,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_disable_description',
 		'<div class="sfw-label">
 			<span class="sfw-title">' . esc_html__( 'Disable elements\' description', 'sidebar-navigation-for-wpbakery' ) . '</span>
-			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Hides the descriptions under WPBakery elements in the Add Element panel.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Hides the descriptions under WPBakery elements in the Add Element panel. NOTE: After WPBakery 9.0 descriptions are removed by default.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
 		</div>',
 		'sidebar_nav_for_wpbakery_disable_description_callback',
 		'sidebar-navigation-for-wpbakery',
