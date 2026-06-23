@@ -12,6 +12,10 @@
   #vc_preloader {
     background-color: color.adjust($background-color, $lightness: 5%);
   }
+
+  #vc_inline-frame-wrapper {
+    background-color: color.adjust($background-color, $lightness: 10%);
+  }
 }
 
 .sfw-theme-dark {
