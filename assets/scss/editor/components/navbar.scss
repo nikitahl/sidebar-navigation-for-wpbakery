@@ -22,10 +22,6 @@
   height: auto;
 }
 
-#vc_navbar .vc_navbar-brand {
-  padding: 25px;
-}
-
 #vc_navbar .vc_save-buttons {
   flex-direction: column;
   gap: 4px;
@@ -41,11 +37,19 @@
   font-size: 10px;
 }
 
-#vc_navbar a.vc_icon-btn {
+#vc_navbar a.vc_icon-btn,
+#vc_navbar .vc_navbar-brand {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: var(--vc-navbar-width);
-  height: 45px;
-  padding: 24px;
+  height: var(--vc-navbar-width);
+  padding: 0;
   font-size: 20px;
+}
+
+#vc_navbar .vc_navbar-brand {
+  font-size: 0;
 }
 
 #vc_navbar .vc_navbar-nav {
