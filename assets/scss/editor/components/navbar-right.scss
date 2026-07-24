@@ -14,12 +14,9 @@
     right: var(--vc-navbar-width) !important;
   }
 
-  #vc_navbar .vc_dropdown-list[role=menu] {
+  #vc_navbar .vc_dropdown-list[role="menu"] {
     left: initial;
     right: 100%;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 0;
+    border-radius: 3px 0 0 3px;
   }
 }

@@ -14,7 +14,7 @@
   .vc_wrapper-param-type-param_group li.vc_param .vc_param_group-controls .vc_control,
   .vc_wrapper-param-type-param_group .vc_param-group-admin-labels,
   .wpb-unit-label,
-  .vc_wrapper-param-type-param_group .vc_empty-container:after {
+  .vc_wrapper-param-type-param_group .vc_empty-container::after {
     color: $color;
   }
 
