@@ -79,6 +79,7 @@ export class PageStructure {
             this.renderPageStructure()
             vc.events.on('afterLoadShortcode', this.debouncedRender)
             vc.events.on('afterRemoveShortcode', this.debouncedRender)
+            vc.events.on('editElementPanel:ready', this.debouncedRender)
           }
         },
         render: function () {
