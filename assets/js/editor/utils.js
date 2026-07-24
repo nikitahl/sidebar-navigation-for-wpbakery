@@ -31,7 +31,7 @@ export function addSearchInputListener () {
         // next sibling
         $($visibleElements[1]).find('[data-vc-clickable]').focus()
       }
-      if (13 === (e.keyCode || e.which)) {
+      if (13 === (e.keyCode || e.which) && $visibleElements.length > 1) {
         $visibleElements.find('.snfw-highlighted').removeClass('snfw-highlighted')
         $firstVisibleElement.click()
       }

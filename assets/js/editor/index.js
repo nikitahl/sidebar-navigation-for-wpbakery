@@ -4,6 +4,7 @@ import { SidebarForWPBakery } from './sidebar'
 import { PageStructure } from './page-structure'
 import { Notifications } from './notifications'
 import { applyThemeColor } from './theme-color'
+import initUndoRedo from './undo-redo'
 
 const $ = window.jQuery
 
@@ -18,5 +19,6 @@ $(document).ready(() => {
     new SidebarForWPBakery()
 
     addSearchInputListener()
+    initUndoRedo()
   })
 })
