@@ -23,14 +23,15 @@
 }
 
 #vc_navbar .vc_save-buttons {
+  width: 100%;
   flex-direction: column;
-  gap: 4px;
-  margin: 0 2px;
+  gap: 6px;
+  margin: 5px 0;
 }
 
 #vc_navbar .vc_save-buttons .vc_btn {
-  margin: 2px;
-  width: 70%;
+  margin: 0;
+  width: 80%;
 }
 
 #vc_navbar .vc_save-buttons .vc_btn p {
@@ -76,6 +77,17 @@
 
 #vc_navbar #vc_screen-size-control .vc_dropdown-list {
   top: -145px;
+}
+
+// for v9.0 and above
+#vc_navbar .vc_dropdown-list[role="menu"] {
+  top: -50px;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 3px;
+}
+// for v9.0 and above
+#vc_navbar #vc_screen-size-control .vc_dropdown-list[role="menu"] {
+  top: -200px;
 }
 
 #vc_navbar .vc_icon-btn.vc_active {

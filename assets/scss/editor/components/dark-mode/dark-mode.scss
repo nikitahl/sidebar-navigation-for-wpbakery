@@ -16,6 +16,18 @@
   #vc_inline-frame-wrapper {
     background-color: color.adjust($background-color, $lightness: 10%);
   }
+
+  &.vc_editor.compose-mode .vc_welcome.vc_select-post-custom-layout-frontend-editor {
+    background-color: color.adjust($background-color, $lightness: 10%);
+  }
+
+  .vc_welcome-header {
+    color: $color;
+  }
+
+  .vc_post-custom-layout svg {
+    filter: invert(99%) sepia(6%) saturate(184%) hue-rotate(204deg) brightness(146%) contrast(87%);
+  }
 }
 
 .sfw-theme-dark {

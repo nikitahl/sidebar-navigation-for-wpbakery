@@ -102,7 +102,9 @@
   }
 
   .vc_add-element-container .wpb-content-layouts .wpb-element-title,
-  .vc_ui-template-card-name {
+  .vc_ui-template-card-name,
+  .vc_add-element-container .wpb-content-layouts-title,
+  .vc_add-element-container .wpb-teasers-description {
     color: $color;
   }
 
@@ -160,7 +162,8 @@
     background-color: color.adjust($background-color, $lightness: 5%);
   }
 
-  .vc_ui-panel-template-item-name {
+  .vc_ui-panel-template-item-name,
+  .vc-panel-no-templates-message {
     color: $color;
   }
 
@@ -183,6 +186,13 @@
     }
 
     #vc_seo-title {
+      color: $color;
+    }
+  }
+
+  #vc_ui-seo-analysis {
+    .vc_ui-seo-results-title,
+    .vc_ui-seo-results-toggle::after {
       color: $color;
     }
   }
