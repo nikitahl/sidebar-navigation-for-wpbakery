@@ -24,9 +24,7 @@ jobs:
 
       - name: Run Stylelint
         run: |
-          yarn lint:scss
-          
-            codestyle-php:
+          yarn lint:scss          
 
   codestyle-php:
     name: PHP codestyle checks
