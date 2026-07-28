@@ -6,25 +6,47 @@
   .wpb_vc_row_inner > .vc_controls > .column_move,
   .wpb_vc_section > .vc_controls > .column_move,
   .vc_controls-row .vc_control,
-  .wpb_row_container > .wpb_vc_column > .wpb_element_wrapper {
+  .wpb_row_container > .wpb_vc_column > .wpb_element_wrapper,
+  .vc_wrapper-param-type-param_group li.vc_param {
     background-color: color.adjust($background-color, $lightness: -5%);
-    border: 1px solid color.adjust($background-color, $lightness: 5%);
+  }
+
+  .vc_wrapper-param-type-param_group li.vc_param .vc_param_group-controls .vc_control,
+  .vc_wrapper-param-type-param_group .vc_param-group-admin-labels,
+  .wpb-unit-label,
+  .vc_wrapper-param-type-param_group .vc_empty-container::after {
+    color: $color;
+  }
+
+  .vc_wrapper-param-type-param_group .vc_empty-container {
+    border-color: $color;
   }
 
   // Inputs
   .vc_ui-search-box input[type="search"],
-  .vc_ui-panel-content-container input,
+  .vc_ui-panel-content-container input:not([type="range"]),
   .vc_ui-panel-content-container select,
   .vc_ui-panel-content-container textarea,
   .vc_cta3-colored-dropdown .classic,
   .vc_shortcode-param[data-param_type="dropdown"] select.wpb_vc_param_value,
   .vc_shortcode-param[data-param_type="dropdown"] select.wpb_vc_param_value option,
+  .wpb-form-select + .select2-container.select2-container--default .select2-selection--single,
+  .wpb-form-select-search + .select2-container.select2-container--default .select2-selection--single,
   .wpb_el_type_attach_images .gallery_widget_add_images,
   .wpb_el_type_attach_image .gallery_widget_add_images,
   .vc_css-editor .vc_settings .vc_background-image .vc_add-image {
-    background-color: color.adjust($background-color, $lightness: -5%);
+    background-color: color.adjust($background-color, $lightness: -5%) !important;
+    color: $color !important;;
+    border: 1px solid color.adjust($background-color, $lightness: 10%) !important;
+
+    &:focus {
+      border: 1px solid color.adjust(#005FB1, $lightness: 10%) !important;
+    }
+  }
+
+  .wpb-form-select + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered,
+  .wpb-form-select-search + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered {
     color: $color;
-    border: 1px solid color.adjust($background-color, $lightness: 10%);
   }
 
   // Buttons
@@ -40,7 +62,43 @@
     background-color: color.adjust($background-color, $lightness: -10%);
   }
 
+  .vc_param_type_number_inner_wrapper > .wpb-unit-selector + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered,
+  .vc_param_type_number_inner_wrapper > .wpb-unit-selector + .select2-container.select2-container--default .select2-selection--single .select2-selection__arrow::after,
+  .wpb_link-input-wrapper .wpb_link-edit-btn .vc-composer-icon,
+  .wpb_button_group-button--icon .wpb_button_group-icon,
+  .vc_shortcode-param[data-param_type="number"] .vc_param_type_number_chevron,
+  .vc_param_type_number_chevron,
+  .wpb_linked_fields_toggle,
+  .vc_wrapper-param-type-button_group.wpb_el_type_button_group .wpb_button_group-button--icon .wpb_button_group-icon {
+    color: $color;
+  }
+
+  .vc_wrapper-param-type-button_group.wpb_el_type_button_group .wpb_button_group-buttons,
+  .wpb_button_group-buttons {
+    background-color: color.adjust($background-color, $lightness: -5%);
+    border: 1px solid color.adjust($background-color, $lightness: 10%);
+  }
+
+  .vc_wrapper-param-type-button_group.wpb_el_type_button_group .wpb_button_group-button--text .wpb_button_group-text {
+    color: $color;
+  }
+
+  // Colorpicker
+  .pcr-app.wpb-pickr {
+    background-color: color.adjust($background-color, $lightness: 5%);
+  }
+
   // Design options
+  .vc_css-editor .vc_layout-onion .vc_css-editor-link-toggle .vc-composer-icon,
+  .vc_css-editor .vc_layout-onion .vc_margin > .wpb-unit-selector + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered,
+  .vc_css-editor .vc_layout-onion .vc_border > .wpb-unit-selector + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered,
+  .vc_css-editor .vc_layout-onion .vc_padding > .wpb-unit-selector + .select2-container.select2-container--default .select2-selection--single .select2-selection__rendered,
+  .vc_css-editor .vc_layout-onion .vc_margin > .wpb-unit-selector + .select2-container.select2-container--default .select2-selection--single .select2-selection__arrow::after,
+  .vc_css-editor .vc_layout-onion .vc_border > .wpb-unit-selector + .select2-container.select2-container--default .select2-selection--single .select2-selection__arrow::after,
+  .vc_css-editor .vc_layout-onion .vc_padding > .wpb-unit-selector + .select2-container.select2-container--default .select2-selection--single .select2-selection__arrow::after {
+    color: $color;
+  }
+
   .vc_css-editor .vc_layout-onion {
     label {
       color: $color;
@@ -52,6 +110,10 @@
 
     .vc_margin .vc_border .vc_padding {
       background-color: color.adjust($background-color, $lightness: 10%);
+    }
+
+    .vc_margin .vc_border .vc_padding .vc_content {
+      background-color: color.adjust($background-color, $lightness: 15%);
     }
   }
 
@@ -94,5 +156,21 @@
   .vc_column-offset-table .vc_screen-size {
     background-color: color.adjust($background-color, $lightness: -2%);
     color: $color;
+  }
+
+  // Settings
+  .vc_checkbox-label {
+    color: $color;
+  }
+
+  .select2-container--default .select2-selection--multiple {
+    background-color: color.adjust($background-color, $lightness: -2%);
+    border: 1px solid color.adjust($background-color, $lightness: 10%) !important;
+    color: $color;
+  }
+
+  #vc_settings-post-tags textarea {
+    border: none !important;
+    background-color: transparent !important;
   }
 }

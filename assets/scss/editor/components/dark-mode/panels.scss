@@ -73,8 +73,16 @@
   }
 
   // Add element panel
-  .vc_add-element-container .wpb-content-layouts li:hover {
-    background-color: color.adjust($background-color, $lightness: -10%);
+  .vc_add-element-container .wpb-content-layouts li:hover,
+  .vc_add-element-container .wpb-content-layouts a.snfw-highlighted,
+  .vc_add-element-container .wpb-content-layouts a:focus,
+  .vc_ui-template-card::before {
+    background-color: color.adjust($background-color, $lightness: 10%);
+  }
+
+  .vc_general.vc_ui-tabs-line .vc_ui-tabs-line-trigger:hover,
+  .vc_general.vc_ui-tabs-line .vc_ui-tabs-line-trigger:focus {
+    background-color: color.adjust($ui-background-color, $lightness: 10%);
   }
 
   .vc_add-element-container .wpb-content-layouts:not(.wpb-teasers-grid) a {
@@ -87,8 +95,17 @@
 
   #vc_elements_name_filter {
     &, &:focus {
+      background-color: color.adjust($background-color, $lightness: -5%);
       color: $color;
+      border: 1px solid color.adjust($background-color, $lightness: 10%);
     }
+  }
+
+  .vc_add-element-container .wpb-content-layouts .wpb-element-title,
+  .vc_ui-template-card-name,
+  .vc_add-element-container .wpb-content-layouts-title,
+  .vc_add-element-container .wpb-teasers-description {
+    color: $color;
   }
 
   // Row layout editor
@@ -123,7 +140,9 @@
   // Template library panel
   #vc_templates_name_filter {
     &, &:focus {
+      background-color: color.adjust($background-color, $lightness: -5%);
       color: $color;
+      border: 1px solid color.adjust($background-color, $lightness: 10%);
     }
   }
 
@@ -143,7 +162,8 @@
     background-color: color.adjust($background-color, $lightness: 5%);
   }
 
-  .vc_ui-panel-template-item-name {
+  .vc_ui-panel-template-item-name,
+  .vc-panel-no-templates-message {
     color: $color;
   }
 
@@ -170,6 +190,13 @@
     }
   }
 
+  #vc_ui-seo-analysis {
+    .vc_ui-seo-results-title,
+    .vc_ui-seo-results-toggle::after {
+      color: $color;
+    }
+  }
+
   #vc_ui-seo-social .wpb-social-net-preview {
     .wpb-social-placeholder-image,
     .wpb-preview-content {
@@ -188,6 +215,16 @@
   .vc_color-success.vc_message_box {
     background-color: color.adjust($background-color, $lightness: -5%);
     border-color: color.adjust($background-color, $lightness: 10%);
+    color: $color;
+  }
+
+  // Settings panel
+  a.vc_post-custom-layout:hover,
+  a.vc_post-custom-layout.vc-active-post-custom-layout {
+    background-color: color.adjust($background-color, $lightness: 30%);
+  }
+
+  .vc_layout-label {
     color: $color;
   }
 }

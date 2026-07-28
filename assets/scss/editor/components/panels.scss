@@ -46,3 +46,27 @@
 .vc_ui-panel-content.vc_properties-list-init {
   margin: auto !important;
 }
+
+.snfw-highlighted {
+  background-color: #F0F0F1;
+}
+
+
+// after wpb 9.0
+.vc_ui-panel-header .vc_ui-panel-header-header {
+  .vc_ui-panel-header-actions {
+    width: 90%;
+  }
+
+  .vc_ui-panel-header-actions .wpb-search-input {
+    width: 100%
+  }
+
+  .vc_ui-panel-minimize-button {
+    display: none;
+  }
+
+  .vc-c-icon-search {
+    font-size: 14px;
+  }
+}

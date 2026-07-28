@@ -3,8 +3,8 @@
 Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-extensions, wpbakery-page-builder
 Requires at least: 6.4
-Tested up to: 6.9
-Stable tag: 2.4
+Tested up to: 7.0
+Stable tag: 2.5
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -15,7 +15,9 @@ Enhance WPBakery Page Builder experience with user-friendly sidebar for navigati
 
 Take your WPBakery Page Builder workflow to the next level with a modern, customizable sidebar designed for faster navigation and smoother editing.
 
-This lightweight plugin adds a persistent sidebar with navigation and panels, giving you instant access to WPBakery elements, settings, and page structure—without blocking your content or cluttering the editor. No more dragging, resizing, or hunting for options—everything you need stays neatly organized in one place.
+This lightweight plugin adds a persistent sidebar with navigation and panels, giving you instant access to WPBakery elements, settings, and page structure—without blocking your content or cluttering the editor.
+
+No more dragging, resizing, or hunting for options—everything you need stays neatly organized in one place.
 
 With simple controls and flexible settings, you can tailor the sidebar to match your workflow. Whether you want a compact layout, resizable panels, or a cleaner editor interface, this plugin makes WPBakery easier and more efficient to use.
 
@@ -28,6 +30,7 @@ Perfect for designers, developers, and content creators who want to boost produc
 * Resizable sidebar width for a personalized layout
 * Dismissible notifications for a distraction-free interface
 * Scroll directly to selected elements in the Edit Form panel
+* Add a first found element on Enter
 * Customizable settings page to adjust sidebar appearance and behavior:
   * Hide element descriptions in the Add Element panel
   * Reduce spacing between elements for a compact view
@@ -87,6 +90,11 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
+
+= 2.5 =
+* Fix: Fixed issue with sidebar styles not applying correctly after 9.0 update of WPBakery Page Builder.
+* Update: Update dark theme styles for the Frontend editor interface.
+* Update: Added ability to add first/selected element on Enter key press in the Add Element panel.
 
 = 2.4 =
 * Update: Added option to set theme for the Frontend editor interface (light/dark).

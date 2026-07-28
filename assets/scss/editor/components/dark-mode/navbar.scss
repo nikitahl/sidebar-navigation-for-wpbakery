@@ -1,10 +1,10 @@
 @use "sass:color";
 
-$ui-background-color: #001424;
-
 @mixin navbar {
     .vc_navbar,
-    .vc_ui-panel-header-container {
+    .vc_ui-panel-header-container,
+    .vc_navbar .vc_dropdown.open .vc_dropdown-toggle,
+    .vc_navbar .vc_dropdown .vc_dropdown-list {
         background-color: $ui-background-color;
     }
 
@@ -12,7 +12,16 @@ $ui-background-color: #001424;
         border-color: $ui-background-color;
     }
 
-    .vc_navbar a.vc_icon-btn:not([disabled]):hover {
+    .vc_navbar a.vc_icon-btn:not([disabled]):hover,
+    .vc_navbar a.vc_icon-btn:not([disabled]):focus,
+    #vc_navbar a.vc_icon-btn.vc_active,
+    .vc_navbar .vc_dropdown .vc_dropdown-list a.active,
+    .vc_navbar .vc_dropdown .vc_dropdown-list a:hover,
+    .vc_navbar .vc_dropdown .vc_dropdown-list a:focus {
         background-color: color.adjust($ui-background-color, $lightness: 10%);
+    }
+
+    .vc_navbar .vc_btn.vc_btn-save-draft {
+        background-color: color.adjust($ui-background-color, $lightness: 15%);
     }
 }

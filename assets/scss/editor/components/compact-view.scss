@@ -23,7 +23,7 @@
   .wpb_element_label,
   .vc_css-editor .vc_settings label{
     font-weight: 500;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .vc_description {
@@ -36,10 +36,28 @@
   }
 
   .vc_edit_form_elements input,
-  .vc_edit_form_elements select {
+  .vc_edit_form_elements select,
+  .wpb_button_group-buttons,
+  .wpb-form-select + .select2-container.select2-container--default .select2-selection--single,
+  .wpb-form-select-search + .select2-container.select2-container--default .select2-selection--single {
     height: 34px;
     font-size: 13px;
     line-height: 1;
+  }
+
+  .wpb_button_group-buttons,
+  .wpb-form-select + .select2-container.select2-container--default .select2-selection--single,
+  .wpb-form-select-search + .select2-container.select2-container--default .select2-selection--single {
+    min-height: 34px;
+  }
+
+  .wpb-form-select + .select2-container.select2-container--default .select2-selection--single,
+  .wpb-form-select-search + .select2-container.select2-container--default .select2-selection--single {
+    padding: 8px;
+  }
+
+  .wpb_button_group-button {
+    height: 24px;
   }
 
   .vc_edit_form_elements input[type="checkbox"],
@@ -56,8 +74,8 @@
   }
 
   .vc_css-editor input {
-    height: 20px;
-    width: 30px;
+    height: 30px;
+    width: 40px;
     font-size: 10px;
     line-height: 1;
   }
@@ -91,9 +109,10 @@
     font-size: 12px;
   }
 
+  .vc-iconpicker-wrapper .fip-vc-theme-grey.vc-icons-selector .selector,
   .vc-icons-selector .selector {
     width: 90px;
-    height: 30px;
+    height: 34px;
   }
 
   .vc-icons-selector .selected-icon {
@@ -115,27 +134,27 @@
     left: 38px;
   }
 
-  .vc_css-editor .vc_layout-onion .vc_border,
-  .vc_css-editor .vc_layout-onion .vc_padding,
-  .vc_css-editor .vc_layout-onion .vc_content {
-    margin: 36px;
-  }
+  // .vc_css-editor .vc_layout-onion .vc_border,
+  // .vc_css-editor .vc_layout-onion .vc_padding,
+  // .vc_css-editor .vc_layout-onion .vc_content {
+  //   margin: 36px;
+  // }
 
-  .vc_css-editor .vc_layout-onion input.vc_bottom {
-    bottom: 3px
-  }
+  // .vc_css-editor .vc_layout-onion input.vc_bottom {
+  //   bottom: 3px
+  // }
 
-  .vc_css-editor .vc_layout-onion input.vc_top {
-    top: 3px
-  }
+  // .vc_css-editor .vc_layout-onion input.vc_top {
+  //   top: -10px
+  // }
 
-  .vc_css-editor .vc_layout-onion input.vc_left {
-    left: 3px
-  }
+  // .vc_css-editor .vc_layout-onion input.vc_left {
+  //   left: 3px
+  // }
 
-  .vc_css-editor .vc_layout-onion input.vc_right {
-    right: 3px
-  }
+  // .vc_css-editor .vc_layout-onion input.vc_right {
+  //   right: 3px
+  // }
 
   .pickr .pcr-button {
     height: 26px;

@@ -19,6 +19,7 @@ Perfect for designers, developers, and content creators who want to boost produc
 * Resizable sidebar width for a personalized layout
 * Dismissible notifications for a distraction-free interface
 * Scroll directly to selected elements in the Edit Form panel
+* Add a first found element on Enter
 * Customizable settings page to adjust sidebar appearance and behavior:
   * Hide element descriptions in the Add Element panel
   * Reduce spacing between elements for a compact view
