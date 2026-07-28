@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Nikita Hlopov
+# Copyright (C) 2026 Nikita Hlopov
 # This file is distributed under the same license as the Sidebar for WPBakery Page Builder plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sidebar for WPBakery Page Builder 2.4\n"
+"Project-Id-Version: Sidebar for WPBakery Page Builder 2.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sidebar-navigation-for-wpbakery\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-04T21:27:12+00:00\n"
+"POT-Creation-Date: 2026-07-28T20:30:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: sidebar-navigation-for-wpbakery\n"
@@ -39,79 +39,79 @@ msgstr ""
 msgid "Sidebar for WPBakery Page Builder Settings"
 msgstr ""
 
-#: includes/settings.php:103
+#: includes/settings.php:132
 msgid "Disable elements' description"
 msgstr ""
 
-#: includes/settings.php:104
-msgid "Hides the descriptions under WPBakery elements in the Add Element panel."
+#: includes/settings.php:133
+msgid "Hides the descriptions under WPBakery elements in the Add Element panel. NOTE: After WPBakery 9.0 descriptions are removed by default."
 msgstr ""
 
-#: includes/settings.php:115
+#: includes/settings.php:144
 msgid "Elements compact view"
 msgstr ""
 
-#: includes/settings.php:116
+#: includes/settings.php:145
 msgid "Reduces spacing between elements in the Add Element panel for a more compact view."
 msgstr ""
 
-#: includes/settings.php:127
+#: includes/settings.php:156
 msgid "Edit Form compact view"
 msgstr ""
 
-#: includes/settings.php:128
+#: includes/settings.php:157
 msgid "Reduces fields size and spacing in the Edit Element panel for a more compact view."
 msgstr ""
 
-#: includes/settings.php:139
+#: includes/settings.php:168
 msgid "Responsive view"
 msgstr ""
 
-#: includes/settings.php:140
+#: includes/settings.php:169
 msgid "Makes the page view area shrink when the sidebar is opened."
 msgstr ""
 
-#: includes/settings.php:151
+#: includes/settings.php:180
 msgid "Page Structure icon"
 msgstr ""
 
-#: includes/settings.php:152
+#: includes/settings.php:181
 msgid "Adds a Page Structure icon to the navbar. Displays a Page Structure in a panel."
 msgstr ""
 
-#: includes/settings.php:163
+#: includes/settings.php:192
 msgid "Sidebar Position"
 msgstr ""
 
-#: includes/settings.php:164
+#: includes/settings.php:193
 msgid "Choose the position of the sidebar."
 msgstr ""
 
-#: includes/settings.php:175
+#: includes/settings.php:204
 msgid "Color Theme"
 msgstr ""
 
-#: includes/settings.php:176
+#: includes/settings.php:205
 msgid "Choose the color theme for the plugin interface."
 msgstr ""
 
-#: includes/settings.php:270
+#: includes/settings.php:299
 msgid "Left"
 msgstr ""
 
-#: includes/settings.php:275
+#: includes/settings.php:304
 msgid "Right"
 msgstr ""
 
-#: includes/settings.php:290
+#: includes/settings.php:319
 msgid "Light"
 msgstr ""
 
-#: includes/settings.php:291
+#: includes/settings.php:320
 msgid "Dark"
 msgstr ""
 
-#: includes/settings.php:292
+#: includes/settings.php:321
 msgid "Device Default"
 msgstr ""
 
