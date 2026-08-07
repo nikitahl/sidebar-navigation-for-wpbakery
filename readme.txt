@@ -60,12 +60,11 @@ This plugin is open-source! You can contribute, report issues, or suggest improv
 
 1. Enhanced Sidebar UI
 2. Editor Navigation Bar
-3. Add Element Panel
-4. Edit Form Panel
-5. Page Settings Panel
-6. Page Structure Panel
-7. Sidebar on the Right
-8. Plugin Settings Page
+3. Edit Form Panel
+4. Page Structure Panel
+5. Sidebar on the Right
+6. Dark mode
+7. Plugin Settings Page
 
 == Frequently Asked Questions ==
 
