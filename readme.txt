@@ -3,8 +3,8 @@
 Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-extensions, wpbakery-page-builder
 Requires at least: 6.4
-Tested up to: 7.0
-Stable tag: 2.5
+Tested up to: 7.1
+Stable tag: 2.5.1
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -89,6 +89,9 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
+
+= 2.5.1 =
+* Fix: Fixed the issue with the adding of the first/selected element on Enter key press in the Add Element panel.
 
 = 2.5 =
 * Fix: Fixed issue with sidebar styles not applying correctly after 9.0 update of WPBakery Page Builder.
