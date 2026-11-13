@@ -24,6 +24,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
 add_action( 'vc_frontend_editor_hook_load_edit', 'sidebar_for_wpb_enqueue_preload_script' );
 
 add_action( 'vc_frontend_editor_enqueue_js_css', 'sidebar_for_wpb_enqueue_frontend', 999 );
+add_action( 'vc_backend_editor_enqueue_js_css', 'sidebar_for_wpb_enqueue_backend' );
 
 // Add "Settings" link on the Plugins page.
 add_filter( 'plugin_action_links_sidebar-navigation-for-wpbakery/sidebar-navigation-for-wpbakery.php', 'sidebar_nav_for_wpbakery_settings_link' );
@@ -88,6 +89,11 @@ function sidebar_for_wpb_enqueue_frontend() {
 		// Provide plugin URL for JS.
 		wp_localize_script( 'sidebar-for-wpb-js', 'sidebar_for_wpb_js', $settings );
 	}
+}
+
+function sidebar_for_wpb_enqueue_backend () {
+		wp_register_style( 'sidebar-for-wpb-backend-css', plugins_url( '/assets/dist/css/backend-editor.min.css', __FILE__ ), [], SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, 'all' );
+		wp_enqueue_style( 'sidebar-for-wpb-backend-css' );
 }
 
 /**
