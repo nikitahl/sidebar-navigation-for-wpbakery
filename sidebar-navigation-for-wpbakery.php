@@ -60,7 +60,7 @@ function sidebar_for_wpb_enqueue_preload_script() {
 }
 
 /**
- * Enqueue the plugin's styles and scripts.
+ * Enqueue the plugin's styles and scripts for Frontend editor.
  */
 function sidebar_for_wpb_enqueue_frontend() {
 	// Check if we are in inline editor mode and only then load the script.
@@ -91,7 +91,12 @@ function sidebar_for_wpb_enqueue_frontend() {
 	}
 }
 
-function sidebar_for_wpb_enqueue_backend () {
+/**
+ * Enqueue the plugin's styles for Backend editor.
+ * 
+ * @since 2.6
+ */
+function sidebar_for_wpb_enqueue_backend() {
 		wp_register_style( 'sidebar-for-wpb-backend-css', plugins_url( '/assets/dist/css/backend.min.css', __FILE__ ), [], SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, 'all' );
 		wp_enqueue_style( 'sidebar-for-wpb-backend-css' );
 }
