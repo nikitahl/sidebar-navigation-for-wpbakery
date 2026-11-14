@@ -154,7 +154,7 @@
 .vc_controls-row {
     top: 10px;
     padding: 0 5px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     justify-content: flex-end;
 }
 
@@ -320,7 +320,7 @@
 .wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_control-btn.vc_control-btn-copypaste,
 .wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_btn-content,
 .metabox-composer-content .vc_control-container .vc_copypaste-select + .select2-container .select2-selection {
-  padding: 0px;
+  padding: 0;
   display: inline-flex !important;
   justify-content: center;
   width: var(--control-size);
