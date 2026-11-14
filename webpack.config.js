@@ -11,7 +11,8 @@ module.exports = (env, argv) => {
     devtool: isProduction ? false : 'source-map',
     entry: {
       admin: './assets/js/admin/index.js',
-      editor: './assets/js/editor/index.js'
+      backend: './assets/js/editor/backend/index.js',
+      frontend: './assets/js/editor/frontend/index.js'
     },
     output: {
       filename: '[name].min.js',

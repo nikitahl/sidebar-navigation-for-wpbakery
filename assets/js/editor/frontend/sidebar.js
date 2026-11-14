@@ -65,7 +65,7 @@ export class SidebarForWPBakery {
     $.each(this.$navbarItems, this.setNavbarItems.bind(this))
 
     // Append styles
-    this.$body.append(`<link rel="stylesheet" href="${this.pluginUrl}/assets/dist/css/editor.min.css" type="text/css" />`)
+    this.$body.append(`<link rel="stylesheet" href="${this.pluginUrl}/assets/dist/css/frontend.min.css" type="text/css" />`)
 
     // Set up MutationObserver
     const myObserver = new MutationObserver(this.mutationHandler.bind(this))

@@ -65,7 +65,7 @@ function sidebar_for_wpb_enqueue_preload_script() {
 function sidebar_for_wpb_enqueue_frontend() {
 	// Check if we are in inline editor mode and only then load the script.
 	if ( vc_is_inline() ) {
-		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/editor.min.js', __FILE__ ), [], SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, true );
+		wp_register_script( 'sidebar-for-wpb-js', plugins_url( '/assets/dist/js/frontend.min.js', __FILE__ ), [], SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, true );
 		wp_enqueue_script( 'sidebar-for-wpb-js' );
 
 		$page_structure_html  = file_get_contents( plugin_dir_path( __FILE__ ) . 'includes/page-structure-panel.php' );
@@ -92,7 +92,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 }
 
 function sidebar_for_wpb_enqueue_backend () {
-		wp_register_style( 'sidebar-for-wpb-backend-css', plugins_url( '/assets/dist/css/backend-editor.min.css', __FILE__ ), [], SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, 'all' );
+		wp_register_style( 'sidebar-for-wpb-backend-css', plugins_url( '/assets/dist/css/backend.min.css', __FILE__ ), [], SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION, 'all' );
 		wp_enqueue_style( 'sidebar-for-wpb-backend-css' );
 }
 
