@@ -93,7 +93,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 
 /**
  * Enqueue the plugin's styles for Backend editor.
- * 
+ *
  * @since 2.6
  */
 function sidebar_for_wpb_enqueue_backend() {
