@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  z-index: 0;
+  z-index: 1;
 }
 
 .sfw-tooltip-text {
@@ -32,7 +32,7 @@
   border-radius: 5px;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0 4px 6px;
-  z-index: 1;
+  z-index: 9;
 }
 
 #sidebar-position-option .sfw-inline-item {
@@ -95,4 +95,8 @@
 .sfw-toggle input:disabled + .sfw-toggle-slider {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+.form-table th {
+  width: 300px;
 }
