@@ -42,20 +42,17 @@
 
 /* Columns */
 
-.wpb_row_container > .wpb_vc_column > .vc_controls:first-of-type,
-.wpb_row_container > .wpb_vc_column_inner > .vc_controls:first-of-type {
+.wpb_row_container > :is(.wpb_vc_column, .wpb_vc_column_inner) > .vc_controls:first-of-type {
   border: var(--border) var(--column-color);
   border-bottom: none;
 }
 
-.wpb_row_container > .wpb_vc_column > .vc_controls:last-of-type,
-.wpb_row_container > .wpb_vc_column_inner > .vc_controls:last-of-type {
+.wpb_row_container > :is(.wpb_vc_column, .wpb_vc_column_inner) > .vc_controls:last-of-type {
   border: var(--border) var(--column-color);
   border-top: none;
 }
 
-.wpb_row_container > .wpb_vc_column > .wpb_element_wrapper,
-.wpb_row_container > .wpb_vc_column_inner > .wpb_element_wrapper {
+.wpb_row_container > :is(.wpb_vc_column, .wpb_vc_column_inner) > .wpb_element_wrapper {
     border: var(--border) var(--column-color);
     border-top: none;
     border-bottom: none;
@@ -104,11 +101,8 @@
   background: #f6fff6;
 }
 
-.wpb_row_container > .wpb_vc_column > .vc_controls,
-.wpb_row_container > .wpb_vc_column_inner > .vc_controls,
-.wpb_row_container > .wpb_vc_column > .wpb_element_wrapper,
-.wpb_row_container > .wpb_vc_column_inner > .wpb_element_wrapper,
-/* .wpb_content_element > .wpb_element_wrapper, */
+.wpb_row_container > :is(.wpb_vc_column, .wpb_vc_column_inner) > .vc_controls,
+.wpb_row_container > :is(.wpb_vc_column, .wpb_vc_column_inner) > .wpb_element_wrapper,
 .wpb_vc_row_inner {
   background: transparent;
 }
@@ -120,8 +114,7 @@
   border: var(--border) var(--row-color);
 }
 
-.wpb_vc_tta_section.vc_shortcodes_container,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container {
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container {
   border: none;
 }
 
@@ -137,27 +130,12 @@
 .wpb_vc_column .vc_control-btn-column-menu .vc_column-controls-select + .select2-container .select2-selection__rendered::before,
 .wpb_vc_column_inner .vc_control-btn-column-menu .vc_column-controls-select + .select2-container .select2-selection__rendered::before,
 .metabox-composer-content .vc_copypaste-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection__rendered::before,
 .vc_shortcodes_container .wpb-container-controls-menu .wpb-container-controls-select + .select2-container .select2-selection__rendered::before {
   font-size: var(--icon-font-size);
   color: white !important;
@@ -213,8 +191,7 @@
 
 /* Column controls */
 
-.wpb_row_container > .wpb_vc_column > .vc_controls,
-.wpb_row_container > .wpb_vc_column_inner > .vc_controls {
+.wpb_row_container > :is(.wpb_vc_column, .wpb_vc_column_inner) > .vc_controls {
   height: var(--control-size);
 }
 
@@ -285,11 +262,7 @@
 
 /* TTA controls */
 
-.wpb_vc_tta_tabs > .vc_controls,
-.wpb_vc_tta_pageable > .vc_controls,
-.wpb_vc_tta_tour > .vc_controls,
-.wpb_vc_tta_accordion > .vc_controls,
-.wpb_vc_tta_toggle > .vc_controls {
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls {
   height: var(--control-size);
 }
 
@@ -319,21 +292,9 @@
 }
 
 .metabox-composer-content .vc_controls-content-widget .vc_copypaste-select + .select2-container .select2-selection,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
 .vc_shortcodes_container .wpb-container-controls-menu .wpb-container-controls-select + .select2-container .select2-selection {
   background: var(--row-color);
   color: white;
@@ -344,42 +305,25 @@
 }
 
 .metabox-composer-content .vc_controls-content-widget .vc_copypaste-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_tabs > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_pageable > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_tour > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_accordion > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_toggle > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_accordion, .wpb_vc_tta_toggle) > .vc_controls > .vc_controls-content-widget.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
 .vc_shortcodes_container .wpb-container-controls-menu .wpb-container-controls-select + .select2-container .select2-selection:hover {
   background: var(--row-color-hover);
   color: white;
 }
 
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls {
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls {
   height: var(--control-size);
   margin: 5px 0;
 }
 
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
 .wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_control-btn.vc_control-btn-copypaste,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
 .metabox-composer-content .vc_control-container .vc_copypaste-select + .select2-container .select2-selection,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection {
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection {
   padding: 0;
   display: inline-flex !important;
   justify-content: center;
@@ -390,43 +334,26 @@
 
 .metabox-composer-content .vc_control-container,
 .metabox-composer-content .vc_control-container .vc_copypaste-select + .select2-container .select2-selection,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_tabs.wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
-.wpb_vc_tta_pageable.wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
-.wpb_vc_tta_tour.wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
-.wpb_vc_tta_toggle.wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
-.wpb_vc_tta_tabs.wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
-.wpb_vc_tta_pageable.wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
-.wpb_vc_tta_tour.wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
-.wpb_vc_tta_toggle.wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection {
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_toggle).wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_toggle).wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn {
   background: var(--column-color);
 }
 
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_btn-content:hover,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_btn-content:focus,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_btn-content:hover,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_btn-content:focus,
 .wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_control-btn.vc_control-btn-copypaste:hover,
 .wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_control-btn.vc_control-btn-copypaste:focus,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_btn-content:hover,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls .vc_btn-content:focus,
 .metabox-composer-content .vc_control-container .vc_copypaste-select + .select2-container .select2-selection:hover,
 .metabox-composer-content .vc_control-container .vc_copypaste-select + .select2-container .select2-selection:focus,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus {
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:hover,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden > .wpb-tta-controls-menu .wpb-tta-controls-select + .select2-container .select2-selection:focus {
   background: var(--column-color-hover);
 }
 
@@ -435,8 +362,7 @@
   overflow: hidden;
 }
 
-.wpb_vc_tta_section.vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control {
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control {
   width: var(--bottom-control-size);
   height: var(--bottom-control-size);
   background: var(--column-color);
@@ -444,15 +370,12 @@
   border-radius: var(--border-radius);
 }
 
-.wpb_vc_tta_section.vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control:hover,
-.wpb_vc_tta_section.vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control:focus,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control:hover,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control:focus {
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control:hover,
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control:focus {
   background: var(--column-color-hover);
 }
 
-.wpb_vc_tta_section.vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control .vc-c-add-circle,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control .vc-c-add-circle {
+:is(.wpb_vc_tta_section, .wpb_vc_tta_toggle_section).vc_shortcodes_container.vc_active > .wpb_element_wrapper > .vc_tta-panel-body > .bottom-controls .vc_control .vc-c-add-circle {
   font-size: var(--icon-font-size);
 }
 
@@ -460,22 +383,12 @@
   background: transparent;
 }
 
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content,
-.wpb_vc_tta_toggle_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content,
-
+:is(.wpb_vc_tta_toggle_section, .wpb_vc_tta_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content,
+:is(.wpb_vc_tta_toggle_section, .wpb_vc_tta_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content,
+:is(.wpb_vc_tta_toggle_section, .wpb_vc_tta_section).vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content,
 .wpb_vc_tta_accordion .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_tabs.wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_pageable.wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_tour.wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_toggle.wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_tabs.wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_pageable.wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_tour.wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_toggle.wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-compact.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-menu-visible.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content,
-.wpb_vc_tta_section.vc_shortcodes_container > .wpb_element_wrapper > .vc_tta-panel-body > .vc_controls > .vc_control-container.wpb-controls-name-hidden.wpb-controls-name-hidden > .vc_element-name > .vc_btn-content {
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_toggle).wpb-tta-accordion-view .wpb_vc_tta_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content,
+:is(.wpb_vc_tta_tabs, .wpb_vc_tta_pageable, .wpb_vc_tta_tour, .wpb_vc_tta_toggle).wpb-tta-accordion-view .wpb_vc_tta_toggle_section.vc_shortcodes_container .vc_tta-panel-body > .vc_controls .vc_control-btn .vc_btn-content {
   display: inline-flex !important;
   color: white !important;
 }
