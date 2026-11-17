@@ -9,19 +9,19 @@ Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Enhance WPBakery Page Builder experience with user-friendly sidebar for navigation, page structure and customizable settings.
+A collection of interface enhancements and productivity features for a smoother, more efficient WPBakery editing experience.
 
 == Description ==
 
-Take your WPBakery Page Builder workflow to the next level with a modern, customizable sidebar designed for faster navigation and smoother editing.
+Make WPBakery Page Builder work the way you want.
 
-This lightweight plugin adds a persistent sidebar with navigation and panels, giving you instant access to WPBakery elements, settings, and page structure—without blocking your content or cluttering the editor.
+This plugin gives you greater control over the editing environment with a customizable sidebar, improved navigation, page structure access, and a range of interface enhancements.
 
-No more dragging, resizing, or hunting for options—everything you need stays neatly organized in one place.
+Reorganize your workspace, adjust panel layouts, enable compact views, and customize editor styling to create an interface that better fits your workflow.
 
-With simple controls and flexible settings, you can tailor the sidebar to match your workflow. Whether you want a compact layout, resizable panels, or a cleaner editor interface, this plugin makes WPBakery easier and more efficient to use.
+Designed to improve both usability and flexibility, the plugin helps reduce unnecessary clutter and makes essential editing tools easier to access.
 
-Perfect for designers, developers, and content creators who want to boost productivity and enjoy a cleaner WPBakery editing experience.
+Get a more streamlined and personalized WPBakery experience without changing the way you build pages.
 
 == Features ==
 

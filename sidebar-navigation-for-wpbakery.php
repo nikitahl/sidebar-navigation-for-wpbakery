@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Sidebar for WPBakery Page Builder
- * Description: Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
+ * Description: A collection of interface enhancements and customization options for a better WPBakery editing experience.
  * Version: 2.6.0
  * Author: Nikita Hlopov
  * Author URI: https://nikitahl.com
