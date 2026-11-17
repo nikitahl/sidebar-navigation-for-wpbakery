@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Sidebar for WPBakery Page Builder
  * Description: Customizable UI for WPBakery Page Builder with sidebar navigation and panels.
- * Version: 2.5.1
+ * Version: 2.6.0
  * Author: Nikita Hlopov
  * Author URI: https://nikitahl.com
  * Requires PHP: 7.0
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.5.1' );
+define( 'SIDEBAR_NAVIGATION_FOR_WPBAKERY_VERSION', '2.6.0' );
 define( 'SIDEBAR_NAVIGATION_FOR_WPBAKERY_TD', 'sidebar-navigation-for-wpbakery' );
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
@@ -98,7 +98,7 @@ function sidebar_for_wpb_enqueue_frontend() {
 /**
  * Enqueue the plugin's styles for Backend editor.
  *
- * @since 2.6
+ * @since 2.6.0
  */
 function sidebar_for_wpb_enqueue_backend() {
 	// Check if custom Backend Editor styling is enabled.

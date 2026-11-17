@@ -356,7 +356,7 @@ function sidebar_nav_for_wpbakery_color_theme_callback() {
 /**
  * Display the Frontend Editor Sidebar option.
  * 
- * @since 2.6
+ * @since 2.6.0
  */
 function sidebar_nav_for_wpbakery_enable_frontend_sidebar_callback() {
 	sidebar_nav_for_wpbakery_toggle_callback(
@@ -369,7 +369,7 @@ function sidebar_nav_for_wpbakery_enable_frontend_sidebar_callback() {
 /**
  * Display the Backend Editor Styling option.
  * 
- * @since 2.6
+ * @since 2.6.0
  */
 function sidebar_nav_for_wpbakery_enable_backend_styles_callback() {
 	sidebar_nav_for_wpbakery_toggle_callback(
@@ -387,7 +387,7 @@ function sidebar_nav_for_wpbakery_enable_backend_styles_callback() {
  * @param string $label       Accessible label.
  * @param mixed  $checked     Value that represents the enabled state.
  * 
- * @since 2.6
+ * @since 2.6.0
  */
 function sidebar_nav_for_wpbakery_toggle_callback( $option_name, $default = 0, $label = '', $checked_values = [ 1, '1' ] ) {
 	$value   = get_option( $option_name, $default );
@@ -415,7 +415,7 @@ function sidebar_nav_for_wpbakery_toggle_callback( $option_name, $default = 0, $
  * @param mixed $value Option value.
  * @return string
  * 
- * @since 2.6
+ * @since 2.6.0
  */
 function sidebar_nav_for_wpbakery_sanitize_responsive_view( $value ) {
     return in_array( (string) $value, [ '0', '1', 'default' ], true )
