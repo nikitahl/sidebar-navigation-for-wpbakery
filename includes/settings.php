@@ -61,18 +61,22 @@ function sidebar_nav_for_wpbakery_settings_page() {
  */
 function sidebar_nav_for_wpbakery_settings_init() {
 	// Register settings.
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_enable_frontend_sidebar',
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_enable_frontend_sidebar',
 		[
 			'sanitize_callback' => 'absint',
 			'default'           => '1',
 		]
 	);
 
-	register_setting( 'sidebar_nav_for_wpbakery_options_group', 'sidebar_nav_for_wpbakery_enable_backend_styles',
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_enable_backend_styles',
 		[
 			'sanitize_callback' => 'absint',
 			'default'           => '1',
-		] 
+		]
 	);
 	register_setting(
 		'sidebar_nav_for_wpbakery_options_group',
@@ -355,7 +359,7 @@ function sidebar_nav_for_wpbakery_color_theme_callback() {
 
 /**
  * Display the Frontend Editor Sidebar option.
- * 
+ *
  * @since 2.6.0
  */
 function sidebar_nav_for_wpbakery_enable_frontend_sidebar_callback() {
@@ -368,7 +372,7 @@ function sidebar_nav_for_wpbakery_enable_frontend_sidebar_callback() {
 
 /**
  * Display the Backend Editor Styling option.
- * 
+ *
  * @since 2.6.0
  */
 function sidebar_nav_for_wpbakery_enable_backend_styles_callback() {
@@ -382,15 +386,15 @@ function sidebar_nav_for_wpbakery_enable_backend_styles_callback() {
 /**
  * Display a toggle switch setting.
  *
- * @param string $option_name Option name.
- * @param mixed  $default     Default option value.
- * @param string $label       Accessible label.
- * @param mixed  $checked     Value that represents the enabled state.
- * 
+ * @param string $option_name    Option name.
+ * @param mixed  $defaultValue   Default option value.
+ * @param string $label          Accessible label.
+ * @param mixed  $checked_values Value that represents the enabled state.
+ *
  * @since 2.6.0
  */
-function sidebar_nav_for_wpbakery_toggle_callback( $option_name, $default = 0, $label = '', $checked_values = [ 1, '1' ] ) {
-	$value   = get_option( $option_name, $default );
+function sidebar_nav_for_wpbakery_toggle_callback( $option_name, $defaultValue = 0, $label = '', $checked_values = [ 1, '1' ] ) {
+	$value   = get_option( $option_name, $defaultValue );
 	$enabled = in_array( $value, $checked_values, true );
 	?>
 	<label class="sfw-toggle">
@@ -414,13 +418,13 @@ function sidebar_nav_for_wpbakery_toggle_callback( $option_name, $default = 0, $
  *
  * @param mixed $value Option value.
  * @return string
- * 
+ *
  * @since 2.6.0
  */
 function sidebar_nav_for_wpbakery_sanitize_responsive_view( $value ) {
-    return in_array( (string) $value, [ '0', '1', 'default' ], true )
-        ? (string) $value
-        : 'default';
+		return in_array( (string) $value, [ '0', '1', 'default' ], true )
+				? (string) $value
+				: 'default';
 }
 
 /**
