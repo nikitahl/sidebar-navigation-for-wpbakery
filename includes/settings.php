@@ -387,14 +387,14 @@ function sidebar_nav_for_wpbakery_enable_backend_styles_callback() {
  * Display a toggle switch setting.
  *
  * @param string $option_name    Option name.
- * @param mixed  $defaultValue   Default option value.
+ * @param mixed  $default_value  Default option value.
  * @param string $label          Accessible label.
  * @param mixed  $checked_values Value that represents the enabled state.
  *
  * @since 2.6.0
  */
-function sidebar_nav_for_wpbakery_toggle_callback( $option_name, $defaultValue = 0, $label = '', $checked_values = [ 1, '1' ] ) {
-	$value   = get_option( $option_name, $defaultValue );
+function sidebar_nav_for_wpbakery_toggle_callback( $option_name, $default_value = 0, $label = '', $checked_values = [ 1, '1' ] ) {
+	$value   = get_option( $option_name, $default_value );
 	$enabled = in_array( $value, $checked_values, true );
 	?>
 	<label class="sfw-toggle">
