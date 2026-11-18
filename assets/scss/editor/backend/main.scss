@@ -17,6 +17,10 @@
 
 /* Rows */
 
+.wpb_vc_row:last-of-type {
+  margin-bottom: 20px;
+}
+
 .wpb_vc_row > .wpb_element_wrapper,
 .wpb_vc_row_inner {
   border: var(--border) var(--row-color);
@@ -73,7 +77,6 @@
 .wpb_vc_section > .wpb_element_wrapper {
   border: var(--border) #333;
   border-radius: var(--border-radius);
-  padding: 5px;
 }
 
 .wpb_vc_section > .wpb_element_wrapper:hover {
@@ -85,9 +88,15 @@
   padding: 20px;
 }
 
+.wpb_vc_section.vc_collapsed-section {
+  margin-bottom: 20px;
+}
+
 .wpb_vc_section.vc_collapsed-section > .wpb_element_wrapper > .vc_section_container {
   height: 0;
+  min-height: 0;
   overflow: hidden;
+  outline: none;
 }
 
 /* Content elements */
