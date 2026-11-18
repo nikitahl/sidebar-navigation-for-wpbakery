@@ -4,24 +4,24 @@ Contributors: nikitahl, mrdollar4444
 Tags: wpbakery, wpbakery-extension, wpbakery-extensions, wpbakery-page-builder
 Requires at least: 6.4
 Tested up to: 7.1
-Stable tag: 2.5.1
+Stable tag: 2.6.0
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Enhance WPBakery Page Builder experience with user-friendly sidebar for navigation, page structure and customizable settings.
+A collection of interface enhancements and productivity features for a smoother, more efficient WPBakery editing experience.
 
 == Description ==
 
-Take your WPBakery Page Builder workflow to the next level with a modern, customizable sidebar designed for faster navigation and smoother editing.
+Make WPBakery Page Builder work the way you want.
 
-This lightweight plugin adds a persistent sidebar with navigation and panels, giving you instant access to WPBakery elements, settings, and page structure—without blocking your content or cluttering the editor.
+This plugin gives you greater control over the editing environment with a customizable sidebar, improved navigation, page structure access, and a range of interface enhancements.
 
-No more dragging, resizing, or hunting for options—everything you need stays neatly organized in one place.
+Reorganize your workspace, adjust panel layouts, enable compact views, and customize editor styling to create an interface that better fits your workflow.
 
-With simple controls and flexible settings, you can tailor the sidebar to match your workflow. Whether you want a compact layout, resizable panels, or a cleaner editor interface, this plugin makes WPBakery easier and more efficient to use.
+Designed to improve both usability and flexibility, the plugin helps reduce unnecessary clutter and makes essential editing tools easier to access.
 
-Perfect for designers, developers, and content creators who want to boost productivity and enjoy a cleaner WPBakery editing experience.
+Get a more streamlined and personalized WPBakery experience without changing the way you build pages.
 
 == Features ==
 
@@ -31,7 +31,10 @@ Perfect for designers, developers, and content creators who want to boost produc
 * Dismissible notifications for a distraction-free interface
 * Scroll directly to selected elements in the Edit Form panel
 * Add a first found element on Enter
+* Customized Backend Editor view (Requires WPBakery v9.0+)
 * Customizable settings page to adjust sidebar appearance and behavior:
+  * Toggle sidebar in the Frontend Editor.
+  * Toggle custom styling in the Backend Editor.
   * Hide element descriptions in the Add Element panel
   * Reduce spacing between elements for a compact view
   * Optimize field size and spacing in the Edit Form/Settings panel
@@ -65,6 +68,7 @@ This plugin is open-source! You can contribute, report issues, or suggest improv
 5. Sidebar on the Right
 6. Dark mode
 7. Plugin Settings Page
+8. Customized Backend Editor
 
 == Frequently Asked Questions ==
 
@@ -89,6 +93,12 @@ Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress d
 Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
+
+= 2.6.0 =
+* New: Added an option to enable or disable the sidebar in the Frontend Editor.
+* New: Added an option to enable or disable custom styling in the Backend Editor.
+* Improvement: Improved the settings page with toggle switches for a more intuitive experience.
+* Fix: Fixed a DOM-based XSS issue in the Page Structure panel caused by unescaped element names and row titles.
 
 = 2.5.1 =
 * Fix: Fixed the issue with the adding of the first/selected element on Enter key press in the Add Element panel.

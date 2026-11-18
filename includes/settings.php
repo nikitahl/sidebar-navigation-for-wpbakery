@@ -63,6 +63,23 @@ function sidebar_nav_for_wpbakery_settings_init() {
 	// Register settings.
 	register_setting(
 		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_enable_frontend_sidebar',
+		[
+			'sanitize_callback' => 'absint',
+			'default'           => '1',
+		]
+	);
+
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
+		'sidebar_nav_for_wpbakery_enable_backend_styles',
+		[
+			'sanitize_callback' => 'absint',
+			'default'           => '1',
+		]
+	);
+	register_setting(
+		'sidebar_nav_for_wpbakery_options_group',
 		'sidebar_nav_for_wpbakery_disable_description',
 		[
 			'sanitize_callback' => 'absint',
@@ -86,10 +103,8 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_options_group',
 		'sidebar_nav_for_wpbakery_responsive_view',
 		[
-			'sanitize_callback' => function ( $value ) {
-				// Ensures checkbox properly saves '1' or '0'.
-				return '1' === $value ? '1' : '0';
-			},
+			'sanitize_callback' => 'sidebar_nav_for_wpbakery_sanitize_responsive_view',
+			'default'           => 'default',
 		]
 	);
 	register_setting(
@@ -117,12 +132,37 @@ function sidebar_nav_for_wpbakery_settings_init() {
 			},
 		]
 	);
+
 	// Add settings section.
 	add_settings_section(
 		'sidebar_nav_for_wpbakery_main_section',
 		'',
 		'',
 		'sidebar-navigation-for-wpbakery'
+	);
+
+	// Add "Customized Backend Editor styling" field.
+	add_settings_field(
+		'sidebar_nav_for_wpbakery_enable_backend_styles',
+		'<div class="sfw-label">
+			<span class="sfw-title">' . esc_html__( 'Customized Backend Editor styling', 'sidebar-navigation-for-wpbakery' ) . '</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Applies custom styling to the WPBakery Backend Editor.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+		</div>',
+		'sidebar_nav_for_wpbakery_enable_backend_styles_callback',
+		'sidebar-navigation-for-wpbakery',
+		'sidebar_nav_for_wpbakery_main_section'
+	);
+
+	// Add "Frontend Editor sidebar" field.
+	add_settings_field(
+		'sidebar_nav_for_wpbakery_enable_frontend_sidebar',
+		'<div class="sfw-label">
+			<span class="sfw-title">' . esc_html__( 'Frontend Editor sidebar', 'sidebar-navigation-for-wpbakery' ) . '</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Displays WPBakery navigation and panels as a sidebar in the Frontend Editor.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+		</div>',
+		'sidebar_nav_for_wpbakery_enable_frontend_sidebar_callback',
+		'sidebar-navigation-for-wpbakery',
+		'sidebar_nav_for_wpbakery_main_section'
 	);
 
 	// Add "Disable elements' description" field.
@@ -202,7 +242,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_color_theme',
 		'<div class="sfw-label">
 			<span class="sfw-title">' . esc_html__( 'Color Theme', 'sidebar-navigation-for-wpbakery' ) . '</span>
-			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the color theme for the plugin interface.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the color theme for the navbar and panels interface.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
 		</div>',
 		'sidebar_nav_for_wpbakery_color_theme_callback',
 		'sidebar-navigation-for-wpbakery',
@@ -210,65 +250,60 @@ function sidebar_nav_for_wpbakery_settings_init() {
 	);
 }
 
+
 /**
- * Callback for "Disable elements' description" checkbox.
+ * Callback for "Disable elements' description" toggle.
  *
  * @since 2.0
  */
 function sidebar_nav_for_wpbakery_disable_description_callback() {
-	$option = get_option( 'sidebar_nav_for_wpbakery_disable_description', 0 );
-	?>
-	<input type="checkbox" name="sidebar_nav_for_wpbakery_disable_description"
-		id="sidebar_nav_for_wpbakery_disable_description" value="1"
-		<?php checked( 1, $option, true ); ?> />
-	<?php
+	sidebar_nav_for_wpbakery_toggle_callback(
+		'sidebar_nav_for_wpbakery_disable_description',
+		0,
+		__( 'Disable elements\' description', 'sidebar-navigation-for-wpbakery' )
+	);
 }
 
 /**
- * Callback for "Compact view" checkbox.
+ * Callback for "Compact view" toggle.
  *
  * @since 2.0
  */
 function sidebar_nav_for_wpbakery_compact_view_callback() {
-	$option = get_option( 'sidebar_nav_for_wpbakery_compact_view', 0 );
-	?>
-	<input type="checkbox" name="sidebar_nav_for_wpbakery_compact_view"
-		id="sidebar_nav_for_wpbakery_compact_view" value="1"
-		<?php checked( 1, $option, true ); ?> />
-	<?php
+	sidebar_nav_for_wpbakery_toggle_callback(
+		'sidebar_nav_for_wpbakery_compact_view',
+		0,
+		__( 'Compact view', 'sidebar-navigation-for-wpbakery' )
+	);
 }
 
 /**
- * Callback for "Compact view" checkbox for Edit Form/Settings panel.
+ * Callback for "Compact view" toggle for Edit Form/Settings panel.
  *
  * @since 2.1
  */
 function sidebar_nav_for_wpbakery_compact_view_edit_form_callback() {
-	$option = get_option( 'sidebar_nav_for_wpbakery_compact_view_edit_form', 0 );
-	?>
-	<input type="checkbox" name="sidebar_nav_for_wpbakery_compact_view_edit_form"
-		id="sidebar_nav_for_wpbakery_compact_view_edit_form" value="1"
-		<?php checked( 1, $option, true ); ?> />
-	<?php
+	sidebar_nav_for_wpbakery_toggle_callback(
+		'sidebar_nav_for_wpbakery_compact_view_edit_form',
+		0,
+		__( 'Compact view for Edit Form/Settings panel', 'sidebar-navigation-for-wpbakery' )
+	);
 }
 
 /**
- * Callback for "Responsive view" checkbox.
+ * Callback for "Responsive view" toggle.
  *
  * @since 2.0
  */
 function sidebar_nav_for_wpbakery_responsive_view_callback() {
-	$option = get_option( 'sidebar_nav_for_wpbakery_responsive_view', 'default' );
-
-	// If the option is 'default' (not set yet), use checked. Otherwise, use saved value.
-	$checked = ( 'default' === $option || '1' === $option ) ? 'checked' : '';
-
-	?>
-	<input type="checkbox" name="sidebar_nav_for_wpbakery_responsive_view"
-		id="sidebar_nav_for_wpbakery_responsive_view" value="1"
-		<?php echo esc_attr( $checked ); ?> />
-	<?php
+	sidebar_nav_for_wpbakery_toggle_callback(
+		'sidebar_nav_for_wpbakery_responsive_view',
+		'default',
+		__( 'Responsive view', 'sidebar-navigation-for-wpbakery' ),
+		[ 'default', '1', 1 ]
+	);
 }
+
 
 /**
  * Callback for "Page Structure" checkbox.
@@ -276,12 +311,11 @@ function sidebar_nav_for_wpbakery_responsive_view_callback() {
  * @since 2.1
  */
 function sidebar_nav_for_wpbakery_page_structure_callback() {
-	$option = get_option( 'sidebar_nav_for_wpbakery_page_structure', 0 );
-	?>
-	<input type="checkbox" name="sidebar_nav_for_wpbakery_page_structure"
-		id="sidebar_nav_for_wpbakery_page_structure" value="1"
-		<?php checked( 1, $option, true ); ?> />
-	<?php
+	sidebar_nav_for_wpbakery_toggle_callback(
+		'sidebar_nav_for_wpbakery_page_structure',
+		0,
+		__( 'Enable Page Structure', 'sidebar-navigation-for-wpbakery' )
+	);
 }
 
 /**
@@ -321,6 +355,76 @@ function sidebar_nav_for_wpbakery_color_theme_callback() {
 		<option value="device" <?php selected( 'device', $option ); ?>><?php esc_html_e( 'Device Default', 'sidebar-navigation-for-wpbakery' ); ?></option>
 	</select>
 	<?php
+}
+
+/**
+ * Display the Frontend Editor Sidebar option.
+ *
+ * @since 2.6.0
+ */
+function sidebar_nav_for_wpbakery_enable_frontend_sidebar_callback() {
+	sidebar_nav_for_wpbakery_toggle_callback(
+		'sidebar_nav_for_wpbakery_enable_frontend_sidebar',
+		1,
+		__( 'Enable Frontend Editor sidebar', 'sidebar-navigation-for-wpbakery' )
+	);
+}
+
+/**
+ * Display the Backend Editor Styling option.
+ *
+ * @since 2.6.0
+ */
+function sidebar_nav_for_wpbakery_enable_backend_styles_callback() {
+	sidebar_nav_for_wpbakery_toggle_callback(
+		'sidebar_nav_for_wpbakery_enable_backend_styles',
+		1,
+		__( 'Enable Backend Editor styling', 'sidebar-navigation-for-wpbakery' )
+	);
+}
+
+/**
+ * Display a toggle switch setting.
+ *
+ * @param string $option_name    Option name.
+ * @param mixed  $default_value  Default option value.
+ * @param string $label          Accessible label.
+ * @param mixed  $checked_values Value that represents the enabled state.
+ *
+ * @since 2.6.0
+ */
+function sidebar_nav_for_wpbakery_toggle_callback( $option_name, $default_value = 0, $label = '', $checked_values = [ 1, '1' ] ) {
+	$value   = get_option( $option_name, $default_value );
+	$enabled = in_array( $value, $checked_values, true );
+	?>
+	<label class="sfw-toggle">
+		<input type="hidden" name="<?php echo esc_attr( $option_name ); ?>" value="0">
+		<input
+			type="checkbox"
+			name="<?php echo esc_attr( $option_name ); ?>"
+			id="<?php echo esc_attr( $option_name ); ?>"
+			value="1"
+			role="switch"
+			aria-label="<?php echo esc_attr( $label ); ?>"
+			<?php checked( $enabled ); ?>
+		>
+		<span class="sfw-toggle-slider"></span>
+	</label>
+	<?php
+}
+
+/**
+ * Sanitize the Responsive View option.
+ *
+ * @param mixed $value Option value.
+ * @return string
+ *
+ * @since 2.6.0
+ */
+function sidebar_nav_for_wpbakery_sanitize_responsive_view( $value ) {
+		return in_array( (string) $value, [ '0', '1', 'default' ], true )
+				? (string) $value
+				: 'default';
 }
 
 /**

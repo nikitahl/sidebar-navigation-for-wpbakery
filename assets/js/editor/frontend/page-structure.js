@@ -173,19 +173,22 @@ export class PageStructure {
         nodeName += rowTitle ? ` (${rowTitle})` : ''
       }
       nodeName = nodeName || 'Unnamed Element'
+      // Static markup only; untrusted values (names, ids) are set via .text()/.attr() to prevent DOM XSS.
       const $li = $(`
         <li class="page-structure-item ${this.createNodeClasses(node) || ''}">
-          <div class="page-structure-label" title="${nodeName}" id="${id}">
-            <span>
-              ${nodeName}
-            </span>
+          <div class="page-structure-label">
+            <span class="page-structure-name"></span>
             <div class="element-controls">
-              <a class="vc_control-btn vc_control-btn-inspect" data-control="inspect" href="#" title="${this.pageStructureFind} ${nodeName}" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-search"></i></span></a>
-              <a class="vc_control-btn vc_control-btn-edit" data-control="edit" href="#" title="${window.i18nLocale.edit} ${nodeName}" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-mode_edit"></i></span></a>
+              <a class="vc_control-btn vc_control-btn-inspect" data-control="inspect" href="#" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-search"></i></span></a>
+              <a class="vc_control-btn vc_control-btn-edit" data-control="edit" href="#" target="_blank"><span class="vc_btn-content"><i class="vc-composer-icon vc-c-icon-mode_edit"></i></span></a>
             </div>
           </div>
         </li>
       `)
+      $li.find('.page-structure-label').attr({ title: nodeName, id })
+      $li.find('.page-structure-name').text(nodeName)
+      $li.find('.vc_control-btn-inspect').attr('title', `${this.pageStructureFind} ${nodeName}`)
+      $li.find('.vc_control-btn-edit').attr('title', `${window.i18nLocale.edit} ${nodeName}`)
 
       if (node?.children?.length) {
         const $childContainer = $('<div class="page-structure-children"></div>').append(this.createTreeHTML(node.children))

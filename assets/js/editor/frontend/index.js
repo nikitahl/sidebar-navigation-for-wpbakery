@@ -1,4 +1,4 @@
-import '../../scss/editor/main.scss'
+import '../../../scss/editor/frontend/main.scss'
 import { extendInlineShortcodeView, addSearchInputListener } from './utils'
 import { SidebarForWPBakery } from './sidebar'
 import { PageStructure } from './page-structure'
