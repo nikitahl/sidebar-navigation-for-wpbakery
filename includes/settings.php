@@ -242,7 +242,7 @@ function sidebar_nav_for_wpbakery_settings_init() {
 		'sidebar_nav_for_wpbakery_color_theme',
 		'<div class="sfw-label">
 			<span class="sfw-title">' . esc_html__( 'Color Theme', 'sidebar-navigation-for-wpbakery' ) . '</span>
-			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the color theme for the plugin interface.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
+			<span class="sfw-tooltip" aria-label="' . esc_attr__( 'Choose the color theme for the navbar and panels interface.', 'sidebar-navigation-for-wpbakery' ) . '">❔</span>
 		</div>',
 		'sidebar_nav_for_wpbakery_color_theme_callback',
 		'sidebar-navigation-for-wpbakery',
