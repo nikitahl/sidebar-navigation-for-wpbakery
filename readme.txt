@@ -99,6 +99,7 @@ Deactivate the plugin via the WordPress **Plugins** page.
 * New: Added an option to enable or disable the sidebar in the Frontend Editor.
 * New: Added an option to enable or disable custom styling in the Backend Editor.
 * Improvement: Improved the settings page with toggle switches for a more intuitive experience.
+* Fix: Fixed a DOM-based XSS issue in the Page Structure panel caused by unescaped element names and row titles.
 
 = 2.5.1 =
 * Fix: Fixed the issue with the adding of the first/selected element on Enter key press in the Add Element panel.
