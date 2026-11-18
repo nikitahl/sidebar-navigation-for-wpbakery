@@ -74,23 +74,31 @@ This plugin is open-source! You can contribute, report issues, or suggest improv
 
 = How do I activate the sidebar? =
 
-Simply activate the plugin and edit any post/page using WPBakery Page Builder’s Frontend Editor.
+Simply activate the plugin and edit any post or page using WPBakery Page Builder’s Frontend Editor. Make sure the Frontend Editor sidebar is enabled in the plugin settings.
 
 = Where does the sidebar appear? =
 
-By default, the sidebar appears on the left side of the WPBakery Page Builder interface. You can change it to the right in the settings.
+By default, the sidebar appears on the left side of the WPBakery Page Builder interface. You can change its position to the right in the settings.
 
 = Can I customize the sidebar? =
 
-Yes! The settings page allows you to tweak sidebar positioning, spacing, and visibility preferences.
+Yes! The settings page allows you to adjust sidebar positioning, spacing, and other display preferences to suit your workflow.
+
+= Can I disable the sidebar? =
+
+Yes! You can enable or disable the Frontend Editor sidebar at any time using the corresponding toggle in the plugin settings. This allows you to keep the plugin active while using the default WPBakery interface.
+
+= Does the plugin also customize the Backend Editor? =
+
+Yes! The plugin includes custom styling for WPBakery's Backend Editor, providing an enhanced and more consistent editing interface.
+
+= Can I disable the custom Backend Editor styling? =
+
+Yes! You can enable or disable the custom Backend Editor styling independently using its toggle in the plugin settings.
 
 = Where do I find the plugin settings? =
 
 Navigate to **Settings > Sidebar for WPBakery Page Builder** in your WordPress dashboard.
-
-= How do I disable the sidebar? =
-
-Deactivate the plugin via the WordPress **Plugins** page.
 
 == Changelog ==
 
