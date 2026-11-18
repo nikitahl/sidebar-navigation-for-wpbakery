@@ -95,7 +95,6 @@ Deactivate the plugin via the WordPress **Plugins** page.
 == Changelog ==
 
 = 2.6.0 =
-
 * New: Added an option to enable or disable the sidebar in the Frontend Editor.
 * New: Added an option to enable or disable custom styling in the Backend Editor.
 * Improvement: Improved the settings page with toggle switches for a more intuitive experience.
